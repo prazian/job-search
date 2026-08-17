@@ -24,7 +24,7 @@ Being straight about this up front, because a fake lead wastes more time than an
 **Verified with live data (you can click these right now):**
 - The 5 leads in [04-fresh-hiring-posts.md](04-fresh-hiring-posts.md) — pulled from HN's public API today, real permalinks.
 - The OSS projects in [03-opensource-targets.md](03-opensource-targets.md) — star counts, open-issue counts, and help-wanted labels checked live via GitHub's API today.
-- The community links in [01-founder-communities.md](01-founder-communities.md) — every URL was checked to exist today.
+- The community links in [01-founder-communities.md](01-founder-communities.md) — **corrected 2026-08-18** after the first pass trusted search snippets instead of checking pages directly, which let a dead-since-2015 Slack community and a dead Discord invite through. Every row now verified against the platform's own API/page directly (Discord invite-lookup API, Telegram preview pages, direct page fetches) — see that file for the method per row.
 - The two scripts — both ran successfully against live APIs while building this.
 
 **Not possible for me to do, and why:**
