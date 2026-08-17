@@ -59,7 +59,7 @@ Rules that matter more than the wording: **reply within hours, not days** (hirin
 ```
 Hey [Name], saw your post about [specific thing they said, e.g. "needing a hand with your AWS migration"].
 
-I'm a solutions architect / full-stack dev (AWS, Python, TypeScript, Go, [X] years, ex-[relevant angle if useful]), currently taking on contract work. [One line tying your background to their specific problem, e.g. "Spent the last few years doing exactly this kind of ECS/Terraform migration for startups moving off Heroku."]
+I'm a solutions architect / full-stack dev (AWS, Python, TypeScript, Go, [X] years, ex-[relevant angle if useful]), currently taking on contract work. [One line tying your background to their specific problem, e.g. "Spent the last few years doing exactly this kind of ECS/Terraform migration for startups moving off Heroku."] [Optional, only if their post is timezone-sensitive or clearly US-based: Based abroad but happy to work your hours, full overlap with US time isn't a problem.]
 
 Can send a couple examples if that's useful, no pressure either way. Still looking for someone?
 ```

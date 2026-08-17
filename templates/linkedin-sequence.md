@@ -4,7 +4,7 @@ Fill in `[brackets]`. Send message 1 the same day, message 2 on day 3-4 (only if
 
 ## Message 1, same day
 ```
-Hey [Name], saw your post about [specific thing they said]. I'm a solutions architect / full-stack dev (AWS, Python, TypeScript, Go), currently taking on contract work. [One line tying your background to their specific problem.]
+Hey [Name], saw your post about [specific thing they said]. I'm a solutions architect / full-stack dev (AWS, Python, TypeScript, Go), currently taking on contract work. [One line tying your background to their specific problem.] [Optional, if timezone-sensitive: Based abroad but happy to work your hours, full US overlap isn't a problem.]
 
 Can send a couple examples if that's useful, no pressure either way. Still looking for someone?
 ```

@@ -21,7 +21,7 @@ That's the whole system. The compounding part is consistency, 5 a week is roughl
 ```
 Hey [Name], it's been a while! Hope [specific thing you know about their situation, new role, new city, their company] is going well.
 
-Small update from me: went independent, doing contract work in cloud architecture and backend (AWS, Python, TypeScript, Go). Mostly helping small teams and startups that need senior infra help without a full-time hire. Based in Armenia now too, turns out to be a good timezone bridge for EU and US-morning teams.
+Small update from me: went independent, doing contract work in cloud architecture and backend (AWS, Python, TypeScript, Go). Mostly helping small teams and startups that need senior infra help without a full-time hire. Based in Armenia now too, but flexible on timezone, EU hours, US hours, whatever a team needs.
 
 No real ask here, just reconnecting. But if you ever hear of someone needing backup on the infra or backend side, keep me in mind.
 ```
@@ -35,7 +35,7 @@ I do contract work in exactly that space (AWS/cloud architecture, Python, TypeSc
 
 ### Template C, direct referral ask (people who know a lot of people)
 ```
-Hey [Name], quick one. I went independent doing contract cloud/backend work (AWS, Python, TypeScript, Go), based in Armenia now with rates to match.
+Hey [Name], quick one. I went independent doing contract cloud/backend work (AWS, Python, TypeScript, Go), based in Armenia now with rates to match, flexible on timezone including US hours.
 
 You talk to a lot of founders and teams, does anyone come to mind who's mentioned needing infra help, a cloud migration, or just more senior backend capacity? Happy to be introduced, or just forward my info along.
 

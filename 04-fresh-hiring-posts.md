@@ -4,6 +4,8 @@
 
 Source: [Ask HN: Who is hiring? (August 2026)](https://news.ycombinator.com/item?id=49156683), scanned via HN's public Algolia API on 2026-08-17. `scripts/hn_scan.py` re-runs this scan against whichever month's thread is current, run it weekly, it auto-discovers the new thread each month.
 
+**On location and hours:** based in Armenia, but genuinely flexible on timezone, including full US business hours if a role needs it. What isn't flexible: legal work authorization. The documents on hand (Estonian e-Residency, Danish residence permit) are useful for running things as an EU-facing B2B entity, but neither one, nor Armenian residency, grants authorization to work in the US. That distinction only bites on roles that explicitly require it, most contract/B2B engagements don't, since they're paying a foreign entity for services rather than employing a person. Flagged below wherever it matters.
+
 ## The 5 leads
 
 ### 1. Reef Technologies, Senior Python Backend Engineer, 🟢 best geographic fit
@@ -35,16 +37,16 @@ Saw the Viteus contractor call for DevOps/Full-Stack support. I do exactly this 
 The "scope before writing code" line in your Sr Agentic Engineer listing matches how I already work with Claude Code and Cursor on production TypeScript systems, not just prototyping. Got 20 years of backend/cloud architecture behind it too. Worth a quick chat about the FM stack?
 ```
 
-### 4. Arcforma AI, AI Engineer (contract track), 🟡 confirm geography before pitching
-**[Post](https://news.ycombinator.com/item?id=49248055)** · Contract, project-based, $50-150/hr, 3-6 week scoped engagements · Listing says "REMOTE (US only) or ONSITE NYC," unclear if that restriction applies to the contract track specifically or just the full-time track. **Worth a direct one-line email to confirm before investing a full pitch.**
+### 4. Arcforma AI, AI Engineer (contract track), 🟡 confirm which kind of "US only" before pitching
+**[Post](https://news.ycombinator.com/item?id=49248055)** · Contract, project-based, $50-150/hr, 3-6 week scoped engagements · Listing says "REMOTE (US only) or ONSITE NYC." The open question is what "US only" means here: if it's about timezone/overlap, that's a non-issue (happy to work US hours); if it's about requiring US work authorization for tax/compliance reasons, that's a real blocker, since Armenian residency, Estonian e-Residency, and a Danish residence permit don't add up to US work authorization. **Worth a direct one-line email to find out which one it is before investing a full pitch.**
 
 **Opener (framed as the clarifying question, not a full pitch):**
 ```
-Quick question before I put together a proposal: is the contract track (project-based, $50-150/hr) open to remote-from-anywhere, or is the US-only restriction on the listing specific to the full-time role? If it's open, I'd like to talk about the infra/backend side of your AI production work, AWS/Python/cloud architecture background.
+Quick question before I put together a proposal: is the "US only" on the contract track about needing US work authorization, or just wanting someone on US hours? I can work any timezone including full US business hours, just flagging that I'm not US-authorized if that's what it's about. If it's the former, I'd still love to talk, infra/backend side of your AI production work is right in my lane (AWS, Python, cloud architecture).
 ```
 
-### 5. Early-stage health & wellness startup (doubling.io), 🔴 skip unless you hold US work authorization
-**[Post](https://news.ycombinator.com/item?id=49191343)** · Contract (1099), 40 hrs/week, Chicago-preferred or remote US · Explicitly states: **"Must be authorized to work in the US as an independent contractor; no visa sponsorship."** Including this for completeness, but the stated requirement rules out a non-US-authorized applicant, don't spend a pitch here unless that's changed or you have a path around it (e.g., a US-based EOR/agency relationship).
+### 5. Early-stage health & wellness startup (doubling.io), 🔴 skip, this one's a real blocker
+**[Post](https://news.ycombinator.com/item?id=49191343)** · Contract (1099), 40 hrs/week, Chicago-preferred or remote US · Explicitly states: **"Must be authorized to work in the US as an independent contractor; no visa sponsorship."** That's unambiguous, and Armenian, Estonian, or Danish documents don't satisfy it. Including this for completeness, but don't spend a pitch here unless a US-based EOR/agency relationship changes the picture.
 
 ## Keeping this list alive
 

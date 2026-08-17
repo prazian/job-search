@@ -2,6 +2,8 @@
 
 Tested directly: `wellfound.com` returns a hard 403 to any non-browser request, same pattern as Reddit and LinkedIn. So "scout Wellfound" happens in your own logged-in browser (search the company names below there directly, human browsing is fine, automated scraping is what's blocked). What I *could* do: verify real, recent funding rounds through press coverage, which is public and legitimately searchable, and identify actual named founders. None of the three below had a "founder email" published anywhere I could find, that's normal. Wellfound and most seed-stage companies route first contact through the platform's own apply/message flow or a general company inbox, not a scraped personal address. Chasing around that isn't a research gap, it's the product working as intended, so the pitches below target the actual available channel (Wellfound message, or the founder's own public LinkedIn/X).
 
+All three below are US companies. Worth knowing going in: based in Armenia, no US work authorization (Estonian e-Residency and a Danish residence permit don't grant that), but that's normally a non-issue for a contract/1099 engagement, since it's the entity being paid for services, not an employment relationship. What does matter for a US-based team is timezone overlap, and that's fully covered, happy to work US hours. The pitches below lead with that instead of a vague "remote."
+
 ## 3 verified, small-crew, recently-funded companies
 
 ### RWX, dev cloud platform for AI-driven software engineering
@@ -23,17 +25,17 @@ Smaller and earlier than the two above, genuinely tiny crew, the kind of team wh
 
 **RWX:**
 ```
-Congrats on the $12M Series A. Dev cloud for AI-driven engineering is exactly the infra problem I've spent 20 years on (AWS, Kubernetes, Go, cloud architecture). If early scaling means extra hands on infra/reliability before the team's fully staffed, I'd love to help. Remote, contract, can start fast.
+Congrats on the $12M Series A. Dev cloud for AI-driven engineering is exactly the infra problem I've spent 20 years on (AWS, Kubernetes, Go, cloud architecture). If early scaling means extra hands on infra/reliability before the team's fully staffed, I'd love to help. Remote, contract, happy to work Columbus hours, can start fast.
 ```
 
 **Ellis AI:**
 ```
-Congrats on emerging from stealth with $10M+. Reconciling messy financial data at speed is a backend/cloud problem I know well (Python, AWS, 20 years building production systems). If you need contract engineering support while headcount catches up to the roadmap, I'd love to help, remote and fast to start.
+Congrats on emerging from stealth with $10M+. Reconciling messy financial data at speed is a backend/cloud problem I know well (Python, AWS, 20 years building production systems). If you need contract engineering support while headcount catches up to the roadmap, I'd love to help, remote, full overlap with your hours, fast to start.
 ```
 
 **Clad:**
 ```
-Saw your HN post, strong traction for a 7-person team. If backend/infra ever needs contract support while you're heads-down on product (AWS, TypeScript, Go, cloud architecture), happy to help out short-term, even if the current search is for full-time. Remote, available immediately.
+Saw your HN post, strong traction for a 7-person team. If backend/infra ever needs contract support while you're heads-down on product (AWS, TypeScript, Go, cloud architecture), happy to help out short-term, even if the current search is for full-time. Remote, can work NYC hours, available immediately.
 ```
 
 Reusable blank version for any newly-funded company you find yourself: [templates/wellfound-founder-pitch.md](templates/wellfound-founder-pitch.md).
