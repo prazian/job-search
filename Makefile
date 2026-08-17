@@ -6,9 +6,9 @@ TODAY := $(shell date +%Y-%m-%d)
 help:
 	@echo "Job search playbook, available commands:"
 	@echo ""
-	@echo "  make hn         Scan HN's hiring + freelancer threads, opens scan-results/hn-scan-$(TODAY).md"
+	@echo "  make hn         Scan HN's hiring + freelancer threads, writes scan-results/hn-scan-$(TODAY).md"
 	@echo "  make hn-json    Same scan, machine-readable JSON to stdout, no file written"
-	@echo "  make oss        Check OSS target repos for open help-wanted work (~2 min, rate-limited), opens scan-results/oss-scan-$(TODAY).md"
+	@echo "  make oss        Check OSS target repos for open help-wanted work (~2 min, rate-limited), writes scan-results/oss-scan-$(TODAY).md"
 	@echo "  make oss-json   Same scan, machine-readable JSON to stdout, no file written"
 	@echo "  make scan       Run hn then oss back to back"
 	@echo "  make tracker    Open tracker.csv in the default app"
@@ -18,14 +18,12 @@ help:
 
 hn:
 	$(PYTHON) scripts/hn_scan.py
-	open scan-results/hn-scan-$(TODAY).md
 
 hn-json:
 	$(PYTHON) scripts/hn_scan.py --json
 
 oss:
 	$(PYTHON) scripts/oss_scan.py
-	open scan-results/oss-scan-$(TODAY).md
 
 oss-json:
 	$(PYTHON) scripts/oss_scan.py --json

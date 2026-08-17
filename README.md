@@ -43,7 +43,7 @@ Tried setting up a weekly cloud routine to run `hn_scan.py` automatically (routi
 ## Fastest path to a first message sent today
 
 1. Open [04-fresh-hiring-posts.md](04-fresh-hiring-posts.md), pick the best-fit lead, send the opener.
-2. Run `make hn`, costs nothing, takes 10 seconds, opens today's `scan-results/hn-scan-<date>.md` with clickable links and a checkbox per lead. After you apply somewhere, tick its box (`- [ ]` to `- [x]`) and save, the next scan reads that back and keeps it checked.
+2. Run `make hn`, costs nothing, takes 10 seconds, writes today's `scan-results/hn-scan-<date>.md`, open it in your editor. Clickable links, a checkbox per lead. After you apply somewhere, tick its box (`- [ ]` to `- [x]`) and save, the next scan reads that back and keeps it checked.
 3. Join 2-3 communities from [01-founder-communities.md](01-founder-communities.md) today (approval can take a few days on some).
 4. Log every send in [tracker.csv](tracker.csv) so nothing falls through.
 
