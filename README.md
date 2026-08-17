@@ -16,6 +16,7 @@ A working system for landing freelance/contract work, built 2026-08-17. Read thi
 | [tracker.csv](tracker.csv) | Open in Excel/Numbers/Sheets, log every outreach here |
 | [scripts/hn_scan.py](scripts/hn_scan.py) | **Working automation.** Re-run anytime for fresh leads |
 | [scripts/oss_scan.py](scripts/oss_scan.py) | **Working automation.** Checks OSS repos for open help-wanted work |
+| [Makefile](Makefile) | Shortcuts for the two scripts, run `make help` |
 
 ## What's real vs. what needs your hands
 
