@@ -2,7 +2,7 @@
 """
 Scans the current month's Hacker News "Who is hiring?" and "Freelancer? Seeking
 freelancer?" threads for posts that mention contract/freelance work matching a
-given tech stack. Uses HN's public Algolia API — no auth, no scraping, no ToS issues.
+given tech stack. Uses HN's public Algolia API, no auth, no scraping, no ToS issues.
 
 Usage:
     python3 hn_scan.py                  # scan current month, default stack

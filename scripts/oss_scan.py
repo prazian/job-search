@@ -3,7 +3,7 @@
 Checks a curated list of open-source repos (edit REPOS below) for signs of
 active paid/volunteer help wanted: open "help wanted" / "good first issue"
 issues, star count, open issue count. Uses GitHub's public REST API
-(unauthenticated: 60 req/hr core, 10 req/min search — this script paces itself).
+(unauthenticated: 60 req/hr core, 10 req/min search, this script paces itself).
 
 Usage:
     python3 oss_scan.py
