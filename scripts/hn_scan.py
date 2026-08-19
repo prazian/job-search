@@ -157,28 +157,33 @@ def write_markdown(results: dict, path: str, stack_words: list[str], applied: se
         "Applied a lead? Just tick its box below, `- [ ]` to `- [x]`, and save. It carries into tomorrow's scan automatically.",
         "",
     ]
+    all_blocked = []
     for block in results.values():
         lines.append(f"## [{block['thread']}]({block['thread_url']})")
         lines.append("")
         if block.get("note"):
             lines.append(f"*{block['note']}*")
             lines.append("")
-        if not block["matches"]:
+        clean_matches = [m for m in block["matches"] if not m.get("blocked")]
+        all_blocked.extend(m for m in block["matches"] if m.get("blocked"))
+        if not clean_matches:
             lines.append("No matches this run.")
             lines.append("")
             continue
-        for m in block["matches"]:
+        for m in clean_matches:
             checked = m["url"] in applied
             box = "x" if checked else " "
             tag = " (applied)" if checked else ""
-            if m.get("blocked"):
-                lines.append(
-                    f"- [{box}] 🚫 **BLOCKLISTED ({m['blocked']}, see "
-                    f"[07-companies-to-avoid.md](07-companies-to-avoid.md)).** "
-                    f"[{m['author']}]({m['url']}){tag}: {m['excerpt'][:300]}"
-                )
-            else:
-                lines.append(f"- [{box}] **[{m['author']}]({m['url']})**{tag}: {m['excerpt'][:300]}")
+            lines.append(f"- [{box}] **[{m['author']}]({m['url']})**{tag}: {m['excerpt'][:300]}")
+        lines.append("")
+
+    if all_blocked:
+        lines.append("## Blocklisted, do not pitch")
+        lines.append("")
+        lines.append("Pulled out of the lists above. See [07-companies-to-avoid.md](07-companies-to-avoid.md) for why.")
+        lines.append("")
+        for m in all_blocked:
+            lines.append(f"- ~~[{m['author']}]({m['url']}): {m['excerpt'][:200]}~~ (matched: {m['blocked']})")
         lines.append("")
     with open(path, "w") as f:
         f.write("\n".join(lines))
@@ -234,19 +239,24 @@ def main():
         print(json.dumps(results, indent=2))
         return
 
+    all_blocked = []
     for block in results.values():
         print(f"\n=== {block['thread']} ===")
         print(block["thread_url"])
         if block.get("note"):
             print(f"(note: {block['note']})")
-        if not block["matches"]:
+        clean_matches = [m for m in block["matches"] if not m.get("blocked")]
+        all_blocked.extend(m for m in block["matches"] if m.get("blocked"))
+        if not clean_matches:
             print("No matches this run.")
-        for m in block["matches"]:
-            if m.get("blocked"):
-                print(f"\n  [BLOCKLISTED: {m['blocked']}, see 07-companies-to-avoid.md] {m['author']} {m['url']}")
-            else:
-                print(f"\n  [{m['author']}] {m['url']}")
+        for m in clean_matches:
+            print(f"\n  [{m['author']}] {m['url']}")
             print(f"  {m['excerpt'][:280]}")
+
+    if all_blocked:
+        print("\n=== Blocklisted, do not pitch (see 07-companies-to-avoid.md) ===")
+        for m in all_blocked:
+            print(f"  [{m['blocked']}] {m['author']} {m['url']}")
 
     prior = find_prior_report(out_path)
     applied = applied_urls_from_file(prior)
