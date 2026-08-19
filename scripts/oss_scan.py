@@ -5,18 +5,21 @@ active paid/volunteer help wanted: open "help wanted" / "good first issue"
 issues, star count, open issue count. Uses GitHub's public REST API
 (unauthenticated: 60 req/hr core, 10 req/min search, this script paces itself).
 
-Writes a dated, clickable markdown report to scan-results/oss-scan-YYYY-MM-DD.md
-(one per day, kept for history, re-running the same day overwrites that day's
-file). Each repo's "Applied" column shows a checkbox, just open the file in an
-editor and tick it, "- [ ]" to "- [x]", once you've reached out. Before writing,
-the script reads that column back out of today's existing file if there is one
-(so a same-day re-run doesn't lose your edits), otherwise out of the most
-recent prior day's file (so applied status carries forward automatically).
+Writes a dated, clickable markdown report to scan-results/oss-scan-YYYY-MM-DD.md,
+one per day. If today's file already exists, running this again does nothing
+to it (skips the ~2 minute rate-limited scan entirely), prints a note and
+exits, your edits are never touched or re-parsed mid-day. Pass --force to
+rescan and merge fresh GitHub data into today's file anyway. Each repo's
+"Applied" column shows a checkbox, just open the file in an editor and tick
+it, "- [ ]" to "- [x]", once you've reached out. When a genuinely new day's
+file gets created, that column is read back out of the most recent prior
+day's file, so applied status carries forward automatically.
 
 Usage:
     python3 oss_scan.py
     python3 oss_scan.py --repo infisical/infisical --repo zitadel/zitadel
     python3 oss_scan.py --json           # machine-readable output, no file written
+    python3 oss_scan.py --force          # rescan and merge fresh data into today's file even if it exists
 """
 import argparse
 import glob
@@ -119,8 +122,8 @@ def write_markdown(results: list[dict], path: str, applied: set[str]) -> None:
         "# OSS help-wanted scan",
         "",
         f"Generated {now}.",
-        "New file each day (`scan-results/oss-scan-YYYY-MM-DD.md`), history kept.",
-        "Applied somewhere? Tick its box in the Applied column, `[ ]` to `[x]`, and save. It carries into tomorrow's scan automatically.",
+        "New file each day (`scan-results/oss-scan-YYYY-MM-DD.md`). Once this file exists, running the scan again today does nothing to it, edit freely.",
+        "Applied somewhere? Tick its box in the Applied column, `[ ]` to `[x]`, and save. It carries into the next new day's scan automatically.",
         "",
         "| Repo | Applied | Stars | Open issues | Help wanted | Good first issue |",
         "|---|---|---|---|---|---|",
@@ -145,8 +148,14 @@ def main():
     ap.add_argument("--repo", action="append", help="owner/repo, repeatable; overrides default list")
     ap.add_argument("--json", action="store_true", help="output JSON instead of text, skips writing the markdown file")
     ap.add_argument("--out", default=None, help="markdown report path (default scan-results/oss-scan-<today>.md)")
+    ap.add_argument("--force", action="store_true", help="rescan and merge fresh data into today's file even if it already exists")
     args = ap.parse_args()
     out_path = args.out or default_out()
+
+    if not args.json and not args.force and os.path.exists(out_path):
+        print(f"{out_path} already exists, leaving it alone.")
+        print("Your edits (Applied checkboxes, anything else) are untouched. Pass --force to rescan and merge in fresh data anyway.")
+        return
 
     repos = args.repo if args.repo else REPOS
     results = []

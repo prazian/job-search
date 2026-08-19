@@ -4,9 +4,11 @@ Scans the current month's Hacker News "Who is hiring?" and "Freelancer? Seeking
 freelancer?" threads for posts that mention contract/freelance work matching a
 given tech stack. Uses HN's public Algolia API, no auth, no scraping, no ToS issues.
 
-Writes a dated, clickable markdown report to scan-results/hn-scan-YYYY-MM-DD.md
-(one per day, kept for history, re-running the same day overwrites that day's
-file). Each lead gets a checkbox, "- [ ]"/"- [x]".
+Writes a dated, clickable markdown report to scan-results/hn-scan-YYYY-MM-DD.md,
+one per day. If today's file already exists, running this again does nothing
+to it, prints a note and exits, your edits are never touched or re-parsed
+mid-day. Pass --force to rescan and merge fresh HN data into today's file
+anyway. Each lead gets a checkbox, "- [ ]"/"- [x]".
 
 Four buckets:
   - Main list, the default, still deciding.
@@ -36,6 +38,7 @@ Usage:
     python3 hn_scan.py --stack "rust,react"
     python3 hn_scan.py --json           # machine-readable output, no file written
     python3 hn_scan.py --out path.md    # write the report somewhere else
+    python3 hn_scan.py --force          # rescan and merge fresh data into today's file even if it exists
 """
 import argparse
 import glob
@@ -247,9 +250,9 @@ def write_markdown(results: dict, path: str, stack_words: list[str], prior: dict
         "# HN contract/freelance scan",
         "",
         f"Generated {now}. Stack filter: {', '.join(display_stack)}.",
-        "New file each day (`scan-results/hn-scan-YYYY-MM-DD.md`), history kept.",
+        "New file each day (`scan-results/hn-scan-YYYY-MM-DD.md`). Once this file exists, running the scan again today does nothing to it, edit freely.",
         "Applied a lead? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: "
-        "`- [x] [skipped: not a fit] **[author]...`. Either tag moves it to its own section below on the next scan, and stays there.",
+        "`- [x] [skipped: not a fit] **[author]...`. Either tag moves it to its own section below the next time a new day's file is created.",
         "",
     ]
     all_flagged, all_skipped, all_blocked = [], [], []
@@ -311,8 +314,14 @@ def main():
     ap.add_argument("--stack", help="comma-separated keywords, overrides default stack")
     ap.add_argument("--json", action="store_true", help="output JSON instead of text, skips writing the markdown file")
     ap.add_argument("--out", default=None, help="markdown report path (default scan-results/hn-scan-<today>.md)")
+    ap.add_argument("--force", action="store_true", help="rescan and merge fresh HN data into today's file even if it already exists")
     args = ap.parse_args()
     out_path = args.out or default_out()
+
+    if not args.json and not args.force and os.path.exists(out_path):
+        print(f"{out_path} already exists, leaving it alone.")
+        print("Your edits (checkboxes, [skipped: ...] tags, anything else) are untouched. Pass --force to rescan and merge in fresh HN data anyway.")
+        return
 
     stack_words = [w.strip() for w in args.stack.split(",")] if args.stack else DEFAULT_STACK
     stack_pattern = re.compile("|".join(rf"\b{w}\b" for w in stack_words), re.I)
