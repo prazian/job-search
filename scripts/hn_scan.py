@@ -6,12 +6,26 @@ given tech stack. Uses HN's public Algolia API, no auth, no scraping, no ToS iss
 
 Writes a dated, clickable markdown report to scan-results/hn-scan-YYYY-MM-DD.md
 (one per day, kept for history, re-running the same day overwrites that day's
-file). Each lead gets a checkbox, "- [ ]"/"- [x]", just open the file in an
-editor and tick it once you've applied. Before writing, the script reads
-checkbox state back out of today's existing file if there is one (so a same-day
-re-run doesn't lose your edits), otherwise out of the most recent prior day's
-file (so applied status carries forward day to day without you re-checking
-anything).
+file). Each lead gets a checkbox, "- [ ]"/"- [x]".
+
+Four buckets:
+  - Main list, the default, still deciding.
+  - "## Might be possible": auto-flagged for stating a US work-authorization
+    requirement, but that's a soft, sometimes-negotiable signal for a contract
+    engagement, not a hard wall, so it stays here, clickable and checkbox-able,
+    just with a "(flag: ...)" note. Edit US_AUTH_RE below to change what counts.
+  - "## Skipped": things ruled out for real. Gets there two ways: you tag it
+    yourself, "- [x] [skipped: not a fit] **[author]...", any reason, your
+    call, or the scanner auto-tags an onsite/hybrid-only role with no remote
+    option (a physical constraint, not a negotiable one, edit the onsite check
+    below if that changes). Your own tag always wins over an auto one.
+  - "## Blocklisted": companies listed in 07-companies-to-avoid.md, a trust
+    problem, not an eligibility one.
+
+Once something has a tag (yours or auto) it stays tagged and out of the main
+list on every future scan, read back out of the existing report before it's
+rewritten. Move something out of "Might be possible" into "Skipped" the same
+way you'd tag anything else, by adding your own "[skipped: ...]" reason.
 
 Usage:
     python3 hn_scan.py                  # scan current month, default stack
@@ -34,8 +48,23 @@ ALGOLIA = "https://hn.algolia.com/api/v1"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCAN_DIR = os.path.join(ROOT, "scan-results")
 BLOCKLIST_PATH = os.path.join(ROOT, "07-companies-to-avoid.md")
-CHECKBOX_RE = re.compile(r"^-\s\[([ xX])\]\s\*\*\[[^\]]+\]\((?P<url>[^)]+)\)")
+CHECKBOX_RE = re.compile(r"^-\s\[([ xX])\]\s(?:\[(?P<tag>[^\]]*)\]\s)?\*\*\[[^\]]+\]\((?P<url>[^)]+)\)")
+SKIPPED_LINE_RE = re.compile(r"^-\s~~\[[^\]]+\]\((?P<url>[^)]+)\):.*~~\s\(skipped:\s*(?P<tag>[^)]+)\)")
 TABLE_ROW_RE = re.compile(r"^\|\s*([^|]+?)\s*\|")
+
+# Explicit US legal work-authorization requirements, not a timezone/overlap ask.
+# Soft signal: worth flagging, not worth ruling out. You've applied through this before.
+US_AUTH_RE = re.compile(
+    r"authorized to work in the (?:u\.?s\.?a?\.?\b|united states)"
+    r"|\bu\.?s\.?\s*citizens?\s+only\b"
+    r"|\bmust be a (?:us|u\.s\.) citizen\b"
+    r"|\bno (?:visa )?sponsorship\b[^.]{0,80}\b(?:u\.?s\.?a?\.?|united states)\b"
+    r"|\b(?:u\.?s\.?a?\.?|united states)\b[^.]{0,80}\bno (?:visa )?sponsorship\b",
+    re.I,
+)
+# Hard signal: physically can't be onsite in a specific city without relocating.
+ONSITE_RE = re.compile(r"\b(onsite|on-site|hybrid)\b", re.I)
+REMOTE_RE = re.compile(r"\bremote\b", re.I)
 
 
 def default_out() -> str:
@@ -68,6 +97,21 @@ def strip_html(t: str) -> str:
     return html.unescape(t).strip()
 
 
+def detect_flag(text: str) -> str | None:
+    """Soft signal, worth a heads-up but not a reason to rule it out."""
+    if US_AUTH_RE.search(text):
+        return "requires US work authorization, stated"
+    return None
+
+
+def detect_hard_skip(text: str) -> str | None:
+    """Hard signal, a physical constraint, not a negotiable one."""
+    head = text[:200]
+    if ONSITE_RE.search(head) and not REMOTE_RE.search(head):
+        return "onsite/hybrid only, no remote option"
+    return None
+
+
 def find_latest_thread(query: str, author: str | None = None) -> dict | None:
     tags = "story"
     if author:
@@ -95,6 +139,9 @@ def scan_thread(story_id: str, contract_required: bool, stack_pattern: re.Patter
             "author": c.get("author"),
             "url": f"https://news.ycombinator.com/item?id={c.get('id')}",
             "excerpt": text[:400],
+            "full_text": text,
+            "flag": detect_flag(text),
+            "hard_skip": detect_hard_skip(text),
         })
     return matches
 
@@ -120,21 +167,32 @@ def tag_blocklist(results: dict, blocklist: list[str]) -> None:
     for block in results.values():
         for m in block["matches"]:
             for name in blocklist:
-                if name.lower() in m["excerpt"].lower():
+                if name.lower() in m["full_text"].lower():
                     m["blocked"] = name
                     break
 
 
-def applied_urls_from_file(path: str) -> set[str]:
+def read_prior_state(path: str) -> dict[str, dict]:
+    """URL -> {checked, tag} read back from an existing report, so manual edits
+    (ticked boxes, "[skipped: ...]" reasons) survive the next scan. Covers both
+    line shapes: a normal checkbox line (main list, tag optional) and a
+    struck-through line already moved to the Skipped section (tag required)."""
     if not path or not os.path.exists(path):
-        return set()
-    applied = set()
+        return {}
+    state = {}
     with open(path) as f:
         for line in f:
             m = CHECKBOX_RE.match(line)
-            if m and m.group(1).lower() == "x":
-                applied.add(m.group("url"))
-    return applied
+            if m:
+                state[m.group("url")] = {
+                    "checked": m.group(1).lower() == "x",
+                    "tag": m.group("tag"),
+                }
+                continue
+            m = SKIPPED_LINE_RE.match(line)
+            if m:
+                state[m.group("url")] = {"checked": True, "tag": m.group("tag")}
+    return state
 
 
 def find_prior_report(out_path: str) -> str | None:
@@ -145,7 +203,34 @@ def find_prior_report(out_path: str) -> str | None:
     return others[-1] if others else None
 
 
-def write_markdown(results: dict, path: str, stack_words: list[str], applied: set[str]) -> None:
+SKIPPED_PREFIX_RE = re.compile(r"^\s*skipped\s*:\s*", re.I)
+
+
+def bucket_matches(
+    matches: list[dict], prior: dict[str, dict]
+) -> tuple[list[dict], list[tuple[dict, str]], list[tuple[dict, str]], list[dict]]:
+    """Splits into (main, flagged [reason], skipped [reason], blocked).
+    Priority: blocked company > your own tag (always wins, it's your call) >
+    scanner's hard skip (a physical constraint) > scanner's soft flag (worth
+    trying anyway) > main list."""
+    main, flagged, skipped, blocked = [], [], [], []
+    for m in matches:
+        if m.get("blocked"):
+            blocked.append(m)
+            continue
+        prev_tag = prior.get(m["url"], {}).get("tag")
+        if prev_tag:
+            skipped.append((m, SKIPPED_PREFIX_RE.sub("", prev_tag).strip()))
+        elif m.get("hard_skip"):
+            skipped.append((m, m["hard_skip"]))
+        elif m.get("flag"):
+            flagged.append((m, m["flag"]))
+        else:
+            main.append(m)
+    return main, flagged, skipped, blocked
+
+
+def write_markdown(results: dict, path: str, stack_words: list[str], prior: dict[str, dict]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     display_stack = [w.replace(r"\b", "").replace("\\", "") for w in stack_words]
@@ -154,31 +239,54 @@ def write_markdown(results: dict, path: str, stack_words: list[str], applied: se
         "",
         f"Generated {now}. Stack filter: {', '.join(display_stack)}.",
         "New file each day (`scan-results/hn-scan-YYYY-MM-DD.md`), history kept.",
-        "Applied a lead? Just tick its box below, `- [ ]` to `- [x]`, and save. It carries into tomorrow's scan automatically.",
+        "Applied a lead? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: "
+        "`- [x] [skipped: not a fit] **[author]...`. Either tag moves it to its own section below on the next scan, and stays there.",
         "",
     ]
-    all_blocked = []
+    all_flagged, all_skipped, all_blocked = [], [], []
     for block in results.values():
         lines.append(f"## [{block['thread']}]({block['thread_url']})")
         lines.append("")
         if block.get("note"):
             lines.append(f"*{block['note']}*")
             lines.append("")
-        clean_matches = [m for m in block["matches"] if not m.get("blocked")]
-        all_blocked.extend(m for m in block["matches"] if m.get("blocked"))
-        if not clean_matches:
+        main, flagged, skipped, blocked = bucket_matches(block["matches"], prior)
+        all_flagged.extend(flagged)
+        all_skipped.extend(skipped)
+        all_blocked.extend(blocked)
+        if not main:
             lines.append("No matches this run.")
             lines.append("")
             continue
-        for m in clean_matches:
-            checked = m["url"] in applied
+        for m in main:
+            checked = prior.get(m["url"], {}).get("checked", False)
             box = "x" if checked else " "
-            tag = " (applied)" if checked else ""
-            lines.append(f"- [{box}] **[{m['author']}]({m['url']})**{tag}: {m['excerpt'][:300]}")
+            lines.append(f"- [{box}] **[{m['author']}]({m['url']})**: {m['excerpt'][:300]}")
+        lines.append("")
+
+    if all_flagged:
+        lines.append("## Might be possible")
+        lines.append("")
+        lines.append("Still in play, just flagged, worth trying anyway (see the script's docstring for why these aren't hard skips). "
+                      "Tick the box the same way if you apply, or tag it `[skipped: ...]` yourself to move it to Skipped instead.")
+        lines.append("")
+        for m, reason in all_flagged:
+            checked = prior.get(m["url"], {}).get("checked", False)
+            box = "x" if checked else " "
+            lines.append(f"- [{box}] **[{m['author']}]({m['url']})**: {m['excerpt'][:300]} (flag: {reason})")
+        lines.append("")
+
+    if all_skipped:
+        lines.append("## Skipped")
+        lines.append("")
+        lines.append("Ruled out for real, either you tagged it or the scanner's onsite/hybrid-only check did (see the script's docstring).")
+        lines.append("")
+        for m, reason in all_skipped:
+            lines.append(f"- ~~[{m['author']}]({m['url']}): {m['excerpt'][:200]}~~ (skipped: {reason})")
         lines.append("")
 
     if all_blocked:
-        lines.append("## Blocklisted, do not pitch")
+        lines.append("## Blocklisted")
         lines.append("")
         lines.append("Pulled out of the lists above. See [07-companies-to-avoid.md](07-companies-to-avoid.md) for why.")
         lines.append("")
@@ -224,6 +332,9 @@ def main():
                     "author": c.get("author"),
                     "url": f"https://news.ycombinator.com/item?id={c.get('id')}",
                     "excerpt": text[:400],
+                    "full_text": text,
+                    "flag": detect_flag(text),
+                    "hard_skip": detect_hard_skip(text),
                 })
         results["freelancer_thread"] = {
             "thread": freelancer["title"],
@@ -239,28 +350,41 @@ def main():
         print(json.dumps(results, indent=2))
         return
 
-    all_blocked = []
+    prior_path = find_prior_report(out_path)
+    prior = read_prior_state(prior_path)
+
+    all_flagged, all_skipped, all_blocked = [], [], []
     for block in results.values():
         print(f"\n=== {block['thread']} ===")
         print(block["thread_url"])
         if block.get("note"):
             print(f"(note: {block['note']})")
-        clean_matches = [m for m in block["matches"] if not m.get("blocked")]
-        all_blocked.extend(m for m in block["matches"] if m.get("blocked"))
-        if not clean_matches:
+        main, flagged, skipped, blocked = bucket_matches(block["matches"], prior)
+        all_flagged.extend(flagged)
+        all_skipped.extend(skipped)
+        all_blocked.extend(blocked)
+        if not main:
             print("No matches this run.")
-        for m in clean_matches:
+        for m in main:
             print(f"\n  [{m['author']}] {m['url']}")
             print(f"  {m['excerpt'][:280]}")
 
+    if all_flagged:
+        print("\n=== Might be possible ===")
+        for m, reason in all_flagged:
+            print(f"  [{reason}] {m['author']} {m['url']}")
+
+    if all_skipped:
+        print("\n=== Skipped ===")
+        for m, reason in all_skipped:
+            print(f"  [{reason}] {m['author']} {m['url']}")
+
     if all_blocked:
-        print("\n=== Blocklisted, do not pitch (see 07-companies-to-avoid.md) ===")
+        print("\n=== Blocklisted (see 07-companies-to-avoid.md) ===")
         for m in all_blocked:
             print(f"  [{m['blocked']}] {m['author']} {m['url']}")
 
-    prior = find_prior_report(out_path)
-    applied = applied_urls_from_file(prior)
-    write_markdown(results, out_path, stack_words, applied)
+    write_markdown(results, out_path, stack_words, prior)
     print(f"\nReport written to {out_path}")
 
 
