@@ -11,14 +11,18 @@ file). Each lead gets a checkbox, "- [ ]"/"- [x]".
 Four buckets:
   - Main list, the default, still deciding.
   - "## Might be possible": auto-flagged for stating a US work-authorization
-    requirement, but that's a soft, sometimes-negotiable signal for a contract
-    engagement, not a hard wall, so it stays here, clickable and checkbox-able,
-    just with a "(flag: ...)" note. Edit US_AUTH_RE below to change what counts.
-  - "## Skipped": things ruled out for real. Gets there two ways: you tag it
-    yourself, "- [x] [skipped: not a fit] **[author]...", any reason, your
-    call, or the scanner auto-tags an onsite/hybrid-only role with no remote
-    option (a physical constraint, not a negotiable one, edit the onsite check
-    below if that changes). Your own tag always wins over an auto one.
+    requirement ("must be authorized to work in the US", "no visa sponsorship").
+    Soft, sometimes-negotiable signal for a contract engagement, not a hard
+    wall (you've applied through this before), so it stays here, clickable and
+    checkbox-able, just with a "(flag: ...)" note. Edit US_AUTH_RE below to
+    change what counts.
+  - "## Skipped": things ruled out for real. Three ways to get there: you tag
+    it yourself, "- [x] [skipped: not a fit] **[author]...", any reason, your
+    call; the scanner auto-tags a role that says "US only" / "USA only" (you
+    don't reside in the US, that's not negotiable, edit US_ONLY_RE below if
+    that changes); or the scanner auto-tags an onsite/hybrid-only role with no
+    remote option (a physical constraint, edit the onsite check below if that
+    changes). Your own tag always wins over either auto one.
   - "## Blocklisted": companies listed in 07-companies-to-avoid.md, a trust
     problem, not an eligibility one.
 
@@ -62,6 +66,9 @@ US_AUTH_RE = re.compile(
     r"|\b(?:u\.?s\.?a?\.?|united states)\b[^.]{0,80}\bno (?:visa )?sponsorship\b",
     re.I,
 )
+# Hard signal: says the role is US-only, and you don't reside in the US. Not
+# negotiable the way "authorized to work" wording sometimes is.
+US_ONLY_RE = re.compile(r"\b(?:u\.?s\.?a?\.?)\s+only\b", re.I)
 # Hard signal: physically can't be onsite in a specific city without relocating.
 ONSITE_RE = re.compile(r"\b(onsite|on-site|hybrid)\b", re.I)
 REMOTE_RE = re.compile(r"\bremote\b", re.I)
@@ -105,7 +112,9 @@ def detect_flag(text: str) -> str | None:
 
 
 def detect_hard_skip(text: str) -> str | None:
-    """Hard signal, a physical constraint, not a negotiable one."""
+    """Hard signal, a real constraint, not a negotiable one."""
+    if US_ONLY_RE.search(text):
+        return "US-only, and you don't reside in the US"
     head = text[:200]
     if ONSITE_RE.search(head) and not REMOTE_RE.search(head):
         return "onsite/hybrid only, no remote option"
