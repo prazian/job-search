@@ -12,6 +12,7 @@ A working system for landing freelance/contract work, built 2026-08-17. Read thi
 | [04-fresh-hiring-posts.md](04-fresh-hiring-posts.md) | Verified live leads from HN's August 2026 threads |
 | [05-wellfound-startups.md](05-wellfound-startups.md) | Recently-funded small startups + how to reach them |
 | [06-referral-engine.md](06-referral-engine.md) | Weekly referral system + templates + tracker |
+| [07-companies-to-avoid.md](07-companies-to-avoid.md) | Blocklist, companies with reported red flags (unpaid test tasks, etc). Feeds `hn_scan.py` automatically |
 | [templates/](templates/) | Every reusable outreach message, standalone |
 | [tracker.csv](tracker.csv) | Open in Excel/Numbers/Sheets, log every outreach here |
 | [scripts/hn_scan.py](scripts/hn_scan.py) | **Working automation.** Re-run anytime for fresh leads |
@@ -24,7 +25,7 @@ A working system for landing freelance/contract work, built 2026-08-17. Read thi
 Being straight about this up front, because a fake lead wastes more time than an honest gap:
 
 **Verified with live data (you can click these right now):**
-- The 5 leads in [04-fresh-hiring-posts.md](04-fresh-hiring-posts.md), pulled from HN's public API today, real permalinks.
+- The leads in [04-fresh-hiring-posts.md](04-fresh-hiring-posts.md), pulled from HN's public API today, real permalinks. Started at 5, one (Flywheel Motion) got pulled and blocklisted after a direct report, see [07](07-companies-to-avoid.md).
 - The OSS projects in [03-opensource-targets.md](03-opensource-targets.md), star counts, open-issue counts, and help-wanted labels checked live via GitHub's API today.
 - The community links in [01-founder-communities.md](01-founder-communities.md), **corrected 2026-08-18** after the first pass trusted search snippets instead of checking pages directly, which let a dead-since-2015 Slack community and a dead Discord invite through. Every row now verified against the platform's own API/page directly (Discord invite-lookup API, Telegram preview pages, direct page fetches). See that file for the method per row.
 - The two scripts, both ran successfully against live APIs while building this.

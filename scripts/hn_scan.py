@@ -33,7 +33,9 @@ from datetime import datetime, timezone
 ALGOLIA = "https://hn.algolia.com/api/v1"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCAN_DIR = os.path.join(ROOT, "scan-results")
+BLOCKLIST_PATH = os.path.join(ROOT, "07-companies-to-avoid.md")
 CHECKBOX_RE = re.compile(r"^-\s\[([ xX])\]\s\*\*\[[^\]]+\]\((?P<url>[^)]+)\)")
+TABLE_ROW_RE = re.compile(r"^\|\s*([^|]+?)\s*\|")
 
 
 def default_out() -> str:
@@ -97,6 +99,32 @@ def scan_thread(story_id: str, contract_required: bool, stack_pattern: re.Patter
     return matches
 
 
+def load_blocklist(path: str = BLOCKLIST_PATH) -> list[str]:
+    """Reads company names out of the Blocked table in 07-companies-to-avoid.md."""
+    if not os.path.exists(path):
+        return []
+    names = []
+    with open(path) as f:
+        for line in f:
+            m = TABLE_ROW_RE.match(line)
+            if not m:
+                continue
+            first = m.group(1).strip()
+            if not first or first.lower() == "company" or set(first) <= {"-", " "}:
+                continue
+            names.append(first)
+    return names
+
+
+def tag_blocklist(results: dict, blocklist: list[str]) -> None:
+    for block in results.values():
+        for m in block["matches"]:
+            for name in blocklist:
+                if name.lower() in m["excerpt"].lower():
+                    m["blocked"] = name
+                    break
+
+
 def applied_urls_from_file(path: str) -> set[str]:
     if not path or not os.path.exists(path):
         return set()
@@ -143,7 +171,14 @@ def write_markdown(results: dict, path: str, stack_words: list[str], applied: se
             checked = m["url"] in applied
             box = "x" if checked else " "
             tag = " (applied)" if checked else ""
-            lines.append(f"- [{box}] **[{m['author']}]({m['url']})**{tag}: {m['excerpt'][:300]}")
+            if m.get("blocked"):
+                lines.append(
+                    f"- [{box}] 🚫 **BLOCKLISTED ({m['blocked']}, see "
+                    f"[07-companies-to-avoid.md](07-companies-to-avoid.md)).** "
+                    f"[{m['author']}]({m['url']}){tag}: {m['excerpt'][:300]}"
+                )
+            else:
+                lines.append(f"- [{box}] **[{m['author']}]({m['url']})**{tag}: {m['excerpt'][:300]}")
         lines.append("")
     with open(path, "w") as f:
         f.write("\n".join(lines))
@@ -192,6 +227,9 @@ def main():
             "note": "This thread is usually dominated by people OFFERING freelance work, not seeking it. Check manually too.",
         }
 
+    blocklist = load_blocklist()
+    tag_blocklist(results, blocklist)
+
     if args.json:
         print(json.dumps(results, indent=2))
         return
@@ -204,7 +242,10 @@ def main():
         if not block["matches"]:
             print("No matches this run.")
         for m in block["matches"]:
-            print(f"\n  [{m['author']}] {m['url']}")
+            if m.get("blocked"):
+                print(f"\n  [BLOCKLISTED: {m['blocked']}, see 07-companies-to-avoid.md] {m['author']} {m['url']}")
+            else:
+                print(f"\n  [{m['author']}] {m['url']}")
             print(f"  {m['excerpt'][:280]}")
 
     prior = find_prior_report(out_path)
