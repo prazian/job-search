@@ -1,7 +1,7 @@
 # Remotive contract/freelance scan
 
-Generated 2026-08-19 20:12 UTC. Stack filter: aws, python, typescript, golang, go, linux, cloud, devops, kubernetes, terraform, infrastructure, backend. Contract/freelance job_type only.
-New file each day (`scan-results/remotive-scan-YYYY-MM-DD.md`). Once this file exists, running the scan again today does nothing to it, edit freely.
+Generated 2026-08-20 16:40 UTC. Stack filter: aws, python, typescript, golang, go, linux, cloud, devops, kubernetes, terraform, infrastructure, backend. Contract/freelance job_type only.
+New file each day (`scan-results/YYYY-MM-DD/remotive-scan.md`). Once this file exists, running the scan again today does nothing to it, edit freely.
 EMEA/APAC/Worldwide-flagged listings sort first. US-only listings are auto-skipped, not eligible.
 Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `- [x] [skipped: not a fit] **[company]...`.
 

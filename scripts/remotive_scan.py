@@ -15,7 +15,9 @@ first, since those are the preferred region.
 
 Only includes listings whose title and full description are confidently
 English and that don't explicitly require a language other than English (see
-_common.is_english_text / _common.requires_other_language), since you only
+_common.is_english_text / _common.requires_other_language) and doesn't demand
+physical presence in a specific place (_common.requires_specific_location,
+e.g. "Location: Ukraine" or "office-based role"), since you only
 speak English.
 
 Writes a dated, clickable markdown report to
@@ -79,6 +81,8 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
         if not _common.is_english_text(f"{j.get('title', '')} {full_desc}"):
             continue
         if _common.requires_other_language(f"{j.get('title', '')} {full_desc}"):
+            continue
+        if _common.requires_specific_location(f"{j.get('title', '')} {full_desc}"):
             continue
         location = j.get("candidate_required_location", "")
         blocked = next((name for name in blocklist if name.lower() in j.get("company_name", "").lower()), None)

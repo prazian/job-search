@@ -20,7 +20,14 @@ results, unlike Himalayas) and dedupes by link. Only includes listings whose
 title and full description are confidently English and that don't explicitly
 require a language other than English (Djinni's own feed mixes English and
 Ukrainian/Russian listings even within a single category, confirmed directly,
-so this matters here more than on the other sources).
+so this matters here more than on the other sources) or demand physical
+presence in a specific place. That last check matters more here than
+anywhere else too: a real, confirmed pattern on this source is postings
+written in English that require living in Ukraine specifically ("Location:
+Ukraine", "(Ukraine only)"), which have nothing to do with language but are
+just as much a hard no for someone based in Armenia. See
+_common.is_english_text, _common.requires_other_language, and
+_common.requires_specific_location.
 
 Writes a dated, clickable markdown report to
 scan-results/YYYY-MM-DD/djinni-scan.md, one folder per day. If today's file
@@ -119,6 +126,8 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
         if not _common.is_english_text(text):
             continue
         if _common.requires_other_language(text):
+            continue
+        if _common.requires_specific_location(text):
             continue
         blocked = next((name for name in blocklist if name.lower() in item["title"].lower()), None)
         matches.append({

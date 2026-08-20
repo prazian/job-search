@@ -166,6 +166,42 @@ def requires_other_language(text: str) -> str | None:
     return lang or None
 
 
+# A posting written in English, no language requirement, can still demand
+# physical presence in a specific place ("Location: Ukraine", "(Warsaw
+# only)", "office-based role"). Confirmed against real Djinni postings: a
+# "Ukraine only" MilTech role and a "Location in Warsaw (office-based role)"
+# both correctly caught, while "Location: 100% Remote", "Location: Remote
+# (UK or Europe)", and "Kyiv time" (a timezone mention, not a residency one)
+# all correctly pass through.
+# Captured group requires a capitalized first letter (case-sensitive on
+# purpose), real place names are capitalized in real postings, generic
+# trailing words like "etc" or "various" are not, this is what keeps
+# "Location: Indiana, etc." from misfiring on "etc" instead of "Indiana".
+_LOCATION_LABEL_RE = re.compile(r"\b[Ll]ocation:?\s*(?:in\s+)?([A-Z][a-zA-Z\s]{2,25}?)(?=[.\n,(]|$)")
+_PLACE_ONLY_RE = re.compile(r"\b([A-Z][a-zA-Z]{2,20})\s+only\b")
+_FLEXIBLE_WORDS_RE = re.compile(r"\b(remote|anywhere|worldwide|global|flexible)\b", re.I)
+_PLACE_LABEL_EXCLUDE = {"etc", "various", "multiple", "several", "tbd", "na", "n a", "based", "flexible"}
+_PLACE_ONLY_EXCLUDE = {"remote", "english", "senior", "full", "invite", "women", "internal"}
+
+
+def requires_specific_location(text: str) -> str | None:
+    """Returns the place name if the text demands physical presence
+    somewhere specific, else None."""
+    if not text:
+        return None
+    m = _LOCATION_LABEL_RE.search(text)
+    if m:
+        place = m.group(1).strip()
+        if place and place.lower() not in _PLACE_LABEL_EXCLUDE and not _FLEXIBLE_WORDS_RE.search(place):
+            return place
+    m2 = _PLACE_ONLY_RE.search(text)
+    if m2 and m2.group(1).lower() not in _PLACE_ONLY_EXCLUDE:
+        return m2.group(1).strip()
+    if re.search(r"\boffice-based\s+role\b", text, re.I):
+        return "office-based (specific location required)"
+    return None
+
+
 def progress_bar(done: int, total: int, width: int = 24) -> str:
     """[###########-------------] 46%, plain text so it degrades fine when
     piped to a log file instead of a live terminal."""

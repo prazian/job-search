@@ -20,8 +20,10 @@ Only includes listings whose title and full description are confidently
 English (script + common-word heuristics, no external library, see
 _common.is_english_text) and that don't explicitly require a language other
 than English (e.g. "native Armenian speaker", "fluent Russian required", see
-_common.requires_other_language). You only speak English, so both checks run
-against the full job description, not just the short excerpt.
+_common.requires_other_language) or demand physical presence in a specific
+place (e.g. "Location: Ukraine", "office-based role", see
+_common.requires_specific_location). All three checks run against the full
+job description, not just the short excerpt.
 
 Writes a dated, clickable markdown report to
 scan-results/YYYY-MM-DD/himalayas-scan.md, one folder per day. If today's file
@@ -138,6 +140,8 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
                 continue
             other_lang = _common.requires_other_language(f"{title} {full_desc}")
             if other_lang:
+                continue
+            if _common.requires_specific_location(f"{title} {full_desc}"):
                 continue
             company = display_company(j)
             countries = j.get("locationRestrictions", []) or []
