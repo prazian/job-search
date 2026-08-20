@@ -86,12 +86,6 @@ CONTRACT_WORDS = [
 ]
 
 
-def fetch_json(url: str) -> dict:
-    req = urllib.request.Request(url, headers={"User-Agent": "job-search-scan/1.0"})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return json.loads(resp.read().decode("utf-8"))
-
-
 def strip_html(t: str) -> str:
     if not t:
         return ""
@@ -123,13 +117,13 @@ def find_latest_thread(query: str, author: str | None = None) -> dict | None:
     if author:
         tags += f",author_{author}"
     url = f"{ALGOLIA}/search_by_date?query={urllib.parse.quote(query)}&tags={tags}&hitsPerPage=1"
-    data = fetch_json(url)
+    data = _common.fetch_json(url)
     hits = data.get("hits", [])
     return hits[0] if hits else None
 
 
 def scan_thread(story_id: str, contract_required: bool, stack_pattern: re.Pattern) -> list[dict]:
-    data = fetch_json(f"{ALGOLIA}/items/{story_id}")
+    data = _common.fetch_json(f"{ALGOLIA}/items/{story_id}")
     contract_re = re.compile("|".join(CONTRACT_WORDS), re.I)
     matches = []
     for c in data.get("children", []):
@@ -283,7 +277,7 @@ def main():
         freelancer = find_latest_thread("Freelancer Seeking freelancer")
         if freelancer:
             # In this thread, filter for people SEEKING a freelancer (hiring), not offering work.
-            data = fetch_json(f"{ALGOLIA}/items/{freelancer['objectID']}")
+            data = _common.fetch_json(f"{ALGOLIA}/items/{freelancer['objectID']}")
             seeking_re = re.compile(r"SEEKING (A )?FREELANCER|LOOKING FOR|HIRING", re.I)
             matches = []
             for c in data.get("children", []):

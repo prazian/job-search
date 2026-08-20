@@ -1,17 +1,61 @@
 """Shared helpers for the job-search scan scripts (hn_scan.py, oss_scan.py,
-remotive_scan.py, jobicy_scan.py, ...). Keeping this in one place means a new
-scan script gets dated-folder output, don't-touch-existing-files, tag
-persistence, and blocklist/region handling for free, without re-copying (and
-re-debugging) the same logic a fourth or fifth time.
+remotive_scan.py, himalayas_scan.py, djinni_scan.py, ...). Keeping this in one
+place means a new scan script gets dated-folder output,
+don't-touch-existing-files, tag persistence, blocklist/region handling, and a
+retry-safe HTTP fetcher for free, without re-copying (and re-debugging) the
+same logic a sixth or seventh time.
 """
 import glob
+import json
 import os
 import re
+import socket
+import sys
+import time
+import urllib.error
+import urllib.request
 from datetime import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCAN_DIR = os.path.join(ROOT, "scan-results")
 BLOCKLIST_PATH = os.path.join(ROOT, "07-companies-to-avoid.md")
+DEFAULT_HEADERS = {"User-Agent": "job-search-scan/1.0"}
+
+
+def fetch(url: str, headers: dict | None = None, retries: int = 4, timeout: int = 25) -> bytes:
+    """GET a URL, retrying on a 429 or a plain network timeout, both
+    confirmed in practice during long crawls (Himalayas at ~500 requests),
+    rather than throwing away an entire crawl over one transient hiccup. Any
+    other HTTP error (403, 404, 500, ...) is not transient, raised straight
+    away."""
+    req = urllib.request.Request(url, headers={**DEFAULT_HEADERS, **(headers or {})})
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < retries - 1:
+                wait = 10 * (attempt + 1)
+                print(f"  429, backing off {wait}s (attempt {attempt + 1}/{retries})", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            raise
+        except (socket.timeout, TimeoutError, urllib.error.URLError) as e:
+            if attempt < retries - 1:
+                wait = 5 * (attempt + 1)
+                print(f"  network hiccup ({e}), retrying in {wait}s (attempt {attempt + 1}/{retries})", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            raise
+
+
+def fetch_json(url: str, headers: dict | None = None, retries: int = 4, timeout: int = 25) -> dict:
+    return json.loads(fetch(url, headers=headers, retries=retries, timeout=timeout).decode("utf-8"))
+
+
+def fetch_text(url: str, headers: dict | None = None, retries: int = 4, timeout: int = 25) -> str:
+    return fetch(url, headers=headers, retries=retries, timeout=timeout).decode("utf-8")
+
 
 CHECKBOX_RE = re.compile(r"^-\s\[([ xX])\]\s(?:\[(?P<tag>[^\]]*)\]\s)?\*\*\[[^\]]+\]\((?P<url>[^)]+)\)")
 SKIPPED_LINE_RE = re.compile(r"^-\s~~\[[^\]]+\]\((?P<url>[^)]+)\):.*~~\s\(skipped:\s*(?P<tag>[^)]+)\)")

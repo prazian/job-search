@@ -49,7 +49,6 @@ import os
 import re
 import sys
 import time
-import urllib.request
 from datetime import datetime, timezone
 
 import _common
@@ -71,25 +70,6 @@ def strip_html(t: str) -> str:
     t = re.sub(r"<[^>]+>", " ", t)
     t = re.sub(r"\s+", " ", t)
     return t.strip()
-
-
-def fetch_json(url: str, retries: int = 4) -> dict:
-    """429s happen during a long crawl even at a polite pace, no documented
-    rate limit or Retry-After header from this API, so back off progressively
-    and retry rather than treating a transient 429 as a hard failure."""
-    import urllib.error
-    req = urllib.request.Request(url, headers={"User-Agent": "job-search-scan/1.0"})
-    for attempt in range(retries):
-        try:
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < retries - 1:
-                wait = 10 * (attempt + 1)
-                print(f"  429, backing off {wait}s (attempt {attempt + 1}/{retries})", file=sys.stderr)
-                time.sleep(wait)
-                continue
-            raise
 
 
 def display_company(j: dict) -> str:
@@ -115,7 +95,7 @@ def format_locations(countries: list[str]) -> str:
 
 def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tuple[list[dict], int, int]:
     """Returns (matches, pages_crawled, total_pages_available)."""
-    first = fetch_json(f"{API}?limit={PAGE_SIZE}&offset=0")
+    first = _common.fetch_json(f"{API}?limit={PAGE_SIZE}&offset=0")
     total_count = first.get("totalCount", 0)
     total_pages = (total_count + PAGE_SIZE - 1) // PAGE_SIZE if total_count else 0
     pages_to_crawl = min(max_pages, total_pages) if total_pages else max_pages
@@ -173,7 +153,7 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
 
     for page in range(1, pages_to_crawl):
         offset = page * PAGE_SIZE
-        data = fetch_json(f"{API}?limit={PAGE_SIZE}&offset={offset}")
+        data = _common.fetch_json(f"{API}?limit={PAGE_SIZE}&offset={offset}")
         process_page(data)
         pages_done += 1
         if pages_done % 10 == 0 or pages_done == pages_to_crawl:

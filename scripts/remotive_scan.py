@@ -39,7 +39,6 @@ import json
 import os
 import re
 import sys
-import urllib.request
 from datetime import datetime, timezone
 
 import _common
@@ -54,12 +53,6 @@ DEFAULT_STACK = [
 CONTRACT_TYPES = {"contract", "freelance"}
 
 
-def fetch_json(url: str) -> dict:
-    req = urllib.request.Request(url, headers={"User-Agent": "job-search-scan/1.0"})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return json.loads(resp.read().decode("utf-8"))
-
-
 def strip_html(t: str) -> str:
     if not t:
         return ""
@@ -69,7 +62,7 @@ def strip_html(t: str) -> str:
 
 
 def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
-    data = fetch_json(f"{API}?limit=500")
+    data = _common.fetch_json(f"{API}?limit=500")
     matches = []
     for j in data.get("jobs", []):
         if j.get("job_type") not in CONTRACT_TYPES:

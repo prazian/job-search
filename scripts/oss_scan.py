@@ -36,13 +36,13 @@ import re
 import sys
 import time
 import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
 
 import _common
 
 API = "https://api.github.com"
 SOURCE = "oss"
+GITHUB_HEADERS = {"Accept": "application/vnd.github+json"}
 TABLE_ROW_RE = re.compile(r"^\|\s*\[([^\]]+)\]\([^)]+\)\s*\|\s*(\[x\]|\[ \])\s*\|")
 
 # Repos worth checking periodically: fast-growing or sponsor/VC-backed infra &
@@ -62,12 +62,7 @@ REPOS = [
 
 
 def get(url: str) -> dict:
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "job-search-scan/1.0",
-        "Accept": "application/vnd.github+json",
-    })
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    return _common.fetch_json(url, headers=GITHUB_HEADERS)
 
 
 def repo_has_label(repo: str, label_name: str) -> bool:

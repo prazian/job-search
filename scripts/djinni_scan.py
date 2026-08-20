@@ -48,7 +48,6 @@ import os
 import re
 import sys
 import time
-import urllib.request
 from datetime import datetime, timezone
 
 import _common
@@ -70,12 +69,6 @@ TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
 LINK_RE = re.compile(r"<link>(.*?)</link>", re.S)
 DESC_RE = re.compile(r"<description>(.*?)</description>", re.S)
 PUBDATE_RE = re.compile(r"<pubDate>(.*?)</pubDate>", re.S)
-
-
-def fetch_text(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "job-search-scan/1.0"})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8")
 
 
 def strip_html(t: str) -> str:
@@ -115,7 +108,7 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
     for i, url in enumerate(urls):
         if i > 0:
             time.sleep(0.5)
-        for item in parse_items(fetch_text(url)):
+        for item in parse_items(_common.fetch_text(url)):
             seen_links.setdefault(item["link"], item)
 
     matches = []
