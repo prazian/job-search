@@ -10,31 +10,39 @@ Real limitation, tested directly: individual RSS items have no company-name
 field, just title/link/description/pubDate (a lot of Djinni postings are
 recruiting-agency-posted without naming the end client in the feed), so
 listings show as "(see listing)" rather than a real company name, click
-through for that. There's also no structured location/remote field, Djinni is
-inherently a remote-friendly regional board, but you'll want to confirm
-remote status on the listing page itself.
+through for that.
 
-Fetches the general feed plus a few category-filtered feeds
-(?primary_keyword=Python/DevOps/Golang, confirmed these actually narrow
-results, unlike Himalayas) and dedupes by link. Only includes listings whose
-title and full description are confidently English and that don't explicitly
-require a language other than English (Djinni's own feed mixes English and
-Ukrainian/Russian listings even within a single category, confirmed directly,
-so this matters here more than on the other sources) or demand physical
-presence in a specific place. That last check matters more here than
-anywhere else too: a real, confirmed pattern on this source is postings
-written in English that require living in Ukraine specifically ("Location:
-Ukraine", "(Ukraine only)"), which have nothing to do with language but are
-just as much a hard no for someone based in Armenia. See
-_common.is_english_text, _common.requires_other_language, and
-_common.requires_specific_location.
+Only fetches category-filtered feeds (?primary_keyword=) for categories that
+actually map to the stack (Python, Golang, DevOps, Sysadmin, Data Engineer,
+Node.js), not the general/unfiltered firehose: that firehose spans every
+category Djinni has (Marketing, Sales, QA, Business Analyst, ...) and the
+stack-keyword regex alone let plenty of those through on a single loose word
+match ("go" inside a sentence, "cloud" mentioned in passing), confirmed
+directly against real listings a human had to hand-tag "unrelated".
+
+Language and location requirements on Djinni are structured page data, not
+free text, confirmed directly: a job requiring "Ukrainian, Native" or an
+office in a specific country never says so in the RSS description, it's a
+"Required languages" section (language + CEFR level) and Schema.org
+JobPosting JSON-LD (jobLocationType/jobLocation/applicantLocationRequirements)
+on the job's own page, both invisible to the feed. A confirmed, real pattern
+on this source: English-written postings that require living in Ukraine or
+speaking Ukrainian, common since Djinni's core base is Ukrainian, and neither
+has anything to do with the text itself. So candidates that clear the cheap
+RSS-level checks (_common.is_english_text, _common.requires_other_language,
+_common.requires_specific_location, all still run first since they're free)
+get one more fetch of their own job page to read that structured data before
+being called a real match. If that one extra fetch fails for a given job
+(deleted listing, hiccup), the job is kept rather than dropped silently, a
+warning is printed and you can catch it by eye instead of losing a lead to a
+network blip.
 
 Writes a dated, clickable markdown report to
 scan-results/YYYY-MM-DD/djinni-scan.md, one folder per day. If today's file
 already exists, running this again does nothing to it, prints a note and
 exits. Pass --force to rescan and merge fresh data into today's file anyway.
-Same tagging convention as the other scan scripts. If the fetch fails, the
-whole run aborts and no file gets written.
+Same tagging convention as the other scan scripts. If the RSS feed fetch
+fails, the whole run aborts and no file gets written.
 
 Usage:
     python3 djinni_scan.py
@@ -54,10 +62,11 @@ import _common
 
 BASE = "https://djinni.co/jobs/rss/"
 SOURCE = "djinni"
-# Categories confirmed to exist in Djinni's own taxonomy and to actually
-# narrow the RSS feed when passed as ?primary_keyword=. General feed is
-# fetched too and dedupe by link means no double-counting.
-CATEGORIES = ["Python", "DevOps", "Golang", "Data Engineer"]
+# Confirmed against Djinni's own category tree (djinni.co/jobs/ search page,
+# "categories_tree" data), the subset that actually maps to the stack. No
+# general/unfiltered feed, see docstring, that's what let Marketing/QA/
+# Business-Analyst postings through on a loose keyword match.
+CATEGORIES = ["Python", "DevOps", "Golang", "Data Engineer", "Sysadmin", "Node.js"]
 
 DEFAULT_STACK = [
     "aws", "python", "typescript", "golang", r"go\b", "linux",
@@ -69,6 +78,116 @@ TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
 LINK_RE = re.compile(r"<link>(.*?)</link>", re.S)
 DESC_RE = re.compile(r"<description>(.*?)</description>", re.S)
 PUBDATE_RE = re.compile(r"<pubDate>(.*?)</pubDate>", re.S)
+
+# Structured data on the job's own page, confirmed directly against real
+# listings, none of this is present in the RSS description.
+REQUIRED_LANG_SECTION_RE = re.compile(r'<h2[^>]*>Required languages</h2>(.*?)(?=<h2|\Z)', re.S)
+LANG_BLOCK_RE = re.compile(r'csc--language.*?</span>\s*</span>', re.S)
+LANG_PRIMARY_RE = re.compile(r'csc__primary">([^<]+)<')
+LANG_SECONDARY_RE = re.compile(r'csc__secondary">([^<]+)<')
+LD_JSON_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
+
+# Country codes seen in Djinni's applicantLocationRequirements, both ISO
+# alpha-2 ("UA") and alpha-3 ("UKR") show up depending on the listing,
+# confirmed directly. Region-scale entries (like "Europe") come through as
+# plain words already and are handled by _common.is_preferred_region.
+_COUNTRY_CODE_NAMES = {
+    "ua": "Ukraine", "ukr": "Ukraine",
+    "pl": "Poland", "pol": "Poland",
+    "ru": "Russia", "rus": "Russia",
+    "by": "Belarus", "blr": "Belarus",
+    "ge": "Georgia", "geo": "Georgia",
+    "md": "Moldova", "mda": "Moldova",
+    "ro": "Romania", "rou": "Romania",
+    "kz": "Kazakhstan", "kaz": "Kazakhstan",
+    "uz": "Uzbekistan", "uzb": "Uzbekistan",
+    "rs": "Serbia", "srb": "Serbia",
+    "bg": "Bulgaria", "bgr": "Bulgaria",
+    "lt": "Lithuania", "ltu": "Lithuania",
+    "lv": "Latvia", "lva": "Latvia",
+    "ee": "Estonia", "est": "Estonia",
+    "cz": "Czechia", "cze": "Czechia",
+    "sk": "Slovakia", "svk": "Slovakia",
+    "hu": "Hungary", "hun": "Hungary",
+    "de": "Germany", "deu": "Germany",
+    "us": "United States", "usa": "United States",
+    "gb": "United Kingdom", "gbr": "United Kingdom",
+    "am": "Armenia", "arm": "Armenia",
+}
+
+
+def _as_list(value) -> list:
+    if value is None:
+        return []
+    return value if isinstance(value, list) else [value]
+
+
+def required_languages(html: str) -> list[tuple[str, str]]:
+    """[(language, CEFR level or "Native", ...)], read off the job page's own
+    "Required languages" section, empty if that section isn't present."""
+    m = REQUIRED_LANG_SECTION_RE.search(html)
+    if not m:
+        return []
+    out = []
+    for block in LANG_BLOCK_RE.findall(m.group(1)):
+        pm = LANG_PRIMARY_RE.search(block)
+        if not pm:
+            continue
+        sm = LANG_SECONDARY_RE.search(block)
+        out.append((pm.group(1).strip(), sm.group(1).strip() if sm else ""))
+    return out
+
+
+def location_requirement(html: str) -> str | None:
+    """Reads the Schema.org JobPosting JSON-LD block Djinni embeds on every
+    job page. jobLocationType == "TELECOMMUTE" means remote; if it's missing
+    and jobLocation names a country, that's an office-based role, not remote.
+    applicantLocationRequirements is the eligibility restriction on an
+    otherwise-remote role (can be a single object or, confirmed directly, a
+    list when several countries are eligible), a country there (as opposed to
+    a broad region like "Europe") means only residents of that
+    country/countries are eligible, exactly the Ukraine-residency pattern
+    this was built to catch."""
+    m = LD_JSON_RE.search(html)
+    if not m:
+        return None
+    try:
+        data = json.loads(m.group(1))
+    except (json.JSONDecodeError, TypeError):
+        return None
+    if not isinstance(data, dict):
+        return None
+
+    if data.get("jobLocationType") != "TELECOMMUTE":
+        for job_loc in _as_list(data.get("jobLocation")):
+            if not isinstance(job_loc, dict):
+                continue
+            country = (job_loc.get("address") or {}).get("addressCountry")
+            if country:
+                return f"office-based in {country}, not remote"
+
+    names = []
+    for req in _as_list(data.get("applicantLocationRequirements")):
+        if not isinstance(req, dict):
+            continue
+        address = req.get("address") or {}
+        code = (address.get("addressCountry") or "").strip().lower()
+        if code:
+            names.append(_COUNTRY_CODE_NAMES.get(code, code.upper()))
+    if names:
+        return f"remote, but restricted to applicants based in {' or '.join(names)}"
+    return None
+
+
+def fetch_job_flags(url: str) -> str | None:
+    """One fetch of the job's own page, checked for both a non-English
+    required language and a location restriction. Returns a skip reason or
+    None. Raises on a fetch failure, caller decides how to handle that."""
+    html = _common.fetch_text(url)
+    for lang, level in required_languages(html):
+        if lang.lower() != "english":
+            return f"requires {lang}" + (f" ({level})" if level else "")
+    return location_requirement(html)
 
 
 def strip_html(t: str) -> str:
@@ -104,14 +223,14 @@ def parse_items(rss_text: str) -> list[dict]:
 
 def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
     seen_links = {}
-    urls = [BASE] + [f"{BASE}?primary_keyword={cat.replace(' ', '+')}" for cat in CATEGORIES]
+    urls = [f"{BASE}?primary_keyword={cat.replace(' ', '+')}" for cat in CATEGORIES]
     for i, url in enumerate(urls):
         if i > 0:
             time.sleep(0.5)
         for item in parse_items(_common.fetch_text(url)):
             seen_links.setdefault(item["link"], item)
 
-    matches = []
+    candidates = []
     for item in seen_links.values():
         text = f"{item['title']} {item['description']}"
         if not stack_pattern.search(text):
@@ -122,15 +241,33 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
             continue
         if _common.requires_specific_location(text):
             continue
+        candidates.append(item)
+
+    matches = []
+    fetch_errors = 0
+    for i, item in enumerate(candidates):
+        if i % 20 == 0 or i == len(candidates) - 1:
+            print(f"  {_common.progress_bar(i + 1, len(candidates))}  checking listing {i + 1}/{len(candidates)}", file=sys.stderr)
+        try:
+            hard_skip = fetch_job_flags(item["link"])
+        except Exception as e:
+            fetch_errors += 1
+            print(f"  couldn't check {item['link']}: {e} (kept, not dropped over a fetch hiccup)", file=sys.stderr)
+            hard_skip = None
         blocked = next((name for name in blocklist if name.lower() in item["title"].lower()), None)
         matches.append({
             "id": item["link"],
             "author": "(see listing, company not named in feed)",
             "url": item["link"],
             "excerpt": f"{item['title']} | posted {item['pub_date']}",
-            "hard_skip": None,
+            "hard_skip": hard_skip,
             "blocked": blocked,
         })
+        time.sleep(0.3)
+
+    if fetch_errors:
+        print(f"\n{fetch_errors}/{len(candidates)} listing detail fetches failed, "
+              f"those are kept unverified rather than dropped, check them by eye.", file=sys.stderr)
     return matches
 
 
@@ -156,9 +293,10 @@ def write_markdown(matches: list[dict], path: str, stack_words: list[str], prior
     lines = [
         "# Djinni scan (Ukraine/CIS/Eastern Europe tech board)",
         "",
-        f"Generated {now}. Stack filter: {', '.join(display_stack)}. English-only, no other-language-required listings.",
+        f"Generated {now}. Stack filter: {', '.join(display_stack)}. English-only, no other-language-required, "
+        f"no specific-country-residency-required listings (that last check reads the listing's own page, not just the feed).",
         "New file each day (`scan-results/YYYY-MM-DD/djinni-scan.md`). Once this file exists, running the scan again today does nothing to it, edit freely.",
-        "No company-name or location field in Djinni's feed, click through for both. Djinni is inherently remote/CIS-region-friendly but confirm on the listing.",
+        "No company-name field in Djinni's feed, click through for that.",
         "Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `- [x] [skipped: not a fit] **[listing]...`.",
         "",
         "## Matches",
@@ -177,7 +315,8 @@ def write_markdown(matches: list[dict], path: str, stack_words: list[str], prior
     if skipped:
         lines.append("## Skipped")
         lines.append("")
-        lines.append("Ruled out for real, you tagged it yourself.")
+        lines.append("Ruled out for real, either you tagged it or the scanner's language/location check "
+                      "(read off the listing's own page, not the feed) did.")
         lines.append("")
         for m, reason in skipped:
             lines.append(f"- ~~[{m['author']}]({m['url']}): {m['excerpt']}~~ (skipped: {reason})")
