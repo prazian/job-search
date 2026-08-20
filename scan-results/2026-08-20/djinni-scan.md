@@ -8,7 +8,7 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 ## Matches
 
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844160-backend-python-developer/)**: Backend Python Developer | posted Thu, 20 Aug 2026 19:16:20 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844125-servicenow-discovery-engineer-id80139/)**: ServiceNow Discovery Engineer ID80139 | posted Thu, 20 Aug 2026 17:19:53 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844125-servicenow-discovery-engineer-id80139/)**: ServiceNow Discovery Engineer ID80139 | posted Thu, 20 Aug 2026 17:19:53 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/832444-team-leader-python/)**: Team Leader (Python) | posted Thu, 20 Aug 2026 16:56:23 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838109-senior-ai-builder-python/)**: Senior AI Builder (Python) | posted Thu, 20 Aug 2026 15:52:03 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/824065-principal-backend-engineer-python-ai/)**: Principal Backend Engineer (Python / AI) | posted Mon, 17 Aug 2026 17:52:12 +0300
