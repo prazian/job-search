@@ -7,17 +7,17 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 
 ## Matches
 
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844160-backend-python-developer/)**: Backend Python Developer | posted Thu, 20 Aug 2026 19:16:20 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/793072-embedded-software-engineer-c-language/)**: Embedded Software Engineer ( C language ) | posted Thu, 20 Aug 2026 19:04:38 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844157-head-of-affiliate/)**: Head of Affiliate | posted Thu, 20 Aug 2026 18:51:53 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844153-algorithmic-trading-support-engineer/)**: Algorithmic Trading Support Engineer | posted Thu, 20 Aug 2026 18:36:19 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844155-upwork-bidding-and-profile-specialist-for-sof/)**: Upwork Bidding and Profile Specialist for Software Development Services | posted Thu, 20 Aug 2026 18:32:13 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844149-marketing-manager-brand-manager-product-marke/)**: Marketing Manager / Brand Manager / Product Marketing Manager | posted Thu, 20 Aug 2026 18:17:53 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844145-senior-lead-ml-consultant/)**: Senior / Lead ML Consultant | posted Thu, 20 Aug 2026 18:06:23 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/823612-business-system-analyst/)**: Business System Analyst | posted Thu, 20 Aug 2026 18:02:20 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/819998-entry-level-qa-specialist/)**: Entry-Level  QA Specialist | posted Thu, 20 Aug 2026 17:55:39 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844138-product-support-specialist/)**: Product Support Specialist | posted Thu, 20 Aug 2026 17:53:53 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844134-software-engineer-blockchain/)**: Software Engineer (Blockchain) | posted Thu, 20 Aug 2026 17:49:54 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844160-backend-python-developer/)**: Backend Python Developer | posted Thu, 20 Aug 2026 19:16:20 +0300
+- [x] [skipped: Ukrainian C2 - Proficient] **[(see listing, company not named in feed)](https://djinni.co/jobs/793072-embedded-software-engineer-c-language/)**: Embedded Software Engineer ( C language ) | posted Thu, 20 Aug 2026 19:04:38 +0300
+- [x] [skipped: Ukrainian Native] **[(see listing, company not named in feed)](https://djinni.co/jobs/844157-head-of-affiliate/)**: Head of Affiliate | posted Thu, 20 Aug 2026 18:51:53 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844153-algorithmic-trading-support-engineer/)**: Algorithmic Trading Support Engineer | posted Thu, 20 Aug 2026 18:36:19 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844155-upwork-bidding-and-profile-specialist-for-sof/)**: Upwork Bidding and Profile Specialist for Software Development Services | posted Thu, 20 Aug 2026 18:32:13 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844149-marketing-manager-brand-manager-product-marke/)**: Marketing Manager / Brand Manager / Product Marketing Manager | posted Thu, 20 Aug 2026 18:17:53 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844145-senior-lead-ml-consultant/)**: Senior / Lead ML Consultant | posted Thu, 20 Aug 2026 18:06:23 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/823612-business-system-analyst/)**: Business System Analyst | posted Thu, 20 Aug 2026 18:02:20 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/819998-entry-level-qa-specialist/)**: Entry-Level  QA Specialist | posted Thu, 20 Aug 2026 17:55:39 +0300
+- [x] [skipped: ukraininan native] **[(see listing, company not named in feed)](https://djinni.co/jobs/844138-product-support-specialist/)**: Product Support Specialist | posted Thu, 20 Aug 2026 17:53:53 +0300
+- [x] [skipped: relocation to polan required] **[(see listing, company not named in feed)](https://djinni.co/jobs/844134-software-engineer-blockchain/)**: Software Engineer (Blockchain) | posted Thu, 20 Aug 2026 17:49:54 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844133-forward-deployed-engineer-ai-browser-automati/)**: Forward Deployed Engineer (AI/Browser Automations for Insurance domain) | posted Thu, 20 Aug 2026 17:49:53 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837939-chief-billing-officer/)**: Chief Billing Officer | posted Thu, 20 Aug 2026 17:43:54 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844131-senior-qa-automation/)**: Senior QA Automation | posted Thu, 20 Aug 2026 17:39:53 +0300
