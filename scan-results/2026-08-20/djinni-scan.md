@@ -1,0 +1,256 @@
+# Djinni scan (Ukraine/CIS/Eastern Europe tech board)
+
+Generated 2026-08-20 00:23 UTC. Stack filter: aws, python, typescript, golang, go, linux, cloud, devops, kubernetes, terraform, infrastructure, backend. English-only, no other-language-required listings.
+New file each day (`scan-results/YYYY-MM-DD/djinni-scan.md`). Once this file exists, running the scan again today does nothing to it, edit freely.
+No company-name or location field in Djinni's feed, click through for both. Djinni is inherently remote/CIS-region-friendly but confirm on the listing.
+Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `- [x] [skipped: not a fit] **[listing]...`.
+
+## Matches
+
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843957-junior-middle-devops-engineer-irc302727/)**: Junior\Middle DevOps engineer (IRC302727) | posted Wed, 19 Aug 2026 22:33:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843956-middle-frontend-developer-react-next-js/)**: Middle Frontend Developer (React + Next.js) | posted Wed, 19 Aug 2026 22:27:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843955-ai-automation-lead/)**: AI Automation Lead | posted Wed, 19 Aug 2026 22:06:55 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837590-customer-success-manager/)**: Customer Success Manager | posted Wed, 19 Aug 2026 21:49:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843954-cyber-security-senior-devops/)**: Cyber Security Senior DevOps | posted Wed, 19 Aug 2026 21:31:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843950-python-engineer/)**: Python Engineer | posted Wed, 19 Aug 2026 20:33:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843941-product-engineer-full-stack/)**: Product Engineer - Full Stack | posted Wed, 19 Aug 2026 20:09:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843940-team-lead-ai-product-engineering-golang-claud/)**: Team Lead, AI Product Engineering (Golang, Claude Code) | posted Wed, 19 Aug 2026 19:57:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839909-bi-data-engineer/)**: BI/Data Engineer | posted Wed, 19 Aug 2026 19:54:53 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/760459-senior-php-developer-payments/)**: Senior PHP Developer (Payments) | posted Wed, 19 Aug 2026 19:46:14 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843937-golang-engineer/)**: GoLang Engineer | posted Wed, 19 Aug 2026 19:33:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843935-frontend-engineer/)**: Frontend Engineer | posted Wed, 19 Aug 2026 19:27:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/831562-product-marketing-manager/)**: Product Marketing Manager | posted Wed, 19 Aug 2026 18:59:59 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839518-product-manager-digital-banking/)**: Product Manager (Digital Banking) | posted Wed, 19 Aug 2026 18:25:12 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838789-senior-sdet-data-platform-query-engine/)**: Senior SDET — Data Platform / Query Engine | posted Wed, 19 Aug 2026 18:20:01 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843926-ai-builder-full-stack-engineer/)**: AI Builder / Full-Stack Engineer | posted Wed, 19 Aug 2026 18:19:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843925-senior-devops-engineer/)**: Senior DevOps Engineer | posted Wed, 19 Aug 2026 18:17:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/800206-psp-specialist-igaming/)**: PSP Specialist (iGaming) | posted Wed, 19 Aug 2026 18:06:14 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/835260-drophunter-pbn-master/)**: Drophunter / PBN Master | posted Wed, 19 Aug 2026 17:49:53 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843916-senior-devops-with-aws/)**: Senior DevOps with AWS | posted Wed, 19 Aug 2026 17:36:24 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843915-cybersecurity_senior-devops/)**: CyberSecurity_Senior DevOps | posted Wed, 19 Aug 2026 17:36:24 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843914-senior-devops-with-aws/)**: Senior DevOps with AWS | posted Wed, 19 Aug 2026 17:33:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843913-ai-platform-engineer-strong-senior-lead-devop/)**: AI Platform Engineer (Strong Senior/Lead DevOps/MLOps) | posted Wed, 19 Aug 2026 17:33:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843910-ai-infrastructure-engineer/)**: AI Infrastructure Engineer | posted Wed, 19 Aug 2026 17:29:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/833131-databricks-administrator-performance-measurem/)**: Databricks Administrator (Performance Measurement) | posted Wed, 19 Aug 2026 17:29:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841356-trainee-automation-test-engineer/)**: Trainee Automation Test Engineer | posted Wed, 19 Aug 2026 17:29:23 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843909-lead-platform-engineer/)**: Lead Platform Engineer | posted Wed, 19 Aug 2026 17:27:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843906-senior-devops/)**: Senior DevOps | posted Wed, 19 Aug 2026 17:26:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838890-backend-node-js-integrations-engineer-lms-lti/)**: Backend (Node.js) Integrations Engineer - LMS / LTI - 3 months engagement with possible prolongation | posted Wed, 19 Aug 2026 17:24:48 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843905-media-buyer-tg/)**: Media Buyer TG | posted Wed, 19 Aug 2026 17:23:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/773028-mathematician/)**: Mathematician | posted Wed, 19 Aug 2026 17:17:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843902-ai-integration-engineer-python/)**: AI Integration Engineer (Python) | posted Wed, 19 Aug 2026 17:16:30 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839825-lead-python-engineer/)**: Lead Python Engineer | posted Wed, 19 Aug 2026 14:10:57 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843765-backend-engineer-python/)**: Backend Engineer (Python) | posted Wed, 19 Aug 2026 11:59:51 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/764691-junior-python-software-engineer/)**: Junior Python Software Engineer | posted Tue, 18 Aug 2026 22:38:46 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843671-senior-python-full-stack-with-react/)**: Senior Python Full Stack (with React) | posted Tue, 18 Aug 2026 17:49:41 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843664-senior-python-developer/)**: Senior Python Developer | posted Tue, 18 Aug 2026 17:32:54 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/824065-principal-backend-engineer-python-ai/)**: Principal Backend Engineer (Python / AI) | posted Mon, 17 Aug 2026 17:52:12 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841709-senior-python-backend-engineer/)**: Senior Python Backend Engineer | posted Mon, 17 Aug 2026 15:07:06 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837697-middle-aqa-python-engineer/)**: Middle AQA (Python) Engineer | posted Mon, 17 Aug 2026 13:36:10 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843228-python-backend-developer/)**: Python Backend Developer | posted Mon, 17 Aug 2026 12:09:29 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843227-senior-ai-engineer/)**: Senior AI Engineer | posted Mon, 17 Aug 2026 12:08:24 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/826872-middle-python-developer-fastapi/)**: Middle Python Developer (FastAPI) | posted Mon, 17 Aug 2026 10:29:44 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838548-senior-python-software-developer/)**: Senior Python Software Developer | posted Mon, 17 Aug 2026 10:28:15 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/827023-senior-python-developer/)**: Senior Python Developer | posted Mon, 17 Aug 2026 10:06:03 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843000-senior-python-developer-irc301523/)**: Senior Python developer (IRC301523) | posted Fri, 14 Aug 2026 13:17:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/832851-api-developer/)**: API Developer | posted Fri, 14 Aug 2026 12:57:06 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836443-senior-python-developer-market-risk-platform/)**: Senior Python Developer — Market Risk Platform | posted Thu, 13 Aug 2026 17:17:03 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838456-middle-python-developer-for-eu-based-candidat/)**: Middle+ Python Developer (for EU-based candidates) | posted Thu, 13 Aug 2026 16:44:43 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842583-strong-junior-middle-ai-engineer/)**: Strong Junior/ Middle AI Engineer | posted Wed, 12 Aug 2026 14:01:42 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842580-strong-middle-ai-engineer/)**: Strong Middle  AI Engineer | posted Wed, 12 Aug 2026 13:56:59 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842571-sdet-python/)**: SDET (Python) | posted Wed, 12 Aug 2026 13:32:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842536-full-stack-ai-engineer/)**: Full-Stack AI Engineer | posted Wed, 12 Aug 2026 12:32:13 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842494-ai-native-full-stack-python-developer-django-/)**: AI-Native Full-Stack Python Developer (Django, FastAPI, React) | posted Wed, 12 Aug 2026 10:26:58 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842482-senior-backend-ai-engineer-python/)**: Senior Backend AI Engineer (Python) | posted Wed, 12 Aug 2026 09:04:58 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842336-senior-python-engineer/)**: Senior Python Engineer | posted Tue, 11 Aug 2026 16:04:56 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837222-team-lead-python-django/)**: Team Lead Python/Django | posted Tue, 11 Aug 2026 14:42:04 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/834176-middle-python-engineer/)**: Middle Python Engineer | posted Tue, 11 Aug 2026 12:38:06 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/790956-senior-django-developer/)**: Senior Django Developer | posted Tue, 11 Aug 2026 02:27:56 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/831422-interview-engineer-python-full-stack/)**: Interview Engineer - Python (Full-Stack) | posted Mon, 10 Aug 2026 17:59:35 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840000-senior-python-developer/)**: Senior Python Developer | posted Mon, 10 Aug 2026 16:41:15 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841975-ai-agent-engineer/)**: AI Agent Engineer | posted Mon, 10 Aug 2026 14:11:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841937-trainee-junior-middle-python-developer/)**: Trainee, Junior, Middle Python Developer | posted Mon, 10 Aug 2026 12:20:49 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836205-senior-python-developer-risk-calculation-engi/)**: Senior Python Developer — Risk Calculation Engine | posted Mon, 10 Aug 2026 12:18:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836579-senior-developer-python-aws-platform/)**: Senior Developer (Python, AWS, Platform) | posted Mon, 10 Aug 2026 11:26:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/835383-senior-python-engineer-irc298729/)**: Senior Python Engineer IRC298729 | posted Mon, 10 Aug 2026 10:08:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838318-senior-python-engineer-integration-infrastruc/)**: Senior Python Engineer (Integration / Infrastructure) | posted Sat, 08 Aug 2026 22:25:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841824-ai-fullstack-python-react-developer/)**: AI FullStack Python+React Developer | posted Fri, 07 Aug 2026 19:34:34 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/784885-strong-junior-python-developer/)**: Strong Junior Python Developer | posted Fri, 07 Aug 2026 12:04:34 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840259-senior-backend-engineer-high-performance-data/)**: Senior Backend Engineer. High-Performance Data Streaming | posted Fri, 07 Aug 2026 12:03:29 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841620-python-developer/)**: Python Developer | posted Thu, 06 Aug 2026 19:24:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/823500-senior-python-engineer/)**: Senior Python Engineer | posted Thu, 06 Aug 2026 14:28:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841493-senior-backend-engineer/)**: Senior Backend Engineer | posted Thu, 06 Aug 2026 13:06:48 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/805941-python-middle-engineer/)**: Python Middle Engineer | posted Thu, 06 Aug 2026 09:16:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841416-python-automation-infrastructure-engineer/)**: Python Automation / Infrastructure Engineer | posted Thu, 06 Aug 2026 02:58:30 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841317-strong-middle-python-django-developer/)**: Strong Middle Python Django Developer | posted Wed, 05 Aug 2026 15:48:29 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841293-senior-python-developer/)**: Senior Python Developer | posted Wed, 05 Aug 2026 14:44:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841258-django-js/)**: Django / JS | posted Wed, 05 Aug 2026 13:04:33 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841232-technical-lead/)**: Technical Lead | posted Wed, 05 Aug 2026 12:12:55 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/812611-junior-ai-developer/)**: Junior AI Developer | posted Wed, 05 Aug 2026 11:48:57 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841199-python-developer-slot-math-igaming/)**: Python Developer – Slot Math / iGaming | posted Wed, 05 Aug 2026 10:58:28 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841172-python-developer/)**: Python Developer | posted Tue, 04 Aug 2026 23:41:13 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/826693-senior-python-backend-developer-in-romania/)**: Senior Python Backend Developer in Romania | posted Mon, 03 Aug 2026 18:14:26 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/807388-senior-software-engineer-search-engineer-elas/)**: Senior Software Engineer \ Search Engineer (Elasticsearch) | posted Mon, 03 Aug 2026 09:34:14 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/807385-senior-python-ai-engineer-llm-multi-agent-sys/)**: Senior Python AI Engineer (LLM / Multi-Agent Systems) | posted Mon, 03 Aug 2026 09:34:10 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840542-sr-python-engineer/)**: Sr Python Engineer | posted Fri, 31 Jul 2026 19:52:19 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840361-senior-python-backend-engineer-technical-lead/)**: Senior Python Backend Engineer / Technical Lead | posted Fri, 31 Jul 2026 12:00:18 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840356-backend-developer/)**: Backend Developer | posted Fri, 31 Jul 2026 11:32:22 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/834517-senior-ai-engineer/)**: Senior AI Engineer | posted Fri, 31 Jul 2026 08:56:17 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840287-computer-vision-engineer/)**: Computer Vision Engineer | posted Thu, 30 Jul 2026 17:48:16 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/832584-senior-python-developer-scraping-cyprus-locat/)**: Senior Python Developer (Scraping)/  Cyprus location only | posted Thu, 30 Jul 2026 15:04:18 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840084-senior-quant-developer-python-algorithmic-tra/)**: Senior Quant Developer (Python / Algorithmic Trading) | posted Wed, 29 Jul 2026 19:14:14 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/822268-middle-software-engineer/)**: Middle Software Engineer | posted Tue, 28 Jul 2026 17:44:14 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/751196-trainee-junior-python-developer/)**: Trainee, Junior Python Developer | posted Tue, 28 Jul 2026 15:28:13 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/829608-senior-back-end-python-developer/)**: Senior Back-end (Python) developer | posted Tue, 28 Jul 2026 14:47:12 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839570-python-engineer/)**: Python Engineer | posted Mon, 27 Jul 2026 17:16:24 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/833827-senior-backend-python-engineer-ai-integration/)**: Senior Backend (Python) Engineer / AI Integration Specialist | posted Mon, 27 Jul 2026 12:14:09 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/833910-senior-python-developer/)**: Senior Python Developer | posted Mon, 27 Jul 2026 11:37:08 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843835-senior-devops-engineer/)**: Senior DevOps Engineer | posted Wed, 19 Aug 2026 14:39:52 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841343-devops-senior/)**: DevOps (Senior) | posted Wed, 19 Aug 2026 12:06:20 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843749-senior-devops-engineer/)**: Senior DevOps Engineer | posted Wed, 19 Aug 2026 11:19:56 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836852-cloud-devops-engineer-gcp-gke-airflow/)**: Cloud DevOps Engineer (GCP / GKE / Airflow) | posted Wed, 19 Aug 2026 11:19:09 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840149-senior-azure-platform-ai-engineer/)**: Senior Azure Platform / AI Engineer | posted Wed, 19 Aug 2026 10:46:37 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843593-senior-devops-platform-engineer-m-f-d/)**: Senior DevOps/ Platform Engineer (m/f/d) | posted Tue, 18 Aug 2026 14:55:33 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836345-devops-engineer/)**: DevOps Engineer | posted Tue, 18 Aug 2026 14:12:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843555-devops-mlops-engineer/)**: DevOps / MLOps Engineer | posted Tue, 18 Aug 2026 13:45:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/770850-support-engineer/)**: Support Engineer | posted Tue, 18 Aug 2026 10:35:12 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843480-senior-devops-engineer-azure-infrastructure/)**: Senior DevOps Engineer (Azure Infrastructure) | posted Tue, 18 Aug 2026 10:24:16 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843438-devops-engineer-windows-cloud-infrastructure/)**: DevOps Engineer (Windows / Cloud Infrastructure) | posted Mon, 17 Aug 2026 22:07:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840650-senior-devops-engineer/)**: Senior DevOps Engineer | posted Mon, 17 Aug 2026 14:04:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843245-senior-devops-engineer-gcp/)**: Senior DevOps Engineer (GCP) | posted Mon, 17 Aug 2026 12:42:39 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843223-middle-devops-engineer-aws-irc302409/)**: Middle DevOps Engineer (AWS) (IRC302409) | posted Mon, 17 Aug 2026 11:59:29 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/574275-middle-devops/)**: Middle DevOps | posted Mon, 17 Aug 2026 11:19:30 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/800452-middle-sre/)**: Middle SRE | posted Mon, 17 Aug 2026 11:17:46 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/819476-senior-devops-engineer-aws/)**: Senior DevOps Engineer (AWS) | posted Sun, 16 Aug 2026 14:01:38 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843137-senior-site-reliability-devops-engineer/)**: Senior Site Reliability / DevOps Engineer | posted Sat, 15 Aug 2026 18:45:26 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/795528-senior-devops-engineer-sde/)**: Senior DevOps Engineer (СDE) | posted Fri, 14 Aug 2026 21:40:21 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843086-middle-senior-devops/)**: Middle\Senior DevOps | posted Fri, 14 Aug 2026 17:09:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/820791-senior-devops-engineer/)**: Senior DevOps Engineer | posted Fri, 14 Aug 2026 15:57:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843060-senior-devops-engineer/)**: Senior DevOps Engineer | posted Fri, 14 Aug 2026 15:57:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/833394-senior-lead-devsecops-engineer-azure-terrafor/)**: Senior-Lead DevSecOps Engineer (Azure, Terraform, Sentinel) 14.00 – 22.00 CET (#5397) | posted Fri, 14 Aug 2026 13:01:45 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/813499-senior-devops-engineer/)**: Senior DevOps Engineer | posted Fri, 14 Aug 2026 12:57:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/828709-senior-devops-engineer-aws/)**: Senior DevOps Engineer (AWS) | posted Thu, 13 Aug 2026 16:29:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841330-senior-devops-engineer/)**: Senior DevOps Engineer | posted Thu, 13 Aug 2026 16:03:23 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842765-strong-ml-mlops-engineer-for-ai-system-admini/)**: Strong ML \ MLOps Engineer for AI System Administrator (IRC301437) | posted Thu, 13 Aug 2026 12:55:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/797919-senior-devops-engineer/)**: Senior DevOps Engineer | posted Thu, 13 Aug 2026 11:58:00 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/806811-devops-engineer/)**: DevOps Engineer | posted Thu, 13 Aug 2026 11:57:03 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842744-devops-engineer/)**: DevOps Engineer | posted Thu, 13 Aug 2026 11:51:29 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842728-senior-platform-engineer/)**: Senior Platform Engineer | posted Thu, 13 Aug 2026 10:54:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842722-senior-support-devops/)**: Senior Support Devops | posted Thu, 13 Aug 2026 10:27:17 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842660-devops-engineer-aws-serverless/)**: DevOps Engineer(AWS Serverless) | posted Wed, 12 Aug 2026 17:14:59 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839693-senior-devops-engineer/)**: Senior DevOps Engineer | posted Wed, 12 Aug 2026 15:29:38 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/806548-production-support-engineer/)**: Production Support Engineer | posted Wed, 12 Aug 2026 00:34:56 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842270-lead-devops-engineer-aws-migration-and-securi/)**: Lead DevOps Engineer (AWS Migration and Security) | posted Tue, 11 Aug 2026 14:01:17 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842266-lead-devops-engineer-aws-migration-and-securi/)**: Lead DevOps Engineer (AWS Migration and Security) | posted Tue, 11 Aug 2026 13:56:50 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842257-senior-n8n-automation-developer/)**: Senior n8n Automation Developer | posted Tue, 11 Aug 2026 13:26:49 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841130-system-administrator-miltech/)**: System Administrator Miltech | posted Tue, 11 Aug 2026 12:38:00 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842207-senior-ai-platform-engineer/)**: Senior AI Platform Engineer | posted Tue, 11 Aug 2026 11:44:50 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842204-senior-ai-platform-engineer/)**: Senior AI Platform Engineer | posted Tue, 11 Aug 2026 11:42:50 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/835999-senior-devops-engineer/)**: Senior DevOps Engineer | posted Mon, 10 Aug 2026 19:21:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842091-devops-sysadmin/)**: DevOps / SysAdmin | posted Mon, 10 Aug 2026 18:08:48 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842082-sre-devops/)**: SRE / DevOps | posted Mon, 10 Aug 2026 17:46:48 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842070-middle-devops-engineer-gcp-5617/)**: Middle DevOps Engineer (GCP) (#5617) | posted Mon, 10 Aug 2026 17:18:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842067-senior-devops-site-reliability-engineer-5516/)**: Senior DevOps / Site Reliability Engineer (#5516) | posted Mon, 10 Aug 2026 17:14:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841998-devops-engineer/)**: DevOps Engineer | posted Mon, 10 Aug 2026 14:52:49 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841994-customer-success-technical-engineer-devops/)**: Customer Success Technical Engineer / DevOps | posted Mon, 10 Aug 2026 14:46:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/804410-devops-team-lead/)**: DevOps Team Lead | posted Mon, 10 Aug 2026 14:22:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/713120-devops-engineer/)**: DevOps Engineer | posted Mon, 10 Aug 2026 12:03:04 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836068-senior-aws-devops-infrastructure-engineer-tie/)**: Senior AWS DevOps/ Infrastructure Engineer - Tieto Tech Consulting (m/f/d) | posted Mon, 10 Aug 2026 09:08:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/806205-devops-engineer/)**: DevOps Engineer | posted Fri, 07 Aug 2026 12:36:34 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/731978-mlops-engineer/)**: MLOps engineer | posted Thu, 06 Aug 2026 14:26:43 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/147445-devops-engineer/)**: DevOps Engineer | posted Thu, 06 Aug 2026 14:20:26 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841458-team-leader-voip/)**: Team Leader (VoIP) | posted Thu, 06 Aug 2026 11:46:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843854-senior-backend-engineer-go/)**: Senior Backend Engineer (Go) | posted Wed, 19 Aug 2026 15:33:51 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843845-senior-backend-engineer-go/)**: Senior Backend Engineer (Go) | posted Wed, 19 Aug 2026 15:03:54 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843733-senior-backend-engineer-go-6-month-contract/)**: Senior Backend Engineer (Go) – 6-month contract | posted Wed, 19 Aug 2026 10:21:51 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843723-team-lead-golang-developer/)**: Team lead Golang developer | posted Wed, 19 Aug 2026 09:09:51 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843533-middle-senior-software-golang-kubernetes-engi/)**: Middle + / Senior Software Golang Kubernetes Engineer | posted Tue, 18 Aug 2026 12:47:33 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843484-senior-backend-engineer-core-banking-services/)**: Senior Backend Engineer (Core Banking Services team) | posted Tue, 18 Aug 2026 10:32:36 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842952-senior-go-kubernetes-developer/)**: Senior Go / Kubernetes Developer | posted Fri, 14 Aug 2026 11:33:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841678-senior-backend-engineer-go/)**: Senior Backend Engineer GO | posted Fri, 14 Aug 2026 00:00:33 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842895-interview-engineer-golang/)**: Interview Engineer Golang | posted Thu, 13 Aug 2026 19:11:10 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/725028-senior-go-engineer/)**: Senior Go Engineer | posted Thu, 13 Aug 2026 17:36:43 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842111-go-backend-engineer/)**: Go Backend Engineer | posted Mon, 10 Aug 2026 19:51:11 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840675-senior-backend-engineer-go-poland/)**: Senior Backend Engineer(Go) - Poland | posted Mon, 03 Aug 2026 12:44:24 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/828039-ai-first-full-stack-developer/)**: AI-First Full-Stack Developer | posted Thu, 30 Jul 2026 10:20:15 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840014-senior-backend-engineer-java-kotlin-and-go/)**: Senior Backend Engineer (Java/Kotlin and Go) | posted Wed, 29 Jul 2026 16:04:21 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/827349-team-lead-go/)**: Team Lead GO | posted Wed, 29 Jul 2026 09:33:59 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/827563-full-stack-developer-golang-and-react-typescr/)**: Full Stack Developer (Golang and React/TypeScript) | posted Tue, 28 Jul 2026 17:03:35 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839696-senior-go-engineer/)**: Senior Go Engineer | posted Tue, 28 Jul 2026 13:00:18 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839619-senior-go-engineer-connectivity/)**: Senior Go Engineer (Connectivity) | posted Mon, 27 Jul 2026 22:56:09 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/787540-senior-golang-developer/)**: Senior Golang Developer | posted Fri, 24 Jul 2026 00:10:01 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839046-senior-golang-developer/)**: Senior Golang Developer | posted Thu, 23 Jul 2026 16:27:50 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838896-senior-golang-software-engineer/)**: Senior Golang Software Engineer | posted Wed, 22 Jul 2026 22:01:49 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838447-backend-engineer-golang/)**: Backend Engineer (Golang) | posted Tue, 21 Jul 2026 14:25:58 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843891-senior-be-engineer/)**: Senior BE Engineer | posted Wed, 19 Aug 2026 16:46:42 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843801-senior-devops-engineer/)**: Senior DevOps Engineer | posted Wed, 19 Aug 2026 13:16:29 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843787-senior-data-engineer-azure-and-databricks/)**: Senior Data Engineer/ Azure and Databricks | posted Wed, 19 Aug 2026 12:53:51 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843769-mlops-engineer-llm-infrastructure/)**: MLOps Engineer (LLM Infrastructure) | posted Wed, 19 Aug 2026 12:06:16 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843767-mlops-engineer/)**: MLOps Engineer | posted Wed, 19 Aug 2026 12:02:39 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/834531-devops-engineer/)**: DevOps Engineer | posted Wed, 19 Aug 2026 09:21:21 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843701-senior-data-backend-engineer-kotlin/)**: Senior Data Backend Engineer (Kotlin) | posted Tue, 18 Aug 2026 19:35:51 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843692-data-ops-engineer/)**: Data Ops Engineer | posted Tue, 18 Aug 2026 18:56:23 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837189-devops-engineer/)**: DevOps Engineer | posted Tue, 18 Aug 2026 18:05:53 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836642-senior-data-engineer/)**: Senior Data Engineer | posted Tue, 18 Aug 2026 17:43:42 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839965-devops-engineer-blockchain/)**: DevOps Engineer (Blockchain) | posted Tue, 18 Aug 2026 17:19:14 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839683-senior-data-engineer-redshift/)**: Senior Data Engineer (Redshift) | posted Tue, 18 Aug 2026 11:42:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838504-middle-software-engineer-query-engine-data-pl/)**: Middle Software Engineer — Query Engine / Data Platform | posted Tue, 18 Aug 2026 11:26:23 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838485-senior-software-engineer-query-engine-data-pl/)**: Senior Software Engineer — Query Engine / Data Platform | posted Tue, 18 Aug 2026 11:26:17 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838478-middle-sdet-data-platform-query-engine/)**: Middle SDET — Data Platform / Query Engine | posted Tue, 18 Aug 2026 11:26:12 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838497-senior-sdet-data-platform-query-engine/)**: Senior SDET — Data Platform / Query Engine | posted Tue, 18 Aug 2026 11:26:06 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843483-senior-data-engineer-snowflake-5689/)**: Senior Data Engineer (Snowflake) (5689) | posted Tue, 18 Aug 2026 10:29:33 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843477-data-engineer/)**: Data Engineer | posted Tue, 18 Aug 2026 10:17:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843471-data-engineer/)**: Data Engineer | posted Tue, 18 Aug 2026 09:41:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843435-senior-data-engineer-mssql-to-snowflake-migra/)**: Senior Data Engineer — MSSQL to Snowflake Migration (Fivetran + dbt) | posted Mon, 17 Aug 2026 21:41:31 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/834416-senior-devops-engineer-relocation-to-dubai/)**: Senior DevOps Engineer — Relocation to Dubai | posted Mon, 17 Aug 2026 19:11:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843335-trainee-big-data-engineer/)**: Trainee Big Data Engineer | posted Mon, 17 Aug 2026 16:17:43 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843311-data-engineer-with-java/)**: Data Engineer with Java | posted Mon, 17 Aug 2026 15:18:18 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843287-data-engineer/)**: Data Engineer | posted Mon, 17 Aug 2026 14:26:07 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843254-senior-data-engineer/)**: Senior Data Engineer | posted Mon, 17 Aug 2026 12:59:30 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837876-senior-aws-cloud-data-engineer/)**: Senior AWS Cloud Data Engineer | posted Mon, 17 Aug 2026 11:39:30 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843114-middle-ai-ml-engineer-5128/)**: Middle AI/ML Engineer (#5128) | posted Fri, 14 Aug 2026 20:25:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838588-middle-software-engineer-java-c-query-engine-/)**: Middle Software Engineer (Java/C++) — Query Engine / Data Platform | posted Fri, 14 Aug 2026 18:34:58 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843088-senior-data-engineer-with-snowflake/)**: Senior Data Engineer with Snowflake | posted Fri, 14 Aug 2026 17:19:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843083-lead-data-engineer/)**: Lead Data Engineer | posted Fri, 14 Aug 2026 17:03:09 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843073-senior-data-engineer-eu/)**: Senior Data Engineer (EU) | posted Fri, 14 Aug 2026 16:41:30 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843062-senior-data-engineer/)**: Senior Data Engineer | posted Fri, 14 Aug 2026 16:03:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841610-senior-data-engineer-5645/)**: Senior Data Engineer (#5645) | posted Fri, 14 Aug 2026 13:01:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/840209-strong-middle-bi-db-developer/)**: Strong Middle BI/DB Developer | posted Fri, 14 Aug 2026 12:53:26 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842965-data-engineer/)**: Data Engineer | posted Fri, 14 Aug 2026 12:11:11 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842941-senior-lead-data-engineer/)**: Senior/Lead Data Engineer | posted Fri, 14 Aug 2026 11:03:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842939-senior-data-engineer-snowflake/)**: Senior Data Engineer (Snowflake) | posted Fri, 14 Aug 2026 11:01:18 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842935-middle-devops-sysops-engineer/)**: Middle DevOps / SysOps Engineer | posted Fri, 14 Aug 2026 10:43:05 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/835421-data-engineer/)**: Data Engineer | posted Fri, 14 Aug 2026 09:54:50 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842929-senior-devops-engineer/)**: Senior DevOps Engineer | posted Fri, 14 Aug 2026 09:19:09 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842737-data-engineer/)**: Data Engineer | posted Thu, 13 Aug 2026 19:29:35 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842863-senior-lead-appsec-engineer-id71672/)**: Senior/Lead AppSec Engineer ID71672 | posted Thu, 13 Aug 2026 17:19:03 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/781115-data-engineer/)**: Data Engineer | posted Thu, 13 Aug 2026 16:11:32 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842821-computer-vision-engineer/)**: Computer Vision Engineer | posted Thu, 13 Aug 2026 15:07:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842797-consultant-data-engineer-irc302341-uk/)**: Consultant Data Engineer IRC302341 (UK) | posted Thu, 13 Aug 2026 14:17:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/815371-senior-data-engineer/)**: Senior Data Engineer | posted Thu, 13 Aug 2026 13:31:48 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/837055-senior-data-engineer-fintech/)**: Senior Data Engineer (Fintech) | posted Thu, 13 Aug 2026 13:31:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842758-rpa-engineer-uipath-focused/)**: RPA Engineer (UiPath-Focused) | posted Thu, 13 Aug 2026 12:37:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/830428-scraping-antibot-engineer/)**: Scraping/Antibot engineer | posted Thu, 13 Aug 2026 12:25:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842735-senior-data-engineer-databricks-migration/)**: Senior Data Engineer (Databricks Migration) | posted Thu, 13 Aug 2026 11:29:02 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/825116-senior-data-engineer/)**: Senior Data Engineer | posted Wed, 12 Aug 2026 18:34:59 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842654-senior-ceph-rook-ceph-kubernetes-storage-engi/)**: Senior Ceph/Rook-Ceph + Kubernetes Storage Engineer | posted Wed, 12 Aug 2026 17:08:59 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842593-data-engineer/)**: Data Engineer | posted Wed, 12 Aug 2026 14:21:44 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838361-data-engineer/)**: Data Engineer | posted Wed, 12 Aug 2026 13:18:56 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842529-middle-data-engineer-warsaw/)**: Middle Data Engineer, Warsaw | posted Wed, 12 Aug 2026 12:12:58 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842486-devops-engineer/)**: DevOps Engineer | posted Wed, 12 Aug 2026 09:41:04 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842467-devops-engineer/)**: DevOps Engineer | posted Tue, 11 Aug 2026 21:58:56 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/834875-devops-engineer/)**: DevOps Engineer | posted Tue, 11 Aug 2026 19:21:07 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842217-middle-data-engineer/)**: Middle Data Engineer | posted Tue, 11 Aug 2026 12:06:53 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/831339-data-engineer/)**: Data Engineer | posted Tue, 11 Aug 2026 12:05:34 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842208-senior-data-platform-engineer-5647/)**: Senior Data Platform Engineer (#5647) | posted Tue, 11 Aug 2026 11:46:49 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/829201-platform-engineer/)**: Platform Engineer | posted Tue, 11 Aug 2026 09:58:01 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/824385-middle-data-engineer/)**: Middle+ Data Engineer | posted Tue, 11 Aug 2026 09:37:50 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838584-senior-software-engineer-java-c-query-engine-/)**: Senior Software Engineer (Java/C++) — Query Engine / Data Platform | posted Tue, 11 Aug 2026 09:32:25 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/836271-data-warehouse-engineer/)**: Data Warehouse Engineer | posted Mon, 10 Aug 2026 18:54:48 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842096-data-engineer/)**: Data Engineer | posted Mon, 10 Aug 2026 18:34:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842073-senior-data-engineer/)**: Senior Data Engineer | posted Mon, 10 Aug 2026 17:22:47 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838846-senior-devops-engineer-contractor/)**: Senior DevOps Engineer — Contractor | posted Mon, 10 Aug 2026 14:01:43 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841883-devops-engineer/)**: DevOps Engineer | posted Mon, 10 Aug 2026 09:34:40 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841867-senior-software-engineer-java-c-query-engine-/)**: Senior Software Engineer (Java/C++)  — Query Engine / Data Platform | posted Sun, 09 Aug 2026 16:58:39 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841866-middle-sdet-data-platform-query-engine/)**: Middle SDET — Data Platform / Query Engine | posted Sun, 09 Aug 2026 16:58:39 +0300
+- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841865-middle-software-engineer-java-c-query-engine-/)**: Middle Software Engineer (Java/C++) — Query Engine / Data Platform | posted Sun, 09 Aug 2026 16:56:39 +0300
