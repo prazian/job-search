@@ -86,40 +86,36 @@ LANG_BLOCK_RE = re.compile(r'csc--language.*?</span>\s*</span>', re.S)
 LANG_PRIMARY_RE = re.compile(r'csc__primary">([^<]+)<')
 LANG_SECONDARY_RE = re.compile(r'csc__secondary">([^<]+)<')
 LD_JSON_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
-
-# Country codes seen in Djinni's applicantLocationRequirements, both ISO
-# alpha-2 ("UA") and alpha-3 ("UKR") show up depending on the listing,
-# confirmed directly. Region-scale entries (like "Europe") come through as
-# plain words already and are handled by _common.is_preferred_region.
-_COUNTRY_CODE_NAMES = {
-    "ua": "Ukraine", "ukr": "Ukraine",
-    "pl": "Poland", "pol": "Poland",
-    "ru": "Russia", "rus": "Russia",
-    "by": "Belarus", "blr": "Belarus",
-    "ge": "Georgia", "geo": "Georgia",
-    "md": "Moldova", "mda": "Moldova",
-    "ro": "Romania", "rou": "Romania",
-    "kz": "Kazakhstan", "kaz": "Kazakhstan",
-    "uz": "Uzbekistan", "uzb": "Uzbekistan",
-    "rs": "Serbia", "srb": "Serbia",
-    "bg": "Bulgaria", "bgr": "Bulgaria",
-    "lt": "Lithuania", "ltu": "Lithuania",
-    "lv": "Latvia", "lva": "Latvia",
-    "ee": "Estonia", "est": "Estonia",
-    "cz": "Czechia", "cze": "Czechia",
-    "sk": "Slovakia", "svk": "Slovakia",
-    "hu": "Hungary", "hun": "Hungary",
-    "de": "Germany", "deu": "Germany",
-    "us": "United States", "usa": "United States",
-    "gb": "United Kingdom", "gbr": "United Kingdom",
-    "am": "Armenia", "arm": "Armenia",
-}
+# The sidebar "quick facts" panel's own eligible-candidates line, scoped by
+# requiring its exact trailing caption so it can't match the panel's
+# "Office: X" line below it, which reuses the same span class for a
+# different, unrelated fact (a job's office can be in Poland while it's
+# still fully remote-eligible worldwide, confirmed on a real listing).
+CANDIDATE_COUNTRIES_RE = re.compile(
+    r'<span class="location-text">([^<]*)</span>\s*</strong>\s*'
+    r'<div class="font-size-extra-small">Countries where we consider candidates</div>',
+    re.S,
+)
 
 
 def _as_list(value) -> list:
     if value is None:
         return []
     return value if isinstance(value, list) else [value]
+
+
+def _is_broad_location(token: str) -> bool:
+    """"EU" is not "Europe": Armenia is geographically in Europe but not in
+    the European Union, confirmed by you directly on a real "EU" listing, so
+    the two need to be told apart rather than both waved through as "Europe"
+    the way _common.is_preferred_region would. Everything else broad enough
+    to include Armenia (Worldwide, or "Europe" spelled out in any phrasing
+    like "Countries of Europe") passes; "EU" specifically, or a single named
+    country that isn't Armenia, does not."""
+    t = token.strip().lower()
+    if t in ("eu", "european union", "eu only"):
+        return False
+    return bool(re.search(r"\b(worldwide|anywhere|global)\b", t)) or "europe" in t
 
 
 def required_languages(html: str) -> list[tuple[str, str]]:
@@ -139,44 +135,44 @@ def required_languages(html: str) -> list[tuple[str, str]]:
 
 
 def location_requirement(html: str) -> str | None:
-    """Reads the Schema.org JobPosting JSON-LD block Djinni embeds on every
-    job page. jobLocationType == "TELECOMMUTE" means remote; if it's missing
-    and jobLocation names a country, that's an office-based role, not remote.
-    applicantLocationRequirements is the eligibility restriction on an
-    otherwise-remote role (can be a single object or, confirmed directly, a
-    list when several countries are eligible), a country there (as opposed to
-    a broad region like "Europe") means only residents of that
-    country/countries are eligible, exactly the Ukraine-residency pattern
-    this was built to catch."""
+    """Two independent checks, in order:
+
+    1. The Schema.org JobPosting JSON-LD block Djinni embeds on every job
+       page. jobLocationType == "TELECOMMUTE" means remote; if it's missing
+       and jobLocation names a country, that's an office-based (or hybrid)
+       role, physical presence trumps whatever the eligibility line below
+       says, confirmed on a real "Hybrid Remote, Office: Poland, countries
+       considered: Worldwide" listing where the hybrid office requirement is
+       the real constraint despite the broad-sounding eligibility line.
+    2. If it's genuinely remote, the sidebar's own "Countries where we
+       consider candidates" line (see CANDIDATE_COUNTRIES_RE), the
+       human-readable eligibility whitelist. Anything not broad enough to
+       include Armenia (a single country, or "EU" specifically, see
+       _is_broad_location) is a hard skip, exactly the Ukraine/EU-residency
+       pattern this was built to catch."""
     m = LD_JSON_RE.search(html)
-    if not m:
-        return None
-    try:
-        data = json.loads(m.group(1))
-    except (json.JSONDecodeError, TypeError):
-        return None
-    if not isinstance(data, dict):
-        return None
+    if m:
+        try:
+            data = json.loads(m.group(1))
+        except (json.JSONDecodeError, TypeError):
+            data = None
+        if isinstance(data, dict) and data.get("jobLocationType") != "TELECOMMUTE":
+            for job_loc in _as_list(data.get("jobLocation")):
+                if not isinstance(job_loc, dict):
+                    continue
+                country = (job_loc.get("address") or {}).get("addressCountry")
+                if country:
+                    return f"office-based in {country}, not remote"
 
-    if data.get("jobLocationType") != "TELECOMMUTE":
-        for job_loc in _as_list(data.get("jobLocation")):
-            if not isinstance(job_loc, dict):
-                continue
-            country = (job_loc.get("address") or {}).get("addressCountry")
-            if country:
-                return f"office-based in {country}, not remote"
-
-    names = []
-    for req in _as_list(data.get("applicantLocationRequirements")):
-        if not isinstance(req, dict):
-            continue
-        address = req.get("address") or {}
-        code = (address.get("addressCountry") or "").strip().lower()
-        if code:
-            names.append(_COUNTRY_CODE_NAMES.get(code, code.upper()))
-    if names:
-        return f"remote, but restricted to applicants based in {' or '.join(names)}"
-    return None
+    cm = CANDIDATE_COUNTRIES_RE.search(html)
+    if not cm:
+        return None
+    tokens = [t.strip() for t in re.split(r",|\bor\b", cm.group(1)) if t.strip()]
+    if not tokens or any(_is_broad_location(t) for t in tokens):
+        return None
+    if any(t.lower() in ("eu", "european union", "eu only") for t in tokens):
+        return "EU-only, and Armenia isn't in the EU (though it is in Europe)"
+    return f"remote, but restricted to applicants based in {' or '.join(tokens)}"
 
 
 def fetch_job_flags(url: str) -> str | None:
