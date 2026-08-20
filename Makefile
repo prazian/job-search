@@ -1,7 +1,7 @@
 PYTHON := python3
 TODAY := $(shell date +%Y-%m-%d)
 
-.PHONY: help hn hn-force hn-json oss oss-force oss-json remotive remotive-force remotive-json himalayas himalayas-force himalayas-json scan tracker clean
+.PHONY: help hn hn-force hn-json oss oss-force oss-json remotive remotive-force remotive-json himalayas himalayas-force himalayas-json djinni djinni-force djinni-json scan tracker clean
 
 help:
 	@echo "Job search playbook, available commands:"
@@ -10,26 +10,31 @@ help:
 	@echo "                         already exists, does nothing to it, your edits are safe."
 	@echo "  make hn-force          Same scan, but rescans and merges fresh data into today's file even if it exists"
 	@echo "  make hn-json           Same scan, machine-readable JSON to stdout, no file written or checked"
-	@echo "  make oss               Check OSS target repos for open help-wanted work (~2 min, rate-limited)."
+	@echo "  make oss               Check OSS target repos for open help-wanted work (~2 min, rate-limited, shows progress)."
 	@echo "                         If scan-results/$(TODAY)/oss-scan.md already exists, does nothing to it."
 	@echo "  make oss-force         Same scan, but rescans and merges fresh data into today's file even if it exists"
 	@echo "  make oss-json          Same scan, machine-readable JSON to stdout, no file written or checked"
-	@echo "  make remotive          Scan Remotive for contract/freelance leads (EMEA/APAC preferred, US-only auto-skipped)."
-	@echo "                         If scan-results/$(TODAY)/remotive-scan.md already exists, does nothing to it."
+	@echo "  make remotive          Scan Remotive for contract/freelance leads (EMEA/APAC preferred, US-only auto-skipped,"
+	@echo "                         English-only). If scan-results/$(TODAY)/remotive-scan.md already exists, does nothing."
 	@echo "  make remotive-force    Same scan, but rescans and merges fresh data into today's file even if it exists"
 	@echo "  make remotive-json     Same scan, machine-readable JSON to stdout, no file written or checked"
 	@echo "  make himalayas         Crawl Himalayas (full-time + contract, ~500 pages/~10k jobs sampled, several"
-	@echo "                         minutes, shows page-by-page progress). If scan-results/$(TODAY)/himalayas-scan.md"
+	@echo "                         minutes, shows a progress bar, English-only). If scan-results/$(TODAY)/himalayas-scan.md"
 	@echo "                         already exists, does nothing to it. Use HIMALAYAS_PAGES=N for a deeper crawl."
 	@echo "  make himalayas-force   Same scan, but rescans and merges fresh data into today's file even if it exists"
 	@echo "  make himalayas-json    Same scan, machine-readable JSON to stdout, no file written or checked"
-	@echo "  make scan              Run hn, oss, remotive, and himalayas back to back"
+	@echo "  make djinni            Scan Djinni (Ukraine/CIS/Eastern Europe tech board, English-only, no other-language-"
+	@echo "                         required listings). If scan-results/$(TODAY)/djinni-scan.md already exists, does nothing."
+	@echo "  make djinni-force      Same scan, but rescans and merges fresh data into today's file even if it exists"
+	@echo "  make djinni-json       Same scan, machine-readable JSON to stdout, no file written or checked"
+	@echo "  make scan              Run hn, oss, remotive, himalayas, and djinni back to back"
 	@echo "  make tracker           Open tracker.csv in the default app"
 	@echo "  make clean             Remove __pycache__ and other build junk (keeps scan-results/, that's your history)"
 	@echo ""
 	@echo "Each day's reports live together in scan-results/YYYY-MM-DD/, sorted naturally, newest folder is always the last one alphabetically."
 	@echo "Applied somewhere? Just open the report and tick its checkbox, [ ] to [x], then save. It's never re-parsed until a new day's file is created."
 	@echo "Any scan's fetch fails partway (rate limit, network), the whole run aborts and writes nothing, exit code 1, so nothing broken gets persisted."
+	@echo "All sources (except hn.ycombinator.com, which is English by nature) filter out non-English listings and listings requiring a language other than English."
 
 HIMALAYAS_PAGES ?= 500
 
@@ -69,7 +74,16 @@ himalayas-force:
 himalayas-json:
 	$(PYTHON) scripts/himalayas_scan.py --pages $(HIMALAYAS_PAGES) --json
 
-scan: hn oss remotive himalayas
+djinni:
+	$(PYTHON) scripts/djinni_scan.py
+
+djinni-force:
+	$(PYTHON) scripts/djinni_scan.py --force
+
+djinni-json:
+	$(PYTHON) scripts/djinni_scan.py --json
+
+scan: hn oss remotive himalayas djinni
 
 tracker:
 	open tracker.csv

@@ -175,6 +175,7 @@ def main():
     for i, repo in enumerate(repos):
         if i > 0:
             time.sleep(2)
+        print(f"  {_common.progress_bar(i, len(repos))}  checking {i + 1}/{len(repos)}: {repo}", file=sys.stderr)
         try:
             results.append(check_repo(repo))
         except Exception as e:

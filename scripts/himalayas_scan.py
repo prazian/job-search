@@ -16,6 +16,13 @@ X matches so far"). Pass --pages N to crawl further, or --all to attempt the
 entire firehose (thousands of requests, genuinely slow, only do this if you
 mean it).
 
+Only includes listings whose title and full description are confidently
+English (script + common-word heuristics, no external library, see
+_common.is_english_text) and that don't explicitly require a language other
+than English (e.g. "native Armenian speaker", "fluent Russian required", see
+_common.requires_other_language). You only speak English, so both checks run
+against the full job description, not just the short excerpt.
+
 Writes a dated, clickable markdown report to
 scan-results/YYYY-MM-DD/himalayas-scan.md, one folder per day. If today's file
 already exists, running this again does nothing to it, prints a note and
@@ -56,6 +63,14 @@ DEFAULT_STACK = [
 ]
 
 
+def strip_html(t: str) -> str:
+    if not t:
+        return ""
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = re.sub(r"\s+", " ", t)
+    return t.strip()
+
+
 def fetch_json(url: str, retries: int = 4) -> dict:
     """429s happen during a long crawl even at a polite pace, no documented
     rate limit or Retry-After header from this API, so back off progressively
@@ -85,6 +100,17 @@ def display_company(j: dict) -> str:
     return name or j.get("companySlug", "?")
 
 
+def format_locations(countries: list[str]) -> str:
+    """Some listings restrict to "everywhere except a handful of countries",
+    which Himalayas represents as a 100+ country allowlist, dumping all of
+    them inline made every such line an unreadable wall of text."""
+    if not countries:
+        return "no restriction stated"
+    if len(countries) <= 6:
+        return ", ".join(countries)
+    return f"{', '.join(countries[:4])}, and {len(countries) - 4} more countries"
+
+
 def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tuple[list[dict], int, int]:
     """Returns (matches, pages_crawled, total_pages_available)."""
     first = fetch_json(f"{API}?limit={PAGE_SIZE}&offset=0")
@@ -103,11 +129,25 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
             seen_guids.add(guid)
             title = j.get("title", "")
             categories = " ".join(j.get("categories", []))
-            text = f"{title} {categories} {j.get('excerpt', '')}"
+            excerpt_text = j.get("excerpt", "")
+            text = f"{title} {categories} {excerpt_text}"
             if not stack_pattern.search(text):
                 continue
+            full_desc = strip_html(j.get("description", "")) or excerpt_text
+            if not _common.is_english_text(f"{title} {full_desc}"):
+                continue
+            other_lang = _common.requires_other_language(f"{title} {full_desc}")
+            if other_lang:
+                continue
             company = display_company(j)
-            location = ", ".join(j.get("locationRestrictions", []) or []) or "no restriction stated"
+            countries = j.get("locationRestrictions", []) or []
+            location_display = format_locations(countries)
+            # Region checks look at title + raw country list together: a
+            # 150-country "rest of world minus US" restriction never spells
+            # out "EMEA" itself, but the job title usually does, and a lone
+            # country name like "South Africa" would false-positive-match
+            # "africa" on its own without the title's context to lean on.
+            region_text = f"{title} {', '.join(countries)}"
             employment = j.get("employmentType", "?")
             blocked = next((name for name in blocklist if name.lower() in company.lower()), None)
             pub = j.get("pubDate")
@@ -116,16 +156,16 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
                 "id": guid,
                 "author": company,
                 "url": j.get("applicationLink") or guid,
-                "excerpt": f"{title} | {location} | {employment} | posted {posted}",
-                "location": location,
-                "hard_skip": "US-only, and you don't reside in the US" if _common.is_us_only(location) else None,
-                "preferred_region": _common.is_preferred_region(location),
+                "excerpt": f"{title} | {location_display} | {employment} | posted {posted}",
+                "location": location_display,
+                "hard_skip": "US-only, and you don't reside in the US" if _common.is_us_only(region_text) and len(countries) <= 3 else None,
+                "preferred_region": _common.is_preferred_region(region_text),
                 "blocked": blocked,
             })
 
     process_page(first)
     pages_done = 1
-    print(f"  page {pages_done}/{pages_to_crawl} crawled, {len(matches)} matches so far", file=sys.stderr)
+    print(f"  {_common.progress_bar(pages_done, pages_to_crawl)}  page {pages_done}/{pages_to_crawl}  {len(matches)} matches so far", file=sys.stderr)
 
     for page in range(1, pages_to_crawl):
         offset = page * PAGE_SIZE
@@ -133,7 +173,7 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
         process_page(data)
         pages_done += 1
         if pages_done % 10 == 0 or pages_done == pages_to_crawl:
-            print(f"  page {pages_done}/{pages_to_crawl} crawled, {len(matches)} matches so far", file=sys.stderr)
+            print(f"  {_common.progress_bar(pages_done, pages_to_crawl)}  page {pages_done}/{pages_to_crawl}  {len(matches)} matches so far", file=sys.stderr)
         time.sleep(0.6)  # 0.2s got a 429 after ~110 pages, this held up in testing
 
     matches.sort(key=lambda m: not m["preferred_region"])

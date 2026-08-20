@@ -100,3 +100,77 @@ def is_us_only(location: str) -> bool:
 
 def is_preferred_region(location: str) -> bool:
     return bool(PREFERRED_REGION_RE.search(location or ""))
+
+
+# English-language detection, no external library, two checks: script and
+# common-word density. Script alone catches Cyrillic (Russian) and Armenian
+# script outright, since those are entirely different Unicode blocks from
+# Latin. Word density catches other Latin-script languages (Turkish, French,
+# German, ...) that script-checking alone would let through.
+_LATIN_LETTER_RE = re.compile(r"[A-Za-z]")
+_ANY_LETTER_RE = re.compile(r"[^\W\d_]", re.UNICODE)
+_ENGLISH_WORDS = frozenset(
+    "the and you will with for is are this that our we experience team remote "
+    "years work role skills strong looking join required must have has who "
+    "about company product build development engineer engineering software".split()
+)
+_WORD_RE = re.compile(r"[a-zA-Z]+")
+
+
+def is_english_text(text: str, min_letters: int = 30) -> bool:
+    """True if text is confidently English. Short/empty text passes by
+    default (not enough signal to say otherwise, better to under-filter than
+    silently drop something that just had a short title)."""
+    if not text:
+        return True
+    letters = _ANY_LETTER_RE.findall(text)
+    if len(letters) < min_letters:
+        return True
+    latin = sum(1 for c in letters if _LATIN_LETTER_RE.match(c))
+    if latin / len(letters) < 0.85:
+        return False
+    words = [w.lower() for w in _WORD_RE.findall(text)]
+    if len(words) < 15:
+        return True
+    hits = sum(1 for w in words if w in _ENGLISH_WORDS)
+    return (hits / len(words)) >= 0.03
+
+
+# A job can be written in English but still require a language you don't
+# speak ("Armenian native speaker", "fluent Russian required"), catch that
+# as a separate check from is_english_text, which only judges the text
+# itself.
+_OTHER_LANGUAGES = (
+    "armenian|russian|turkish|arabic|georgian|azerbaijani|persian|farsi|ukrainian|"
+    "polish|german|french|spanish|italian|portuguese|dutch|chinese|mandarin|"
+    "japanese|korean|hindi|hebrew|romanian|greek|bulgarian|serbian|croatian|"
+    "czech|slovak|hungarian|vietnamese|thai|indonesian|swedish|norwegian|danish|finnish"
+)
+OTHER_LANGUAGE_REQUIREMENT_RE = re.compile(
+    rf"\b(fluent|native|proficient|proficiency|speak|speaking|speaker|knowledge of|"
+    rf"command of|required?)\b[^.\n]{{0,40}}\b({_OTHER_LANGUAGES})\b"
+    rf"|\b({_OTHER_LANGUAGES})\b[^.\n]{{0,40}}\b(fluent|native|proficient|proficiency|"
+    rf"required|speaking|speaker|language)\b",
+    re.I,
+)
+
+
+def requires_other_language(text: str) -> str | None:
+    """Returns the language name if the text seems to require one you don't
+    speak, else None. English itself is never flagged (checking for "English
+    required" would otherwise self-match the language name list's neighbors)."""
+    m = OTHER_LANGUAGE_REQUIREMENT_RE.search(text or "")
+    if not m:
+        return None
+    lang = (m.group(2) or m.group(3) or "").capitalize()
+    return lang or None
+
+
+def progress_bar(done: int, total: int, width: int = 24) -> str:
+    """[###########-------------] 46%, plain text so it degrades fine when
+    piped to a log file instead of a live terminal."""
+    total = max(total, 1)
+    frac = min(done / total, 1.0)
+    filled = int(width * frac)
+    bar = "#" * filled + "-" * (width - filled)
+    return f"[{bar}] {frac * 100:5.1f}%"

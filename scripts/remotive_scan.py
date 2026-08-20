@@ -13,6 +13,11 @@ hn_scan.py, Armenia doesn't clear US-only bars. Everything else is shown with
 its location string attached, and EMEA/APAC/Worldwide-flagged listings sort
 first, since those are the preferred region.
 
+Only includes listings whose title and full description are confidently
+English and that don't explicitly require a language other than English (see
+_common.is_english_text / _common.requires_other_language), since you only
+speak English.
+
 Writes a dated, clickable markdown report to
 scan-results/YYYY-MM-DD/remotive-scan.md, one folder per day. If today's file
 already exists, running this again does nothing to it, prints a note and
@@ -53,6 +58,14 @@ def fetch_json(url: str) -> dict:
         return json.loads(resp.read().decode("utf-8"))
 
 
+def strip_html(t: str) -> str:
+    if not t:
+        return ""
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = re.sub(r"\s+", " ", t)
+    return t.strip()
+
+
 def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
     data = fetch_json(f"{API}?limit=500")
     matches = []
@@ -61,6 +74,11 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
             continue
         text = f"{j.get('title', '')} {j.get('category', '')} {' '.join(j.get('tags', []))}"
         if not stack_pattern.search(text):
+            continue
+        full_desc = strip_html(j.get("description", ""))
+        if not _common.is_english_text(f"{j.get('title', '')} {full_desc}"):
+            continue
+        if _common.requires_other_language(f"{j.get('title', '')} {full_desc}"):
             continue
         location = j.get("candidate_required_location", "")
         blocked = next((name for name in blocklist if name.lower() in j.get("company_name", "").lower()), None)
