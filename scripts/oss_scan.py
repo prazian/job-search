@@ -8,15 +8,16 @@ adds label:accepted too on repos that actually use that triage label (checked
 live per repo, not assumed). Uses GitHub's public REST API (unauthenticated:
 60 req/hr core, 10 req/min search, this script paces itself).
 
-Writes a dated, clickable markdown report to scan-results/oss-scan-YYYY-MM-DD.md,
-one per day. If today's file already exists, running this again does nothing
-to it (skips the ~2 minute rate-limited scan entirely), prints a note and
-exits, your edits are never touched or re-parsed mid-day. Pass --force to
-rescan and merge fresh GitHub data into today's file anyway. Each repo's
-"Applied" column shows a checkbox, just open the file in an editor and tick
-it, "- [ ]" to "- [x]", once you've reached out. When a genuinely new day's
-file gets created, that column is read back out of the most recent prior
-day's file, so applied status carries forward automatically.
+Writes a dated, clickable markdown report to
+scan-results/YYYY-MM-DD/oss-scan.md, one folder per day. If today's file
+already exists, running this again does nothing to it (skips the ~2 minute
+rate-limited scan entirely), prints a note and exits, your edits are never
+touched or re-parsed mid-day. Pass --force to rescan and merge fresh GitHub
+data into today's file anyway. Each repo's "Applied" column shows a checkbox,
+just open the file in an editor and tick it, "- [ ]" to "- [x]", once you've
+reached out. When a genuinely new day's file gets created, that column is read
+back out of the most recent prior day's file, so applied status carries
+forward automatically.
 
 If any repo's fetch fails partway through (rate limit, network, whatever),
 the whole run aborts and no file gets written, exit code 1, nothing
@@ -29,7 +30,6 @@ Usage:
     python3 oss_scan.py --force          # rescan and merge fresh data into today's file even if it exists
 """
 import argparse
-import glob
 import json
 import os
 import re
@@ -39,9 +39,10 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+import _common
+
 API = "https://api.github.com"
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCAN_DIR = os.path.join(ROOT, "scan-results")
+SOURCE = "oss"
 TABLE_ROW_RE = re.compile(r"^\|\s*\[([^\]]+)\]\([^)]+\)\s*\|\s*(\[x\]|\[ \])\s*\|")
 
 # Repos worth checking periodically: fast-growing or sponsor/VC-backed infra &
@@ -58,11 +59,6 @@ REPOS = [
     "zitadel/zitadel",
     "kubernetes-sigs/karpenter",
 ]
-
-
-def default_out() -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
-    return os.path.join(SCAN_DIR, f"oss-scan-{today}.md")
 
 
 def get(url: str) -> dict:
@@ -135,14 +131,6 @@ def applied_repos_from_file(path: str) -> set[str]:
     return applied
 
 
-def find_prior_report(out_path: str) -> str | None:
-    """Today's own file if a same-day rerun, else the most recent earlier report."""
-    if os.path.exists(out_path):
-        return out_path
-    others = sorted(glob.glob(os.path.join(SCAN_DIR, "oss-scan-*.md")))
-    return others[-1] if others else None
-
-
 def write_markdown(results: list[dict], path: str, applied: set[str]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -150,7 +138,7 @@ def write_markdown(results: list[dict], path: str, applied: set[str]) -> None:
         "# OSS help-wanted scan",
         "",
         f"Generated {now}.",
-        "New file each day (`scan-results/oss-scan-YYYY-MM-DD.md`). Once this file exists, running the scan again today does nothing to it, edit freely.",
+        "New file each day (`scan-results/YYYY-MM-DD/oss-scan.md`). Once this file exists, running the scan again today does nothing to it, edit freely.",
         "Applied somewhere? Tick its box in the Applied column, `[ ]` to `[x]`, and save. It carries into the next new day's scan automatically.",
         "",
         "| Repo | Applied | Stars | Open issues | Help wanted | Good first issue |",
@@ -172,10 +160,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", action="append", help="owner/repo, repeatable; overrides default list")
     ap.add_argument("--json", action="store_true", help="output JSON instead of text, skips writing the markdown file")
-    ap.add_argument("--out", default=None, help="markdown report path (default scan-results/oss-scan-<today>.md)")
+    ap.add_argument("--out", default=None, help="markdown report path (default scan-results/<today>/oss-scan.md)")
     ap.add_argument("--force", action="store_true", help="rescan and merge fresh data into today's file even if it already exists")
     args = ap.parse_args()
-    out_path = args.out or default_out()
+    out_path = args.out or _common.dated_out(SOURCE)
 
     if not args.json and not args.force and os.path.exists(out_path):
         print(f"{out_path} already exists, leaving it alone.")
@@ -210,7 +198,7 @@ def main():
         print(f"  stars={r['stars']}  open_issues={r['open_issues']}  "
               f"help_wanted={r['help_wanted_open']}  good_first_issue={r['good_first_issue_open']}")
 
-    prior = find_prior_report(out_path)
+    prior = _common.find_prior_report(out_path, SOURCE)
     applied = applied_repos_from_file(prior)
     write_markdown(results, out_path, applied)
     print(f"\nReport written to {out_path}")

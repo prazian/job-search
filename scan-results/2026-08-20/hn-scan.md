@@ -1,7 +1,7 @@
 # HN contract/freelance scan
 
-Generated 2026-08-19 20:00 UTC. Stack filter: aws, python, typescript, golang, go, linux, cloud, devops, kubernetes, terraform, infrastructure.
-New file each day (`scan-results/hn-scan-YYYY-MM-DD.md`). Once this file exists, running the scan again today does nothing to it, edit freely.
+Generated 2026-08-20 00:01 UTC. Stack filter: aws, python, typescript, golang, go, linux, cloud, devops, kubernetes, terraform, infrastructure.
+New file each day (`scan-results/YYYY-MM-DD/hn-scan.md`). Once this file exists, running the scan again today does nothing to it, edit freely.
 Applied a lead? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `- [x] [skipped: not a fit] **[author]...`. Either tag moves it to its own section below the next time a new day's file is created.
 
 ## [Ask HN: Who is hiring? (August 2026)](https://news.ycombinator.com/item?id=49156683)
