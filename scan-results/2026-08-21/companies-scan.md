@@ -127,7 +127,7 @@ Generated 2026-08-21 10:01 UTC. New file each day, edit freely, `--force` to res
 - [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/8028067?gh_jid=8028067)**: Senior Backend Engineer - Go and/or JVM | Warszawa, Masovian Voivodeship, Poland | posted 2026-06-26
 - [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/8028077?gh_jid=8028077)**: Senior Backend Engineer - Python and/or Go | Warszawa, Masovian Voivodeship, Poland | posted 2026-06-26
 - [ ] **[Freenow](https://job-boards.greenhouse.io/freenow/jobs/8113888)**: Backend Engineer | Barcelona, Spain | posted 2026-08-11
-- [ ] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Latin America, Argentina, Brazil, Colombia, Mexico, Ukraine
+- [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Latin America, Argentina, Brazil, Colombia, Mexico, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/backend-developer/)**: Backend Developer | Europe, Albania, Poland, Romania, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/principal-senior-backend-engineer/)**: Lead/Principal Go Developer | Africa, Egypt, Morocco, Uganda, Latin America, Brazil, Colombia, Mexico, North America, Canada, USA, Europe, Czech Republic, Germany, Poland, Slovakia, Spain, UK, Ukraine
