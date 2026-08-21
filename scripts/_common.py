@@ -246,6 +246,15 @@ def requires_specific_location(text: str) -> str | None:
     return None
 
 
+_DENMARK_RE = re.compile(r"\b(denmark|danish|copenhagen)\b", re.I)
+
+
+def mentions_denmark(text: str) -> bool:
+    """Explicit, standing preference: no Denmark, no Danish companies,
+    regardless of how the rest of a listing's location/region reads."""
+    return bool(_DENMARK_RE.search(text or ""))
+
+
 def progress_bar(done: int, total: int, width: int = 24) -> str:
     """[###########-------------] 46%, plain text so it degrades fine when
     piped to a log file instead of a live terminal."""

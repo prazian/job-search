@@ -1,0 +1,142 @@
+# Company career-page scan (Europe/Armenia/Georgia/Cyprus, no Denmark)
+
+Generated 2026-08-21 10:01 UTC. New file each day, edit freely, `--force` to rescan.
+
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/7925103?gh_jid=7925103)**: Backend Engineer - Engagement | Barcelona  | posted 2026-07-02
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8020517?gh_jid=8020517)**: Backend Engineer - Investments & Savings | Berlin, Barcelona | posted 2026-06-26
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8129812?gh_jid=8129812)**: Backend Engineer - Lending | Berlin | posted 2026-08-14
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8064019?gh_jid=8064019)**: Backend Engineer - Lending | Barcelona | posted 2026-07-14
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8132053?gh_jid=8132053)**: Backend Engineer - Payments | Berlin, Barcelona | posted 2026-08-17
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/7960138?gh_jid=7960138)**: Backend Engineer - Subscriptions | Barcelona | posted 2026-05-27
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8108866?gh_jid=8108866)**: Senior Backend Engineer - Agentic Platform | Barcelona | posted 2026-08-08
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/7992597?gh_jid=7992597)**: Senior Backend Engineer - Connectivity | Berlin, Barcelona | posted 2026-06-10
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/7656920?gh_jid=7656920)**: Senior Backend Engineer - Customer Risk Lifecycle | Berlin, Barcelona | posted 2026-05-08
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8076441?gh_jid=8076441)**: Senior Cloud Security Engineer | Berlin, Barcelona | posted 2026-07-21
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/7797431?gh_jid=7797431)**: Senior Site Reliability Engineer - Infrastructure | Barcelona | posted 2026-04-09
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/7796233?gh_jid=7796233)**: Senior Site Reliability Engineer - Infrastructure | Berlin | posted 2026-04-09
+- [ ] **[N26](https://n26.com/en-eu/careers/positions/8007338?gh_jid=8007338)**: Senior SRE - Cloud Network Engineering | Berlin | posted 2026-06-17
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6448444)**: Associate Linux Support Engineer | Home based - Worldwide | posted 2025-02-10
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4124053)**: C, Golang Software Engineer working on dqlite, a Raft extension for SQLite | Home based - EMEA | posted 2022-05-16
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4676649)**: Cloud Engineering Manager | Home based - Worldwide | posted 2022-11-03
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6132532)**: Cloud Field Engineer | Home based - Worldwide | posted 2024-07-24
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7410479)**: Cloud Field Engineering Manager | Home based - Worldwide | posted 2025-11-20
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6283017)**: Cloud Professional Services Manager | Home based - Worldwide | posted 2024-10-28
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5915936)**: Cloud Solutions Architect - Alliances | Home based - Worldwide | posted 2024-04-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/2456563)**: Cloud Support Engineer | Home based - Worldwide | posted 2020-11-19
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/2969042)**: Distributed Systems Testing Software Engineer, Python / Go | Home based - Worldwide | posted 2021-03-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3821346)**: Embedded & Desktop Linux Systems Engineer - Optimisation | Home based - Worldwide | posted 2022-03-26
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3362765)**: Embedded Linux Field Engineer for Devices/IoT | Home based - Worldwide | posted 2021-08-04
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6189337)**: Embedded Linux Senior Software Engineer - Optimisation | Home based - Worldwide | posted 2025-02-10
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3666345)**: Engineering Manager - Linux Hardware Enablement | Home Based - Americas; Home Based - APAC; Home based - EMEA | posted 2022-03-29
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4144793)**: Engineering Manager - Public Cloud, Python, Golang | Home Based - Americas; Home based - EMEA | posted 2022-04-15
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3740499)**: Engineering Manager - Python and K8s | Home Based - APAC; Home based - EMEA | posted 2022-05-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3542384)**: Engineering Manager - Ubuntu Linux Kernel | Home based - Worldwide | posted 2022-03-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5146709)**: Golang Engineer | Home based - Worldwide | posted 2023-10-12
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5692058)**: Golang Engineering Manager, Commercial Systems | Home based - EMEA | posted 2024-02-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4827747)**: Golang Software Engineer, Commercial Systems | Home based - EMEA | posted 2023-01-26
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4960407)**: Golang System Software Engineer - Containers / Virtualisation | Home Based - Americas; Home based - EMEA | posted 2023-03-29
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/8055009)**: Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu | Home based - Worldwide | posted 2026-07-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6426388)**: Juju Software Engineer (Go) | Home based - EMEA | posted 2024-11-22
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5370815)**: Junior Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-02-25
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7334725)**: Kernel Build Automation Engineer - Ubuntu Linux | Home based - EMEA | posted 2025-10-16
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6010955)**: Lead Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-06-03
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4717512)**: Linux Cryptography and Security Engineer | Home based - Worldwide | posted 2022-11-23
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5140562)**: Linux Devices Software Engineer | Home based - Worldwide; Office Based - Taipei, Taiwan | posted 2023-10-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4394058)**: Linux devices software engineer - snapd | Home Based - Americas; Home based - EMEA | posted 2022-07-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5151903)**: Linux Kernel Engineer | Home based - Worldwide | posted 2023-10-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6062471)**: Linux Platform Integration - Ubuntu Systems Senior Engineer | Home based - Worldwide | posted 2024-06-23
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7432750)**: Linux Software Engineer - Ubuntu for Next-Gen Silicon (multiple roles and seniority levels) | Home Based - Americas; Home Based - APAC; Home based - EMEA | posted 2025-11-28
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6643965)**: Product Manager - Cloud | Home based - EMEA | posted 2025-02-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5703396)**: Python and Kubernetes Software Engineer - Data, Workflows, AI/ML & Analytics | Home based - Worldwide | posted 2024-04-11
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5143074)**: Python Engineer | Home based - Worldwide | posted 2023-10-11
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5692059)**: Python Engineering Manager, Commercial Systems | Home based - EMEA | posted 2024-02-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6401160)**: Python Software Engineer, Commercial Systems | Home based - EMEA | posted 2024-11-15
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3658005)**: Python Software Engineer - Ubuntu Hardware Certification Team | Home based - EMEA | posted 2022-03-28
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5833620)**: Rust Engineering Lead - Linux and Open Source | Home based - Worldwide | posted 2024-04-04
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5995321)**: Senior Design Manager (Infrastructure) | Home based - EMEA | posted 2024-05-27
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5566674)**: Senior Juju Software Engineer (Go) | Home based - EMEA | posted 2023-12-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3142044)**: Senior Software Engineer (Backend) | Home based - EMEA | posted 2021-06-15
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7774649)**: Senior Software Engineer - Python/Golang - Kubernetes | Home Based - Americas; Home based - EMEA | posted 2026-04-02
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5937947)**: Senior Software Engineer - Python/MongoDB | Home based - EMEA | posted 2024-04-30
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4398031)**: Software Engineer - Cloud Images | Home Based - Americas; Home based - EMEA | posted 2023-02-03
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3062022)**: Software Engineer, Cloud - Sustaining Engineering | Home based - Worldwide | posted 2021-07-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3014391)**: Software Engineer - Data Infrastructure  | Home based - EMEA | posted 2021-05-12
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5218601)**: Software Engineer - Data Infrastructure - Kafka | Home based - EMEA | posted 2023-07-24
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5002072)**: Software Engineer - Data Infrastructure - OpenSearch/ElasticSearch | Home based - EMEA | posted 2023-04-20
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4086684)**: Software Engineering Manager - Container and Virtualisation Infrastructure | Home Based - Americas; Home based - EMEA | posted 2022-07-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3752633)**: Software Engineer - Python and K8s | Home based - Worldwide | posted 2022-02-23
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6222476)**: Software Engineer - Python - Container Images | Home based - EMEA | posted 2024-08-30
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/2928962)**: Software Engineer - Python/Golang - Kubernetes | Home Based - Americas; Home based - EMEA | posted 2021-02-19
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7574469)**: Staff Design Engineer - Cloud Networking UX | Home based - EMEA | posted 2026-01-29
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3880952)**: Staff Software Engineer for Identity Management (Go/Golang) | Home Based - Americas; Home based - EMEA | posted 2022-07-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3748266)**: Telco Cloud Field Engineer | Home Based - Americas; Home based - EMEA | posted 2022-04-25
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6076909)**: Ubuntu Linux Kernel Engineer - Silicon Enablement | Home based - Worldwide | posted 2024-06-27
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6072086)**: UX Designer - Infrastructure | Home based - EMEA | posted 2025-01-28
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8121350&gh_jid=8121350)**: AWS Alliance Director — EMEA | United Kingdom | posted 2026-08-11
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8022946&gh_jid=8022946)**: Lifecycle Marketing Manager - Self Service Cloud | United Kingdom | posted 2026-06-23
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8022947&gh_jid=8022947)**: Lifecycle Marketing Manager - Self Service Cloud | Ireland | posted 2026-06-23
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8114415&gh_jid=8114415)**: Marketplace Sales Specialist - EMEA (Azure, AWS & Google Cloud) | Barcelona, Spain | posted 2026-08-11
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8028261&gh_jid=8028261)**: Senior Product Manager - Self service cloud | Spain | posted 2026-07-01
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8041202&gh_jid=8041202)**: Senior Product Manager - Self service cloud | Greece | posted 2026-07-01
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8041203&gh_jid=8041203)**: Senior Product Manager - Self service cloud | Ireland | posted 2026-07-01
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8041208&gh_jid=8041208)**: Senior Product Manager - Self service cloud | Portugal | posted 2026-07-01
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8041209&gh_jid=8041209)**: Senior Product Manager - Self service cloud | Hungary | posted 2026-07-01
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8041211&gh_jid=8041211)**: Senior Product Manager - Self service cloud | Norway | posted 2026-07-01
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8025629&gh_jid=8025629)**: Software Engineer II - Platform Infrastructure (Orchestration) | Norway | posted 2026-08-04
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8025626&gh_jid=8025626)**: Software Engineer II - Platform Infrastructure (Orchestration) | Portugal | posted 2026-08-04
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=8025625&gh_jid=8025625)**: Software Engineer II - Platform Infrastructure (Orchestration) | Greece | posted 2026-08-04
+- [ ] **[Elastic](https://jobs.elastic.co/jobs?gh_jid=7976542&gh_jid=7976542)**: Software Engineer II - Platform Infrastructure (Orchestration) | Spain | posted 2026-08-04
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8716138002)**: Senior Backend Engineer | Remote, Poland; Remote, United Kingdom | posted 2026-08-14
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621733002)**: Senior Backend Engineer, AI Engineering: Chat    | Remote, Canada; Remote, United Kingdom | posted 2026-07-20
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8636713002)**: Senior Backend Engineer, Deployment Environments | Remote, United Kingdom | posted 2026-07-21
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8729451002)**: Senior Backend Engineer (Go), Tenant Scale: Gitaly  | Remote, Poland; Remote, United Kingdom | posted 2026-08-20
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8704363002)**: Senior Backend Engineer (Python), Agent Developer: Flow Components | Remote, United Kingdom | posted 2026-08-19
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621620002)**: Senior Backend Engineer (Ruby), AI Engineering: AI Coding | Remote, United Kingdom | posted 2026-07-13
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8646595002)**: Senior Backend Engineer (Ruby), AI Engineering: DAP Repository Flows | Remote, United Kingdom | posted 2026-08-07
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8682860002)**: Senior Backend Engineer (Ruby), Plan: Spec-Driven Development | Remote, Poland; Remote, United Kingdom | posted 2026-08-12
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8693103002)**: Senior Software Engineer (Typescript), AI Clients: Duo CLI | Remote, Poland; Remote, United Kingdom | posted 2026-08-12
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8448283002)**: Staff Backend Engineer (Ruby on Rails/AI), Verify | Remote, United Kingdom | posted 2026-03-09
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8514960002)**: Staff Infrastructure Security Engineer  | Remote, India; Remote, Israel; Remote, United Kingdom; Remote, US | posted 2026-04-27
+- [ ] **[Datadog](https://careers.datadoghq.com/detail/8030324/?gh_jid=8030324)**: Director, Product Management - Cloud Security and Shared Capabilities | Paris, France | posted 2026-06-26
+- [ ] **[Datadog](https://careers.datadoghq.com/detail/8127916/?gh_jid=8127916)**: Senior Partner Marketing Manager - Cloud & Channel | London, United Kingdom; Madrid, Spain; Paris, France | posted 2026-08-14
+- [ ] **[Datadog](https://careers.datadoghq.com/detail/8000258/?gh_jid=8000258)**: Senior Security Engineer - Cloud SIEM | Lisbon, Portugal | posted 2026-06-11
+- [ ] **[Datadog](https://careers.datadoghq.com/detail/7996898/?gh_jid=7996898)**: Senior Security Engineer - Cloud SIEM | Dublin, Ireland; Madrid, Spain; Paris, France | posted 2026-06-11
+- [ ] **[Datadog](https://careers.datadoghq.com/detail/4599148/?gh_jid=4599148)**: Senior Software Engineer - Backend  | Bordeaux, France; Paris, France | posted 2022-10-05
+- [ ] **[Stripe](https://stripe.com/jobs/search?gh_jid=7369543)**: Backend/API Engineer, Money as a Service | United Kingdom | posted 2025-11-03
+- [ ] **[Stripe](https://stripe.com/jobs/search?gh_jid=4921361)**: Backend Engineer/API, Payments and Risk | Dublin, Ireland | posted 2023-03-21
+- [ ] **[Stripe](https://stripe.com/jobs/search?gh_jid=6686634)**: Backend Engineer, Core Technology | Dublin | posted 2025-04-07
+- [ ] **[Adyen](https://job-boards.greenhouse.io/adyen/jobs/7607691)**: Senior Observability Infrastructure Engineer | Amsterdam | posted 2026-02-23
+- [ ] **[Adyen](https://job-boards.greenhouse.io/adyen/jobs/8065770)**: Team Lead, Service Cloud | Amsterdam | posted 2026-08-14
+- [ ] **[Bitpanda](https://job-boards.eu.greenhouse.io/bitpanda/jobs/4858728101)**: Cloud Kafka Engineer | Vienna, Vienna, Austria | posted 2026-05-05
+- [ ] **[Bitpanda](https://job-boards.eu.greenhouse.io/bitpanda/jobs/4936846101)**: Graduate Frontend Engineer -  React/TypeScript | București, Bucharest, Romania | posted 2026-08-14
+- [ ] **[Bitpanda](https://job-boards.eu.greenhouse.io/bitpanda/jobs/4751345101)**: Senior DevOps Engineer | Vienna, Vienna, Austria | posted 2026-01-12
+- [ ] **[Bitpanda](https://job-boards.eu.greenhouse.io/bitpanda/jobs/4591201101)**: Software Engineer, Python (Asset Pricing & Hedging) | Vienna, Vienna, Austria | posted 2025-05-16
+- [ ] **[Bitpanda](https://job-boards.eu.greenhouse.io/bitpanda/jobs/4880524101)**: Software Engineer, Rust & Python (Asset Pricing & Hedging) | Vienna, Vienna, Austria | posted 2026-06-02
+- [ ] **[GetYourGuide](https://job-boards.greenhouse.io/getyourguide/jobs/7959986)**: Engineering Manager, Infrastructure - Infrastructure  Platform  | Zurich  | posted 2026-05-27
+- [ ] **[GetYourGuide](https://job-boards.greenhouse.io/getyourguide/jobs/8066995)**: Go-To-Market Product Operations Manager | Berlin | posted 2026-07-17
+- [ ] **[GetYourGuide](https://job-boards.greenhouse.io/getyourguide/jobs/8034895)**: Senior Software Engineer (Backend focused) - Supply | Berlin | posted 2026-08-07
+- [ ] **[GetYourGuide](https://job-boards.greenhouse.io/getyourguide/jobs/8007209)**: Senior Software Engineer,  Localization Platform (Backend focused)  | Zurich | posted 2026-06-15
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635595)**: Backend Engineer III  | Cardiff, London or Remote (UK) | posted 2025-02-17
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635837)**: Senior Backend Engineer | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6036797)**: Senior Staff Backend Engineer | Cardiff, London or Remote (UK) | posted 2024-06-12
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6656228)**: Staff Backend Engineer | Barcelona | posted 2025-02-25
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6636147)**: Staff Backend Engineer  | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/7950249?gh_jid=7950249)**: Backend Product Engineer, Loyalty & Virality (all genders) | Warszawa, Masovian Voivodeship, Poland | posted 2026-05-27
+- [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/8067070?gh_jid=8067070)**: Engineering Manager (backend), Consumer Alliance (all genders) | Warszawa, Masovian Voivodeship, Poland | posted 2026-07-16
+- [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/8028117?gh_jid=8028117)**: Mobile Staff Engineer, Platform/Infrastructure (all genders) | Warszawa, Masovian Voivodeship, Poland | posted 2026-06-30
+- [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/8028067?gh_jid=8028067)**: Senior Backend Engineer - Go and/or JVM | Warszawa, Masovian Voivodeship, Poland | posted 2026-06-26
+- [ ] **[HelloFresh](https://careers.hellofresh.com/global/en/job/8028077?gh_jid=8028077)**: Senior Backend Engineer - Python and/or Go | Warszawa, Masovian Voivodeship, Poland | posted 2026-06-26
+- [ ] **[Freenow](https://job-boards.greenhouse.io/freenow/jobs/8113888)**: Backend Engineer | Barcelona, Spain | posted 2026-08-11
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Latin America, Argentina, Brazil, Colombia, Mexico, Ukraine
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/backend-developer/)**: Backend Developer | Europe, Albania, Poland, Romania, Ukraine
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/principal-senior-backend-engineer/)**: Lead/Principal Go Developer | Africa, Egypt, Morocco, Uganda, Latin America, Brazil, Colombia, Mexico, North America, Canada, USA, Europe, Czech Republic, Germany, Poland, Slovakia, Spain, UK, Ukraine
+
+## Skipped
+
+- ~~[N26](https://n26.com/en-eu/careers/positions/7992395?gh_jid=7992395): Information Security Controls Manager - Cloud & AI Governance | Berlin | posted 2026-06-15~~ (skipped: German)
+- ~~[Canonical](https://job-boards.greenhouse.io/canonical/jobs/8023546): Cloud Support Engineer (London UK office) | Office Based - London, UK | posted 2026-06-23~~ (skipped: page text requires Office Based in London)
+- ~~[Canonical](https://job-boards.greenhouse.io/canonical/jobs/8023521): Linux Desktop Support Associate (London UK office) | Office Based - London, UK | posted 2026-06-23~~ (skipped: page text requires Office Based in London)
+- ~~[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7569101): Linux Desktop Support Engineer (London UK office) | Office Based - London, UK | posted 2026-02-05~~ (skipped: page text requires Office Based in London)
+- ~~[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8623389002): Site Reliability Engineer, Intermediate to Senior Staff — Infrastructure Platforms | Remote, Canada; Remote, United Kingdom; Remote, US | posted 2026-07-10~~ (skipped: page text requires States)
+- ~~[HelloFresh](https://careers.hellofresh.com/global/en/job/8095941?gh_jid=8095941): Senior Cloud Security Engineer (m,f,x) | Berlin, Berlin, Germany | posted 2026-08-04~~ (skipped: German)

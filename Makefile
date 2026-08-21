@@ -1,7 +1,7 @@
 PYTHON := python3
 TODAY := $(shell date +%Y-%m-%d)
 
-.PHONY: help hn hn-force hn-json oss oss-force oss-json remotive remotive-force remotive-json himalayas himalayas-force himalayas-json djinni djinni-force djinni-json scan tracker clean
+.PHONY: help hn hn-force hn-json oss oss-force oss-json remotive remotive-force remotive-json himalayas himalayas-force himalayas-json djinni djinni-force djinni-json companies companies-force companies-json scan tracker clean
 
 help:
 	@echo "Job search playbook, available commands:"
@@ -27,7 +27,11 @@ help:
 	@echo "                         required listings). If scan-results/$(TODAY)/djinni-scan.md already exists, does nothing."
 	@echo "  make djinni-force      Same scan, but rescans and merges fresh data into today's file even if it exists"
 	@echo "  make djinni-json       Same scan, machine-readable JSON to stdout, no file written or checked"
-	@echo "  make scan              Run hn, oss, remotive, himalayas, and djinni back to back"
+	@echo "  make companies         Check big Europe/Armenia/Georgia/Cyprus tech employers' own job boards (Greenhouse +"
+	@echo "                         Sigma Software), region-filtered, no Denmark. One flaky company doesn't kill the run."
+	@echo "  make companies-force   Same scan, but rescans and merges fresh data into today's file even if it exists"
+	@echo "  make companies-json    Same scan, machine-readable JSON to stdout, no file written or checked"
+	@echo "  make scan              Run hn, oss, remotive, himalayas, djinni, and companies back to back"
 	@echo "  make tracker           Open tracker.csv in the default app"
 	@echo "  make clean             Remove __pycache__ and other build junk (keeps scan-results/, that's your history)"
 	@echo ""
@@ -83,7 +87,16 @@ djinni-force:
 djinni-json:
 	$(PYTHON) scripts/djinni_scan.py --json
 
-scan: hn oss remotive himalayas djinni
+companies:
+	$(PYTHON) scripts/company_scan.py
+
+companies-force:
+	$(PYTHON) scripts/company_scan.py --force
+
+companies-json:
+	$(PYTHON) scripts/company_scan.py --json
+
+scan: hn oss remotive himalayas djinni companies
 
 tracker:
 	open tracker.csv
