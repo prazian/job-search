@@ -8,10 +8,10 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 ## Matches
 
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844160-backend-python-developer/)**: Backend Python Developer | posted Thu, 20 Aug 2026 19:16:20 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838109-senior-ai-builder-python/)**: Senior AI Builder (Python) | posted Thu, 20 Aug 2026 15:52:03 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/824065-principal-backend-engineer-python-ai/)**: Principal Backend Engineer (Python / AI) | posted Mon, 17 Aug 2026 17:52:12 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/827023-senior-python-developer/)**: Senior Python Developer | posted Mon, 17 Aug 2026 10:06:03 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/832851-api-developer/)**: API Developer | posted Fri, 14 Aug 2026 12:57:06 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/838109-senior-ai-builder-python/)**: Senior AI Builder (Python) | posted Thu, 20 Aug 2026 15:52:03 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/824065-principal-backend-engineer-python-ai/)**: Principal Backend Engineer (Python / AI) | posted Mon, 17 Aug 2026 17:52:12 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/827023-senior-python-developer/)**: Senior Python Developer | posted Mon, 17 Aug 2026 10:06:03 +0300
+- [ ] [skipped: seems already filled] **[(see listing, company not named in feed)](https://djinni.co/jobs/832851-api-developer/)**: API Developer | posted Fri, 14 Aug 2026 12:57:06 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842536-full-stack-ai-engineer/)**: Full-Stack AI Engineer | posted Wed, 12 Aug 2026 12:32:13 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842494-ai-native-full-stack-python-developer-django-/)**: AI-Native Full-Stack Python Developer (Django, FastAPI, React) | posted Wed, 12 Aug 2026 10:26:58 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842482-senior-backend-ai-engineer-python/)**: Senior Backend AI Engineer (Python) | posted Wed, 12 Aug 2026 09:04:58 +0300
