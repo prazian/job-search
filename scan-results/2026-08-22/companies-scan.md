@@ -1,6 +1,6 @@
 # Company career-page scan (Europe/Armenia/Georgia/Cyprus, no Denmark)
 
-Generated 2026-08-22 15:16 UTC. New file each day, edit freely, `--force` to rescan.
+Generated 2026-08-22 15:41 UTC. New file each day, edit freely, `--force` to rescan.
 
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6448444)**: Associate Linux Support Engineer | Home based - Worldwide | posted 2025-02-10
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4124053)**: C, Golang Software Engineer working on dqlite, a Raft extension for SQLite | Home based - EMEA | posted 2022-05-16
@@ -74,6 +74,7 @@ Generated 2026-08-22 15:16 UTC. New file each day, edit freely, `--force` to res
 - [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635837)**: Senior Backend Engineer | Cardiff, London or Remote (UK) | posted 2025-02-14
 - [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6036797)**: Senior Staff Backend Engineer | Cardiff, London or Remote (UK) | posted 2024-06-12
 - [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6636147)**: Staff Backend Engineer  | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [ ] **[Twilio](https://job-boards.greenhouse.io/twilio/jobs/8108771)**: DevOps Engineer (Observability) | Remote - Ireland | posted 2026-08-05
 - [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Latin America, Argentina, Brazil, Colombia, Mexico, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/backend-developer/)**: Backend Developer | Europe, Albania, Poland, Romania, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine

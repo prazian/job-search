@@ -107,6 +107,18 @@ GREENHOUSE_COMPANIES = [
     ("Contentful", "contentful"),
     ("Typeform", "typeform"),
     ("Skyscanner", "skyscanner"),
+    ("Bitwarden", "bitwarden"),
+    ("Honeycomb", "honeycomb"),
+    ("Chainguard", "chainguard"),
+    ("Fastly", "fastly"),
+    ("Algolia", "algolia"),
+    ("Postman", "postman"),
+    ("Vonage", "vonage"),
+    ("Twilio", "twilio"),
+    ("Tanium", "tanium"),
+    ("PlanetScale", "planetscale"),
+    ("Cockroach Labs", "cockroachlabs"),
+    ("CircleCI", "circleci"),
 ]
 SIGMA_SEARCH_TERMS = ["python", "golang", "devops", "aws", "kubernetes", "terraform", "backend", "cloud"]
 
@@ -126,7 +138,13 @@ DEFAULT_STACK = [
 # posting whose list-level location just said "Hybrid" turned out, on its
 # own page, to be Austin/New York/San Francisco only). Only words that are
 # themselves a genuine scope claim (worldwide, distributed, EMEA, Europe,
-# anywhere, global) count as broad on their own.
+# anywhere, global) count as broad on their own. "EU" is deliberately absent
+# too, and on purpose, same reasoning as djinni_scan.py's EU-vs-Europe fix:
+# Armenia is geographically Europe but not an EU member, so a listing whose
+# only scope word is the bare "EU" (Schengen/EU-work-authorization territory)
+# doesn't qualify just because it superficially reads as European. It only
+# passes if a real named country (see below) or "Europe"/"EMEA" itself is
+# also present, e.g. Bitwarden's "Remote, EU / UK" passes on "UK", not "EU".
 _ACCEPTED_LOCATIONS = (
     "europe|emea|distributed|anywhere|worldwide|global|"
     "armenia|yerevan|tbilisi|cyprus|nicosia|limassol|"
