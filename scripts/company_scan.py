@@ -16,9 +16,13 @@ stack. Two platforms, both genuinely public, no auth, confirmed directly:
     site named directly. No full-listing endpoint exists, only
     keyword search, so this queries it once per stack word and dedupes.
 
-Companies confirmed Danish (Trustpilot) are left out entirely, and any
-individual listing whose location mentions Denmark/Copenhagen is skipped,
-per explicit standing preference, see _common.mentions_denmark.
+Danish companies are not excluded, that was tried and corrected: the actual
+preference is no role that requires living in Denmark, not an aversion to
+Danish companies or Danish colleagues. So a Denmark-only listing is skipped
+(see _common.mentions_denmark, location_region_ok below), but a Danish
+company with a genuinely non-Denmark-required remote listing, or a listing
+that's remote-eligible from Denmark *and* several other countries, is not
+excluded just for that.
 
 Region is a real filter here, not just a sort order: a listing only
 survives if its stated location is broadly Europe (including UK/Nordics
@@ -88,6 +92,7 @@ SOURCE = "companies"
 
 GREENHOUSE_COMPANIES = [
     ("N26", "n26"),
+    ("Trustpilot", "trustpilot"),
     ("trivago", "trivago"),
     ("Canonical", "canonical"),
     ("Elastic", "elastic"),
@@ -119,7 +124,28 @@ GREENHOUSE_COMPANIES = [
     ("PlanetScale", "planetscale"),
     ("Cockroach Labs", "cockroachlabs"),
     ("CircleCI", "circleci"),
+    ("Celonis", "celonis"),
+    ("Neo4j", "neo4j"),
+    ("Builder.io", "builder"),
+    ("Picsart", "picsart"),
 ]
+# Ashby (jobs.ashbyhq.com), a second real ATS platform, structured
+# workplaceType/address fields rather than free text, see scan_ashby. Each
+# slug confirmed by hand: real jobs, real jobUrl pointing at the right
+# company, at least one genuinely Remote listing with a European country in
+# its address/secondaryLocations.
+ASHBY_COMPANIES = [
+    ("Linear", "linear"),
+    ("n8n", "n8n"),
+    ("PostHog", "posthog"),
+    ("Replit", "replit"),
+    ("Ramp", "ramp"),
+    ("ElevenLabs", "elevenlabs"),
+    ("Cursor", "cursor"),
+    ("Attio", "attio"),
+    ("Synthesia", "synthesia"),
+]
+
 SIGMA_SEARCH_TERMS = ["python", "golang", "devops", "aws", "kubernetes", "terraform", "backend", "cloud"]
 
 DEFAULT_STACK = [
@@ -180,18 +206,42 @@ _ACTUAL_STACK_RE = re.compile(r"\b(python|typescript|golang|\bgo\b)\b", re.I)
 
 
 def location_region_ok(location_text: str) -> bool:
-    """Region/Denmark check only, shared by both platforms."""
-    if not location_text or _common.mentions_denmark(location_text):
+    """Region/Denmark check only, shared by both platforms. Checks each
+    ";"/","-separated part on its own rather than the string as a whole, a
+    real bug found directly: GitLab's "Forward Deployed Engineer - EMEA"
+    listings are remote from Ireland, France, Germany, Italy, Netherlands,
+    Sweden, UK, *and also* Denmark, all as independent options, blanket-
+    excluding the whole listing over Denmark being one of eight choices
+    would throw out a listing you could take from any of the other seven.
+    Only a location that's Denmark-only (or has no other accepted part) is
+    excluded."""
+    if not location_text:
         return False
-    return bool(ACCEPTED_LOCATION_RE.search(location_text))
+    parts = re.split(r"[;,]|\bor\b", location_text)
+    return any(
+        ACCEPTED_LOCATION_RE.search(part) and not _common.mentions_denmark(part)
+        for part in parts
+    )
+
+
+_ARMENIA_RE = re.compile(r"\b(armenia|yerevan)\b", re.I)
 
 
 def location_ok(location_text: str) -> bool:
     """Greenhouse's location.name field conflates office city with remote
     scope (see REMOTE_SCOPE_RE comment above), so a bare city/country needs
     that extra explicit word. Sigma Software has its own separate workplace
-    field for that distinction instead, see scan_sigma."""
-    return location_region_ok(location_text) and bool(REMOTE_SCOPE_RE.search(location_text or ""))
+    field for that distinction instead, see scan_sigma.
+
+    Exception: a bare "Yerevan, Armenia" (no "Remote" qualifier) still
+    passes, confirmed real on PicsArt's board, an onsite office role there
+    isn't a relocation problem the way an onsite Berlin/Barcelona role is,
+    it's where you already live."""
+    if not location_text:
+        return False
+    if _ARMENIA_RE.search(location_text):
+        return True
+    return location_region_ok(location_text) and bool(REMOTE_SCOPE_RE.search(location_text))
 
 
 def strip_html(t: str) -> str:
@@ -246,6 +296,57 @@ def scan_greenhouse(company: str, slug: str, stack_pattern: re.Pattern) -> list[
     return matches
 
 
+def scan_ashby(company: str, slug: str, stack_pattern: re.Pattern) -> list[dict]:
+    """Ashby's own board API gives structured fields Greenhouse doesn't:
+    workplaceType (Remote/Hybrid/OnSite, no need to infer from free text)
+    and a real per-job country list (address + secondaryLocations), plus the
+    full plain-text description inline, no per-job detail fetch needed."""
+    data = _common.fetch_json(f"https://api.ashbyhq.com/posting-api/job-board/{slug}")
+    matches = []
+    for j in data.get("jobs", []):
+        title = j.get("title", "")
+        if not stack_pattern.search(title):
+            continue
+        countries = []
+        addr = (j.get("address") or {}).get("postalAddress") or {}
+        if addr.get("addressCountry"):
+            countries.append(addr["addressCountry"])
+        for sl in j.get("secondaryLocations", []):
+            c = ((sl.get("address") or {}).get("postalAddress") or {}).get("addressCountry")
+            if c:
+                countries.append(c)
+        # Onsite/Hybrid in Yerevan isn't a relocation problem, it's where
+        # you already live, same exception as company_scan.py's Greenhouse
+        # path (confirmed real on PicsArt's board).
+        if j.get("workplaceType") != "Remote" and not any(_ARMENIA_RE.search(c) for c in countries):
+            continue
+        location = ", ".join(dict.fromkeys(countries)) or j.get("location", "")
+        if not location_region_ok(location):
+            continue
+        full_text = f"{title} {j.get('descriptionPlain', '')}"
+        hard_skip = None
+        if not _common.is_english_text(full_text):
+            hard_skip = "not confidently English"
+        elif JVM_ONLY_RE.search(full_text) and not _ACTUAL_STACK_RE.search(full_text):
+            hard_skip = "requires Java/Kotlin/Spring Boot (JVM), not your stack"
+        else:
+            hard_skip = _common.requires_other_language(full_text)
+            if not hard_skip:
+                loc_req = _common.requires_specific_location(full_text)
+                if loc_req and loc_req.lower() not in location.lower():
+                    hard_skip = f"page text requires {loc_req}"
+        posted = (j.get("publishedAt") or "")[:10]
+        matches.append({
+            "id": j["jobUrl"],
+            "author": company,
+            "url": j["jobUrl"],
+            "excerpt": f"{title} | {location or 'location not specified'} | posted {posted or '?'}",
+            "hard_skip": hard_skip,
+            "blocked": None,
+        })
+    return matches
+
+
 def scan_sigma(stack_pattern: re.Pattern) -> list[dict]:
     seen = {}
     for term in SIGMA_SEARCH_TERMS:
@@ -294,17 +395,30 @@ def scan_sigma(stack_pattern: re.Pattern) -> list[dict]:
 def scan_all(stack_pattern: re.Pattern, blocklist: list[str]) -> tuple[list[dict], list[str]]:
     all_matches = []
     failed = []
+    total = len(GREENHOUSE_COMPANIES) + len(ASHBY_COMPANIES) + 1  # +1 for Sigma Software
+    done = 0
 
-    for i, (company, slug) in enumerate(GREENHOUSE_COMPANIES):
-        print(f"  {_common.progress_bar(i, len(GREENHOUSE_COMPANIES) + 1)}  {company}", file=sys.stderr)
+    for company, slug in GREENHOUSE_COMPANIES:
+        print(f"  {_common.progress_bar(done, total)}  {company}", file=sys.stderr)
         try:
             all_matches.extend(scan_greenhouse(company, slug, stack_pattern))
         except Exception as e:
             failed.append(company)
             print(f"    skipped {company}, fetch failed: {e}", file=sys.stderr)
+        done += 1
         time.sleep(0.3)
 
-    print(f"  {_common.progress_bar(len(GREENHOUSE_COMPANIES), len(GREENHOUSE_COMPANIES) + 1)}  Sigma Software", file=sys.stderr)
+    for company, slug in ASHBY_COMPANIES:
+        print(f"  {_common.progress_bar(done, total)}  {company}", file=sys.stderr)
+        try:
+            all_matches.extend(scan_ashby(company, slug, stack_pattern))
+        except Exception as e:
+            failed.append(company)
+            print(f"    skipped {company}, fetch failed: {e}", file=sys.stderr)
+        done += 1
+        time.sleep(0.3)
+
+    print(f"  {_common.progress_bar(done, total)}  Sigma Software", file=sys.stderr)
     try:
         all_matches.extend(scan_sigma(stack_pattern))
     except Exception as e:

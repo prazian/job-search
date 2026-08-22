@@ -250,8 +250,12 @@ _DENMARK_RE = re.compile(r"\b(denmark|danish|copenhagen)\b", re.I)
 
 
 def mentions_denmark(text: str) -> bool:
-    """Explicit, standing preference: no Denmark, no Danish companies,
-    regardless of how the rest of a listing's location/region reads."""
+    """True if text mentions Denmark/Danish/Copenhagen. The actual
+    preference, clarified directly: no role requiring you to live in
+    Denmark, not an aversion to Denmark or Danish companies otherwise, so
+    callers use this to catch a Denmark-only location, not to exclude a
+    company or a listing that's remote-eligible from Denmark and other
+    places too."""
     return bool(_DENMARK_RE.search(text or ""))
 
 

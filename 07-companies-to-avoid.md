@@ -10,6 +10,10 @@ Two kinds of entries here: **reported directly** (you ran into it yourself, that
 
 I searched for independent corroboration (Glassdoor, Reddit) before writing this and found none, not because the report looks weak, but because this looks like a very small/new operation with no public review footprint yet either way. So this entry rests entirely on what you ran into, treat it as solid (you're the one who dealt with them), just noting for the record that it isn't cross-checked against a second source the way the rest of this repo's data is.
 
+## Note on Danish companies (not a block)
+
+**Correction, 2026-08-22**: an earlier version of this file blocked Trustpilot and Pleo entirely as "Danish companies." That was wrong. The actual preference, clarified directly: Danish companies are fine, remote work for one is fine, the only thing off the table is a role that requires actually living in Denmark again. So this is handled at the listing level instead, not the company level: `djinni_scan.py`, `company_scan.py`, and `jobicy_scan.py` all skip a listing whose location is Denmark-only, but don't exclude a listing (or a company) just because Denmark is one of several remote-eligible options alongside others, or because the company happens to be Danish-founded. Nothing blocked here for this reason anymore.
+
 ## What "unpaid test task" scams usually look like
 
 - A task framed as short and casual ("just a 40 minute task") that turns out, on a closer look, to be real production work: a piece of content, a landing page, a working script, an actual bug fix.

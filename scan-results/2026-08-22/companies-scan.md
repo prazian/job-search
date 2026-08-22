@@ -1,6 +1,6 @@
 # Company career-page scan (Europe/Armenia/Georgia/Cyprus, no Denmark)
 
-Generated 2026-08-22 15:41 UTC. New file each day, edit freely, `--force` to rescan.
+Generated 2026-08-22 16:25 UTC. New file each day, edit freely, `--force` to rescan.
 
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6448444)**: Associate Linux Support Engineer | Home based - Worldwide | posted 2025-02-10
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4124053)**: C, Golang Software Engineer working on dqlite, a Raft extension for SQLite | Home based - EMEA | posted 2022-05-16
@@ -75,6 +75,10 @@ Generated 2026-08-22 15:41 UTC. New file each day, edit freely, `--force` to res
 - [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6036797)**: Senior Staff Backend Engineer | Cardiff, London or Remote (UK) | posted 2024-06-12
 - [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6636147)**: Staff Backend Engineer  | Cardiff, London or Remote (UK) | posted 2025-02-14
 - [ ] **[Twilio](https://job-boards.greenhouse.io/twilio/jobs/8108771)**: DevOps Engineer (Observability) | Remote - Ireland | posted 2026-08-05
+- [ ] **[PostHog](https://jobs.ashbyhq.com/posthog/3f190a45-7810-47f9-b77d-169b806ea266)**: Backend Engineer - Ingestion (Europe/UK timezone) | European Union, United Kingdom | posted 2026-08-17
+- [ ] **[ElevenLabs](https://jobs.ashbyhq.com/elevenlabs/687394d7-fbf8-49ed-822e-c0690191330c)**: Infrastructure Security Engineer | United Kingdom, Ireland, Bulgaria, Belgium, Denmark, Portugal, Poland, Sweden, Italy, Spain, Netherlands | posted 2026-05-20
+- [ ] **[Attio](https://jobs.ashbyhq.com/attio/433cfa12-a43d-435e-9f69-8fb8688d1b10)**: Senior Product Engineer [Backend]  | Poland, Portugal, Ireland, Germany | posted 2026-05-12
+- [ ] **[Attio](https://jobs.ashbyhq.com/attio/1e6c62e8-d50e-49ab-a7b2-4e54b2e7bcbb)**: Senior Product Engineer [Backend]  | United Kingdom | posted 2026-08-19
 - [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Latin America, Argentina, Brazil, Colombia, Mexico, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/backend-developer/)**: Backend Developer | Europe, Albania, Poland, Romania, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine

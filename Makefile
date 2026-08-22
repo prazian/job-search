@@ -1,7 +1,7 @@
 PYTHON := python3
 TODAY := $(shell date +%Y-%m-%d)
 
-.PHONY: help hn hn-force hn-json oss oss-force oss-json remotive remotive-force remotive-json himalayas himalayas-force himalayas-json djinni djinni-force djinni-json companies companies-force companies-json scan tracker clean
+.PHONY: help hn hn-force hn-json oss oss-force oss-json remotive remotive-force remotive-json himalayas himalayas-force himalayas-json djinni djinni-force djinni-json companies companies-force companies-json jobicy jobicy-force jobicy-json scan tracker clean
 
 help:
 	@echo "Job search playbook, available commands:"
@@ -31,7 +31,11 @@ help:
 	@echo "                         Sigma Software), region-filtered, no Denmark. One flaky company doesn't kill the run."
 	@echo "  make companies-force   Same scan, but rescans and merges fresh data into today's file even if it exists"
 	@echo "  make companies-json    Same scan, machine-readable JSON to stdout, no file written or checked"
-	@echo "  make scan              Run hn, oss, remotive, himalayas, djinni, and companies back to back"
+	@echo "  make jobicy            Scan Jobicy's remote-jobs API (region-tagged per listing, no free-text guessing,"
+	@echo "                         100 results max, region-filtered, no Denmark). Quick, one API call."
+	@echo "  make jobicy-force      Same scan, but rescans and merges fresh data into today's file even if it exists"
+	@echo "  make jobicy-json       Same scan, machine-readable JSON to stdout, no file written or checked"
+	@echo "  make scan              Run hn, oss, remotive, himalayas, djinni, companies, and jobicy back to back"
 	@echo "  make tracker           Open tracker.csv in the default app"
 	@echo "  make clean             Remove __pycache__ and other build junk (keeps scan-results/, that's your history)"
 	@echo ""
@@ -96,7 +100,16 @@ companies-force:
 companies-json:
 	$(PYTHON) scripts/company_scan.py --json
 
-scan: hn oss remotive himalayas djinni companies
+jobicy:
+	$(PYTHON) scripts/jobicy_scan.py
+
+jobicy-force:
+	$(PYTHON) scripts/jobicy_scan.py --force
+
+jobicy-json:
+	$(PYTHON) scripts/jobicy_scan.py --json
+
+scan: hn oss remotive himalayas djinni companies jobicy
 
 tracker:
 	open tracker.csv
