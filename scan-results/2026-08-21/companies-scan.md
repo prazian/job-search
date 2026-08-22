@@ -2,10 +2,10 @@
 
 Generated 2026-08-21 10:01 UTC. New file each day, edit freely, `--force` to rescan.
 
-- [ ] **[N26](https://n26.com/en-eu/careers/positions/7925103?gh_jid=7925103)**: Backend Engineer - Engagement | Barcelona  | posted 2026-07-02
-- [ ] **[N26](https://n26.com/en-eu/careers/positions/8020517?gh_jid=8020517)**: Backend Engineer - Investments & Savings | Berlin, Barcelona | posted 2026-06-26
-- [ ] **[N26](https://n26.com/en-eu/careers/positions/8129812?gh_jid=8129812)**: Backend Engineer - Lending | Berlin | posted 2026-08-14
-- [ ] **[N26](https://n26.com/en-eu/careers/positions/8064019?gh_jid=8064019)**: Backend Engineer - Lending | Barcelona | posted 2026-07-14
+- [x] [skipped: unrelated Spring Boot, JAVA; location Barcelona] **[N26](https://n26.com/en-eu/careers/positions/7925103?gh_jid=7925103)**: Backend Engineer - Engagement | Barcelona  | posted 2026-07-02
+- [x] [skipped: unrelated Spring Boot, JAVA; location Barcelona] **[N26](https://n26.com/en-eu/careers/positions/8020517?gh_jid=8020517)**: Backend Engineer - Investments & Savings | Berlin, Barcelona | posted 2026-06-26
+- [x] [skipped: location Berlin] **[N26](https://n26.com/en-eu/careers/positions/8129812?gh_jid=8129812)**: Backend Engineer - Lending | Berlin | posted 2026-08-14
+- [x] [skipped: unrelated Spring Boot, JAVA; location Barcelona] **[N26](https://n26.com/en-eu/careers/positions/8064019?gh_jid=8064019)**: Backend Engineer - Lending | Barcelona | posted 2026-07-14
 - [ ] **[N26](https://n26.com/en-eu/careers/positions/8132053?gh_jid=8132053)**: Backend Engineer - Payments | Berlin, Barcelona | posted 2026-08-17
 - [ ] **[N26](https://n26.com/en-eu/careers/positions/7960138?gh_jid=7960138)**: Backend Engineer - Subscriptions | Barcelona | posted 2026-05-27
 - [ ] **[N26](https://n26.com/en-eu/careers/positions/8108866?gh_jid=8108866)**: Senior Backend Engineer - Agentic Platform | Barcelona | posted 2026-08-08
