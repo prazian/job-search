@@ -29,11 +29,30 @@ roles worldwide; the non-European ones are dropped silently at this stage
 rather than listed as "skipped", or the report would be mostly noise, which
 runs against being asked to keep this terse.
 
-What survives the region filter gets one more fetch (its own job detail
-page) to run the same English-language and other-language-requirement
-checks used elsewhere (_common.is_english_text, _common.requires_other_language,
-_common.requires_specific_location) against the real description, not just
-the title, and to pull a short excerpt for the report.
+A bare city/country name in the location field is treated as an office
+requirement, not remote eligibility, confirmed directly: N26's whole board
+(72 jobs, every one just "Berlin"/"Barcelona"/etc, "Remote" nowhere) turned
+out to be entirely hybrid-from-that-office once checked by hand, so a
+listing needs an explicit remote-scope word (remote, home-based,
+distributed, worldwide, ...) in the location field itself, see
+REMOTE_SCOPE_RE, companies that mean it say so (Canonical: "Home based -
+EMEA", GitLab: "Remote, Poland"). Sigma Software carries this as a separate
+"workplace" field (Remote/Hybrid/Office) instead, checked directly rather
+than inferred from the location text.
+
+A title match alone isn't enough either, confirmed on the same N26 postings:
+several matched only via the generic word "backend" in the title while the
+actual requirements centered on "a JVM language and Spring Boot", no
+Python/TypeScript/Go anywhere, AWS only "a plus". JVM_ONLY_RE plus a check
+for the real target languages catches that and skips it, not a real stack
+fit just because the title says "backend".
+
+What survives the region and remote-eligibility filters gets one more fetch
+(its own job detail page) to run the same English-language and
+other-language-requirement checks used elsewhere (_common.is_english_text,
+_common.requires_other_language, _common.requires_specific_location) against
+the real description, not just the title, and to pull a short excerpt for
+the report.
 
 Resilient by design, per request: every fetch goes through _common.fetch
 (retries on 429 and timeouts already), and if one company's board is down,
@@ -121,11 +140,40 @@ _ACCEPTED_LOCATIONS = (
 )
 ACCEPTED_LOCATION_RE = re.compile(rf"\b({_ACCEPTED_LOCATIONS})\b", re.I)
 
+# A location field naming a real city/country with no remote-scope word at
+# all almost always means "you work from this office", confirmed directly:
+# N26's whole board (72 jobs, every one just "Berlin"/"Barcelona"/"Vienna"/
+# etc, never "Remote" anywhere) turned out to be entirely hybrid-from-that-
+# office once checked by hand ("This is a hybrid role from Barcelona or
+# Berlin"), same for individual Adyen/Bitpanda/HelloFresh listings spot-
+# checked. Companies that actually mean "remote, team happens to sit in
+# Berlin" say so explicitly (Canonical: "Home based - EMEA", GitLab:
+# "Remote, Poland", Monzo: "...or Remote (UK)"), so require that explicit
+# word rather than trusting a bare city/country name.
+_REMOTE_SCOPE_WORDS = "remote|home[- ]based|distributed|anywhere|worldwide|global"
+REMOTE_SCOPE_RE = re.compile(rf"\b({_REMOTE_SCOPE_WORDS})\b", re.I)
 
-def location_ok(location_text: str) -> bool:
+# Confirmed directly on N26 postings that matched only via the generic title
+# word "backend": full requirements centered on "a JVM language and Spring
+# Boot", AWS/cloud only "a plus", no Python/TypeScript/Go anywhere. A title
+# match alone isn't enough, the actual required language matters.
+JVM_ONLY_RE = re.compile(r"\b(jvm language|kotlin|spring boot|\bjava\b)\b", re.I)
+_ACTUAL_STACK_RE = re.compile(r"\b(python|typescript|golang|\bgo\b)\b", re.I)
+
+
+def location_region_ok(location_text: str) -> bool:
+    """Region/Denmark check only, shared by both platforms."""
     if not location_text or _common.mentions_denmark(location_text):
         return False
     return bool(ACCEPTED_LOCATION_RE.search(location_text))
+
+
+def location_ok(location_text: str) -> bool:
+    """Greenhouse's location.name field conflates office city with remote
+    scope (see REMOTE_SCOPE_RE comment above), so a bare city/country needs
+    that extra explicit word. Sigma Software has its own separate workplace
+    field for that distinction instead, see scan_sigma."""
+    return location_region_ok(location_text) and bool(REMOTE_SCOPE_RE.search(location_text or ""))
 
 
 def strip_html(t: str) -> str:
@@ -159,6 +207,8 @@ def scan_greenhouse(company: str, slug: str, stack_pattern: re.Pattern) -> list[
         hard_skip = None
         if not _common.is_english_text(full_text):
             hard_skip = "not confidently English"
+        elif JVM_ONLY_RE.search(full_text) and not _ACTUAL_STACK_RE.search(full_text):
+            hard_skip = "requires Java/Kotlin/Spring Boot (JVM), not your stack"
         else:
             hard_skip = _common.requires_other_language(full_text)
             if not hard_skip:
@@ -193,17 +243,22 @@ def scan_sigma(stack_pattern: re.Pattern) -> list[dict]:
         if not stack_pattern.search(r.get("title", "")):
             continue
         html_text = _common.fetch_text(r["url"])
+        workplace_m = re.search(r'class="vacancy-card__workplace">([^<]*)<', html_text)
+        if not workplace_m or workplace_m.group(1).strip().lower() != "remote":
+            continue
         loc_m = re.search(
             r'class="vacancy-card-new__locations">.*?<span>([^<]*)</span>', html_text, re.S
         )
         location = loc_m.group(1).strip() if loc_m else ""
-        if not location_ok(location):
+        if not location_region_ok(location):
             continue
         desc_m = re.search(r'id="tabContent_A".*?</ul>', html_text, re.S)
         full_text = f"{r['title']} {strip_html(desc_m.group(0)) if desc_m else ''}"
         hard_skip = None
         if not _common.is_english_text(full_text):
             hard_skip = "not confidently English"
+        elif JVM_ONLY_RE.search(full_text) and not _ACTUAL_STACK_RE.search(full_text):
+            hard_skip = "requires Java/Kotlin/Spring Boot (JVM), not your stack"
         else:
             hard_skip = _common.requires_other_language(full_text)
         matches.append({

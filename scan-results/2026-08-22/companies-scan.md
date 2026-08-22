@@ -1,0 +1,84 @@
+# Company career-page scan (Europe/Armenia/Georgia/Cyprus, no Denmark)
+
+Generated 2026-08-22 15:16 UTC. New file each day, edit freely, `--force` to rescan.
+
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6448444)**: Associate Linux Support Engineer | Home based - Worldwide | posted 2025-02-10
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4124053)**: C, Golang Software Engineer working on dqlite, a Raft extension for SQLite | Home based - EMEA | posted 2022-05-16
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4676649)**: Cloud Engineering Manager | Home based - Worldwide | posted 2022-11-03
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6132532)**: Cloud Field Engineer | Home based - Worldwide | posted 2024-07-24
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7410479)**: Cloud Field Engineering Manager | Home based - Worldwide | posted 2025-11-20
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6283017)**: Cloud Professional Services Manager | Home based - Worldwide | posted 2024-10-28
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5915936)**: Cloud Solutions Architect - Alliances | Home based - Worldwide | posted 2024-04-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/2456563)**: Cloud Support Engineer | Home based - Worldwide | posted 2020-11-19
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/2969042)**: Distributed Systems Testing Software Engineer, Python / Go | Home based - Worldwide | posted 2021-03-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3821346)**: Embedded & Desktop Linux Systems Engineer - Optimisation | Home based - Worldwide | posted 2022-03-26
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3362765)**: Embedded Linux Field Engineer for Devices/IoT | Home based - Worldwide | posted 2021-08-04
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6189337)**: Embedded Linux Senior Software Engineer - Optimisation | Home based - Worldwide | posted 2025-02-10
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3666345)**: Engineering Manager - Linux Hardware Enablement | Home Based - Americas; Home Based - APAC; Home based - EMEA | posted 2022-03-29
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4144793)**: Engineering Manager - Public Cloud, Python, Golang | Home Based - Americas; Home based - EMEA | posted 2022-04-15
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3740499)**: Engineering Manager - Python and K8s | Home Based - APAC; Home based - EMEA | posted 2022-05-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3542384)**: Engineering Manager - Ubuntu Linux Kernel | Home based - Worldwide | posted 2022-03-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5146709)**: Golang Engineer | Home based - Worldwide | posted 2023-10-12
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5692058)**: Golang Engineering Manager, Commercial Systems | Home based - EMEA | posted 2024-02-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4827747)**: Golang Software Engineer, Commercial Systems | Home based - EMEA | posted 2023-01-26
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4960407)**: Golang System Software Engineer - Containers / Virtualisation | Home Based - Americas; Home based - EMEA | posted 2023-03-29
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/8055009)**: Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu | Home based - Worldwide | posted 2026-07-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6426388)**: Juju Software Engineer (Go) | Home based - EMEA | posted 2024-11-22
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5370815)**: Junior Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-02-25
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7334725)**: Kernel Build Automation Engineer - Ubuntu Linux | Home based - EMEA | posted 2025-10-16
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6010955)**: Lead Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-06-03
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4717512)**: Linux Cryptography and Security Engineer | Home based - Worldwide | posted 2022-11-23
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5140562)**: Linux Devices Software Engineer | Home based - Worldwide; Office Based - Taipei, Taiwan | posted 2023-10-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4394058)**: Linux devices software engineer - snapd | Home Based - Americas; Home based - EMEA | posted 2022-07-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5151903)**: Linux Kernel Engineer | Home based - Worldwide | posted 2023-10-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6062471)**: Linux Platform Integration - Ubuntu Systems Senior Engineer | Home based - Worldwide | posted 2024-06-23
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7432750)**: Linux Software Engineer - Ubuntu for Next-Gen Silicon (multiple roles and seniority levels) | Home Based - Americas; Home Based - APAC; Home based - EMEA | posted 2025-11-28
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6643965)**: Product Manager - Cloud | Home based - EMEA | posted 2025-02-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5703396)**: Python and Kubernetes Software Engineer - Data, Workflows, AI/ML & Analytics | Home based - Worldwide | posted 2024-04-11
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5143074)**: Python Engineer | Home based - Worldwide | posted 2023-10-11
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5692059)**: Python Engineering Manager, Commercial Systems | Home based - EMEA | posted 2024-02-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6401160)**: Python Software Engineer, Commercial Systems | Home based - EMEA | posted 2024-11-15
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3658005)**: Python Software Engineer - Ubuntu Hardware Certification Team | Home based - EMEA | posted 2022-03-28
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5833620)**: Rust Engineering Lead - Linux and Open Source | Home based - Worldwide | posted 2024-04-04
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5995321)**: Senior Design Manager (Infrastructure) | Home based - EMEA | posted 2024-05-27
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5566674)**: Senior Juju Software Engineer (Go) | Home based - EMEA | posted 2023-12-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3142044)**: Senior Software Engineer (Backend) | Home based - EMEA | posted 2021-06-15
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7774649)**: Senior Software Engineer - Python/Golang - Kubernetes | Home Based - Americas; Home based - EMEA | posted 2026-04-02
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5937947)**: Senior Software Engineer - Python/MongoDB | Home based - EMEA | posted 2024-04-30
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4398031)**: Software Engineer - Cloud Images | Home Based - Americas; Home based - EMEA | posted 2023-02-03
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3062022)**: Software Engineer, Cloud - Sustaining Engineering | Home based - Worldwide | posted 2021-07-09
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3014391)**: Software Engineer - Data Infrastructure  | Home based - EMEA | posted 2021-05-12
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5218601)**: Software Engineer - Data Infrastructure - Kafka | Home based - EMEA | posted 2023-07-24
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5002072)**: Software Engineer - Data Infrastructure - OpenSearch/ElasticSearch | Home based - EMEA | posted 2023-04-20
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4086684)**: Software Engineering Manager - Container and Virtualisation Infrastructure | Home Based - Americas; Home based - EMEA | posted 2022-07-18
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3752633)**: Software Engineer - Python and K8s | Home based - Worldwide | posted 2022-02-23
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6222476)**: Software Engineer - Python - Container Images | Home based - EMEA | posted 2024-08-30
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/2928962)**: Software Engineer - Python/Golang - Kubernetes | Home Based - Americas; Home based - EMEA | posted 2021-02-19
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7574469)**: Staff Design Engineer - Cloud Networking UX | Home based - EMEA | posted 2026-01-29
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3880952)**: Staff Software Engineer for Identity Management (Go/Golang) | Home Based - Americas; Home based - EMEA | posted 2022-07-13
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3748266)**: Telco Cloud Field Engineer | Home Based - Americas; Home based - EMEA | posted 2022-04-25
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6076909)**: Ubuntu Linux Kernel Engineer - Silicon Enablement | Home based - Worldwide | posted 2024-06-27
+- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6072086)**: UX Designer - Infrastructure | Home based - EMEA | posted 2025-01-28
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8716138002)**: Senior Backend Engineer | Remote, Poland; Remote, United Kingdom | posted 2026-08-14
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621733002)**: Senior Backend Engineer, AI Engineering: Chat    | Remote, Canada; Remote, United Kingdom | posted 2026-07-20
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8636713002)**: Senior Backend Engineer, Deployment Environments | Remote, United Kingdom | posted 2026-07-21
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8729451002)**: Senior Backend Engineer (Go), Tenant Scale: Gitaly  | Remote, Poland; Remote, United Kingdom | posted 2026-08-20
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8704363002)**: Senior Backend Engineer (Python), Agent Developer: Flow Components | Remote, United Kingdom | posted 2026-08-19
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621620002)**: Senior Backend Engineer (Ruby), AI Engineering: AI Coding | Remote, United Kingdom | posted 2026-07-13
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8646595002)**: Senior Backend Engineer (Ruby), AI Engineering: DAP Repository Flows | Remote, United Kingdom | posted 2026-08-07
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8682860002)**: Senior Backend Engineer (Ruby), Plan: Spec-Driven Development | Remote, Poland; Remote, United Kingdom | posted 2026-08-12
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8693103002)**: Senior Software Engineer (Typescript), AI Clients: Duo CLI | Remote, Poland; Remote, United Kingdom | posted 2026-08-12
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8448283002)**: Staff Backend Engineer (Ruby on Rails/AI), Verify | Remote, United Kingdom | posted 2026-03-09
+- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8514960002)**: Staff Infrastructure Security Engineer  | Remote, India; Remote, Israel; Remote, United Kingdom; Remote, US | posted 2026-04-27
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635595)**: Backend Engineer III  | Cardiff, London or Remote (UK) | posted 2025-02-17
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635837)**: Senior Backend Engineer | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6036797)**: Senior Staff Backend Engineer | Cardiff, London or Remote (UK) | posted 2024-06-12
+- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6636147)**: Staff Backend Engineer  | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Latin America, Argentina, Brazil, Colombia, Mexico, Ukraine
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/backend-developer/)**: Backend Developer | Europe, Albania, Poland, Romania, Ukraine
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine
+- [ ] **[Sigma Software](https://career.sigma.software/vacancy/principal-senior-backend-engineer/)**: Lead/Principal Go Developer | Africa, Egypt, Morocco, Uganda, Latin America, Brazil, Colombia, Mexico, North America, Canada, USA, Europe, Czech Republic, Germany, Poland, Slovakia, Spain, UK, Ukraine
+
+## Skipped
+
+- ~~[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8623389002): Site Reliability Engineer, Intermediate to Senior Staff — Infrastructure Platforms | Remote, Canada; Remote, United Kingdom; Remote, US | posted 2026-07-10~~ (skipped: page text requires States)
