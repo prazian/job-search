@@ -46,40 +46,40 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] [skipped: COMMIT is Israeli company!!] **[(see listing, company not named in feed)](https://djinni.co/jobs/845426-senior-devops-engineer-aws/)**: Senior DevOps Engineer (AWS) | posted Fri, 28 Aug 2026 14:52:14 +0300
 - [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/844965-devops-sre-lead/)**: DevOps/SRE Lead | posted Wed, 26 Aug 2026 13:33:24 +0300
 - [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/844864-middle-ops-devops-engineer/)**: Middle Ops/DevOps Engineer | posted Tue, 25 Aug 2026 20:12:03 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844678-senior-voip-unified-communications-engineer/)**: Senior VoIP/ Unified Communications Engineer | posted Tue, 25 Aug 2026 12:40:02 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844607-senior-site-reliability-engineer/)**: Senior Site Reliability Engineer | posted Tue, 25 Aug 2026 08:52:01 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844318-strong-middle-devops/)**: Strong Middle DevOps | posted Fri, 21 Aug 2026 15:57:06 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844315-intern-junior-devops/)**: Intern/Junior DevOps | posted Fri, 21 Aug 2026 15:52:48 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846570-senior-staff-backend-engineer-golang/)**: Senior / Staff Backend Engineer (Golang) | posted Fri, 04 Sep 2026 03:24:27 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846078-team-lead-ai-product-engineering-golang-claud/)**: Team Lead, AI Product Engineering (Golang, Claude Code) | posted Tue, 01 Sep 2026 19:36:23 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841678-senior-backend-engineer-go/)**: Senior Backend Engineer GO | posted Tue, 01 Sep 2026 12:31:13 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845747-senior-principal-go-developer-cybersecurity-p/)**: Senior / Principal Go Developer (Cybersecurity Platform) | posted Mon, 31 Aug 2026 17:20:21 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844772-senior-go-kubernetes-developer/)**: Senior Go / Kubernetes Developer | posted Tue, 25 Aug 2026 15:28:02 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844740-senior-golang-backend-developer/)**: Senior Golang Backend Developer | posted Tue, 25 Aug 2026 14:28:02 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842895-interview-engineer-golang/)**: Interview Engineer Golang | posted Thu, 13 Aug 2026 19:11:10 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842095-senior-golang-php-developer/)**: Senior Golang/PHP Developer | posted Mon, 10 Aug 2026 18:26:47 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842487-middle-devops-engineer/)**: Middle DevOps Engineer | posted Fri, 04 Sep 2026 09:12:15 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/843114-middle-ai-ml-engineer-5128/)**: Middle AI/ML Engineer (#5128) | posted Thu, 03 Sep 2026 17:06:31 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846401-senior-payment-infrastructure-engineer-php-go/)**: Senior Payment Infrastructure Engineer (PHP / Go) | posted Thu, 03 Sep 2026 12:04:25 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/829201-platform-engineer/)**: Platform Engineer | posted Thu, 03 Sep 2026 10:06:35 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846149-senior-infrastructure-engineer-gpu-platform/)**: Senior Infrastructure Engineer (GPU Platform) | posted Wed, 02 Sep 2026 11:58:24 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846107-senior-observability-engineer-cloud-platform/)**: Senior Observability Engineer, Cloud Platform | posted Wed, 02 Sep 2026 04:50:24 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846048-data-engineer-data-collection-and-enrichment/)**: Data Engineer — Data Collection and Enrichment | posted Tue, 01 Sep 2026 18:08:22 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845930-data-engineer/)**: Data Engineer | posted Tue, 01 Sep 2026 14:42:24 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841003-machine-learning-engineer/)**: Machine Learning Engineer | posted Tue, 01 Sep 2026 11:06:11 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/839421-data-engineer/)**: Data Engineer | posted Tue, 01 Sep 2026 10:34:22 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845626-data-engineer/)**: Data Engineer | posted Mon, 31 Aug 2026 12:12:22 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842096-data-engineer/)**: Data Engineer | posted Fri, 28 Aug 2026 16:48:33 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845442-senior-big-data-engineer-adtech-cybersecurity/)**: Senior Big Data Engineer (AdTech Cybersecurity) | posted Fri, 28 Aug 2026 15:38:14 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844974-senior-data-analytics-ai-solution-architect/)**: Senior Data Analytics AI Solution Architect | posted Wed, 26 Aug 2026 13:51:21 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844943-senior-data-engineer-interexy/)**: Senior Data Engineer  Interexy | posted Wed, 26 Aug 2026 12:46:37 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844827-principal-macos-platform-engineer/)**: Principal macOS Platform Engineer | posted Tue, 25 Aug 2026 18:02:03 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/835004-data-engineer-middle-strong-middle/)**: Data Engineer (Middle / Strong Middle) | posted Tue, 25 Aug 2026 16:06:26 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844660-senior-data-engineer-databricks-migration/)**: Senior Data Engineer (Databricks Migration) | posted Tue, 25 Aug 2026 12:00:23 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/824385-middle-data-engineer/)**: Middle+ Data Engineer | posted Tue, 25 Aug 2026 11:43:20 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844478-devops-engineer/)**: DevOps Engineer | posted Mon, 24 Aug 2026 12:00:00 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/844460-senior-ai-ml-engineer/)**: Senior AI/ML Engineer | posted Mon, 24 Aug 2026 10:54:00 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838694-enterpise-finance-engineer/)**: Enterpise Finance Engineer | posted Mon, 24 Aug 2026 09:30:01 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844678-senior-voip-unified-communications-engineer/)**: Senior VoIP/ Unified Communications Engineer | posted Tue, 25 Aug 2026 12:40:02 +0300
+- [x] [skipped: unrelated] **[(see listing, company not named in feed)](https://djinni.co/jobs/844607-senior-site-reliability-engineer/)**: Senior Site Reliability Engineer | posted Tue, 25 Aug 2026 08:52:01 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844318-strong-middle-devops/)**: Strong Middle DevOps | posted Fri, 21 Aug 2026 15:57:06 +0300
+- [x] [skipped: too junior] **[(see listing, company not named in feed)](https://djinni.co/jobs/844315-intern-junior-devops/)**: Intern/Junior DevOps | posted Fri, 21 Aug 2026 15:52:48 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/846570-senior-staff-backend-engineer-golang/)**: Senior / Staff Backend Engineer (Golang) | posted Fri, 04 Sep 2026 03:24:27 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/846078-team-lead-ai-product-engineering-golang-claud/)**: Team Lead, AI Product Engineering (Golang, Claude Code) | posted Tue, 01 Sep 2026 19:36:23 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/841678-senior-backend-engineer-go/)**: Senior Backend Engineer GO | posted Tue, 01 Sep 2026 12:31:13 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/845747-senior-principal-go-developer-cybersecurity-p/)**: Senior / Principal Go Developer (Cybersecurity Platform) | posted Mon, 31 Aug 2026 17:20:21 +0300
+- [x] [skipped: Ukraining native] **[(see listing, company not named in feed)](https://djinni.co/jobs/844772-senior-go-kubernetes-developer/)**: Senior Go / Kubernetes Developer | posted Tue, 25 Aug 2026 15:28:02 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/844740-senior-golang-backend-developer/)**: Senior Golang Backend Developer | posted Tue, 25 Aug 2026 14:28:02 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/842895-interview-engineer-golang/)**: Interview Engineer Golang | posted Thu, 13 Aug 2026 19:11:10 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/842095-senior-golang-php-developer/)**: Senior Golang/PHP Developer | posted Mon, 10 Aug 2026 18:26:47 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/842487-middle-devops-engineer/)**: Middle DevOps Engineer | posted Fri, 04 Sep 2026 09:12:15 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/843114-middle-ai-ml-engineer-5128/)**: Middle AI/ML Engineer (#5128) | posted Thu, 03 Sep 2026 17:06:31 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/846401-senior-payment-infrastructure-engineer-php-go/)**: Senior Payment Infrastructure Engineer (PHP / Go) | posted Thu, 03 Sep 2026 12:04:25 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/829201-platform-engineer/)**: Platform Engineer | posted Thu, 03 Sep 2026 10:06:35 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/846149-senior-infrastructure-engineer-gpu-platform/)**: Senior Infrastructure Engineer (GPU Platform) | posted Wed, 02 Sep 2026 11:58:24 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/846107-senior-observability-engineer-cloud-platform/)**: Senior Observability Engineer, Cloud Platform | posted Wed, 02 Sep 2026 04:50:24 +0300
+- [x] [skipped: needs Russian] **[(see listing, company not named in feed)](https://djinni.co/jobs/846048-data-engineer-data-collection-and-enrichment/)**: Data Engineer — Data Collection and Enrichment | posted Tue, 01 Sep 2026 18:08:22 +0300
+- [x] [skipped: Ukranian native] **[(see listing, company not named in feed)](https://djinni.co/jobs/845930-data-engineer/)**: Data Engineer | posted Tue, 01 Sep 2026 14:42:24 +0300
+- [x] [skipped: Ukranian native] **[(see listing, company not named in feed)](https://djinni.co/jobs/841003-machine-learning-engineer/)**: Machine Learning Engineer | posted Tue, 01 Sep 2026 11:06:11 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/839421-data-engineer/)**: Data Engineer | posted Tue, 01 Sep 2026 10:34:22 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/845626-data-engineer/)**: Data Engineer | posted Mon, 31 Aug 2026 12:12:22 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/842096-data-engineer/)**: Data Engineer | posted Fri, 28 Aug 2026 16:48:33 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/845442-senior-big-data-engineer-adtech-cybersecurity/)**: Senior Big Data Engineer (AdTech Cybersecurity) | posted Fri, 28 Aug 2026 15:38:14 +0300
+- [x] [skipped: Azure] **[(see listing, company not named in feed)](https://djinni.co/jobs/844974-senior-data-analytics-ai-solution-architect/)**: Senior Data Analytics AI Solution Architect | posted Wed, 26 Aug 2026 13:51:21 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844943-senior-data-engineer-interexy/)**: Senior Data Engineer  Interexy | posted Wed, 26 Aug 2026 12:46:37 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/844827-principal-macos-platform-engineer/)**: Principal macOS Platform Engineer | posted Tue, 25 Aug 2026 18:02:03 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/835004-data-engineer-middle-strong-middle/)**: Data Engineer (Middle / Strong Middle) | posted Tue, 25 Aug 2026 16:06:26 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/844660-senior-data-engineer-databricks-migration/)**: Senior Data Engineer (Databricks Migration) | posted Tue, 25 Aug 2026 12:00:23 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/824385-middle-data-engineer/)**: Middle+ Data Engineer | posted Tue, 25 Aug 2026 11:43:20 +0300
+- [x] [skipped: needs Ukrainian] **[(see listing, company not named in feed)](https://djinni.co/jobs/844478-devops-engineer/)**: DevOps Engineer | posted Mon, 24 Aug 2026 12:00:00 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/844460-senior-ai-ml-engineer/)**: Senior AI/ML Engineer | posted Mon, 24 Aug 2026 10:54:00 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/838694-enterpise-finance-engineer/)**: Enterpise Finance Engineer | posted Mon, 24 Aug 2026 09:30:01 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846238-senior-integration-engineer-as-400-jd-edwards/)**: Senior Integration Engineer (AS/400 / JD Edwards) IRC303672 | posted Wed, 02 Sep 2026 15:30:24 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845889-senior-linux-system-administrator/)**: Senior Linux System Administrator | posted Tue, 01 Sep 2026 13:06:26 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845726-itsm-engineer-system-administrator/)**: ITSM Engineer / System Administrator | posted Mon, 31 Aug 2026 16:14:21 +0300
