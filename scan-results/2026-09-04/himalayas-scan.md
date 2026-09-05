@@ -88,15 +88,15 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] [skipped: US fintech] **[Stripe](https://himalayas.app/companies/stripe/jobs/integration-engineer-metronome-7293122002)**: Integration Engineer, Metronome | no restriction stated | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[mercor](https://himalayas.app/companies/mercor/jobs/gtm-analyst-fully-remote-upto-160-hr-5075761410)**: GTM Analyst - Fully Remote | Upto $160/hr | Germany | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Salesforce](https://himalayas.app/companies/salesforce/jobs/data-architect-data-foundation)**: Data Architect, Data Foundation | United Kingdom | Full Time | posted 2026-09-03
-- [ ] **[Motorola Solutions](https://himalayas.app/companies/motorola-solutions/jobs/product-marketing-manager)**: Product Marketing Manager | Canada | Full Time | posted 2026-09-03
-- [ ] **[DevRev](https://himalayas.app/companies/devrev/jobs/software-engineer-ai-performance)**: Software Engineer - AI Performance | Philippines | Full Time | posted 2026-09-03
-- [ ] **[Stripe](https://himalayas.app/companies/stripe/jobs/product-marketing-manager-market-intelligence-2965025337)**: Product Marketing Manager, Market Intelligence | Canada, United States | Full Time | posted 2026-09-03
-- [ ] **[Bits In Glass](https://himalayas.app/companies/bits-in-glass/jobs/sr-data-engineer)**: Sr. Data Engineer | Canada | Full Time | posted 2026-09-03
-- [ ] **[CruxOCM](https://himalayas.app/companies/cruxocm/jobs/forward-deployed-engineer)**: Forward Deployed Engineer | Canada | Full Time | posted 2026-09-03
-- [ ] **[Wiz Co](https://himalayas.app/companies/wiz-co/jobs/solutions-support-engineer-6887705618)**: Solutions Support Engineer | Ireland | Full Time | posted 2026-09-03
-- [ ] **[CI&T](https://himalayas.app/companies/ci-t/jobs/job-31387-developer-net-senior-brazil)**: [Job - 31387] Developer .NET Senior, Brazil | Brazil | Full Time | posted 2026-09-03
-- [ ] **[CXM](https://himalayas.app/companies/cxm/jobs/site-reliability-engineer-9703641752)**: Site Reliability Engineer | no restriction stated | Full Time | posted 2026-09-03
-- [ ] **[Tabby](https://himalayas.app/companies/tabby/jobs/senior-backend-engineer-6066200352)**: Senior Backend Engineer | Georgia | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[Motorola Solutions](https://himalayas.app/companies/motorola-solutions/jobs/product-marketing-manager)**: Product Marketing Manager | Canada | Full Time | posted 2026-09-03
+- [x] [skipped: job was removed] **[DevRev](https://himalayas.app/companies/devrev/jobs/software-engineer-ai-performance)**: Software Engineer - AI Performance | Philippines | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[Stripe](https://himalayas.app/companies/stripe/jobs/product-marketing-manager-market-intelligence-2965025337)**: Product Marketing Manager, Market Intelligence | Canada, United States | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[Bits In Glass](https://himalayas.app/companies/bits-in-glass/jobs/sr-data-engineer)**: Sr. Data Engineer | Canada | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[CruxOCM](https://himalayas.app/companies/cruxocm/jobs/forward-deployed-engineer)**: Forward Deployed Engineer | Canada | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[Wiz Co](https://himalayas.app/companies/wiz-co/jobs/solutions-support-engineer-6887705618)**: Solutions Support Engineer | Ireland | Full Time | posted 2026-09-03
+- [x] [skipped: job was removed] **[CI&T](https://himalayas.app/companies/ci-t/jobs/job-31387-developer-net-senior-brazil)**: [Job - 31387] Developer .NET Senior, Brazil | Brazil | Full Time | posted 2026-09-03
+- [x] [skipped: Americas and latin america is prefered] **[CXM](https://himalayas.app/companies/cxm/jobs/site-reliability-engineer-9703641752)**: Site Reliability Engineer | no restriction stated | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[Tabby](https://himalayas.app/companies/tabby/jobs/senior-backend-engineer-6066200352)**: Senior Backend Engineer | Georgia | Full Time | posted 2026-09-03
 - [ ] **[BnBerry](https://himalayas.app/companies/bnberry/jobs/product-marketing-gtm-lead)**: Product Marketing / GTM Lead | Serbia | Full Time | posted 2026-09-03
 - [ ] **[NVIDIA](https://himalayas.app/companies/nvidia/jobs/senior-mlops-engineer-dsx-enablement-5166818832)**: Senior MLOps Engineer - DSX Enablement | Germany | Full Time | posted 2026-09-03
 - [ ] **[Mirantis](https://himalayas.app/companies/mirantis/jobs/observability-platform-engineer-neocloud-4473390202)**: Observability Platform Engineer — Neocloud | Bulgaria | Full Time | posted 2026-09-03
