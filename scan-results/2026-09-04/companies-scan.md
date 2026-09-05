@@ -89,8 +89,8 @@ Generated 2026-09-04 07:06 UTC. New file each day, edit freely, `--force` to res
 - [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Ukraine, Latin America, Argentina, Brazil, Colombia, Mexico
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/junior-devops-engineer-7/)**: Junior DevOps Engineer | Europe, Albania, Poland, Romania, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: Middle DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine
-- [ ] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-golang-developer/)**: Senior/Principal Golang Developer | Europe, Albania, Poland, Romania, Ukraine, Latin America, Brazil, Mexico
-- [ ] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-go-developer/)**: Senior / Principal Go Developer | Europe, Albania, Poland, Romania, Ukraine
+- [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-golang-developer/)**: Senior/Principal Golang Developer | Europe, Albania, Poland, Romania, Ukraine, Latin America, Brazil, Mexico
+- [x] [same as before] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-go-developer/)**: Senior / Principal Go Developer | Europe, Albania, Poland, Romania, Ukraine
 - [ ] **[Sigma Software](https://career.sigma.software/vacancy/senior-devops-finops-engineer/)**: Senior DevOps/FinOps Engineer | Europe, Poland, Romania, Ukraine
 
 ## Skipped
