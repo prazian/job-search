@@ -104,8 +104,8 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/840467-senior-backend-engineer-nestjs/)**: Senior Backend Engineer – NestJS | posted Mon, 17 Aug 2026 09:11:22 +0300
 - [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/842645-tech-lead-senior-node-js-backend-engineer/)**: Tech Lead/Senior Node.js Backend Engineer | posted Thu, 13 Aug 2026 11:33:02 +0300
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/842681-back-end-developer-node-js/)**: Back-end Developer (Node.js) | posted Wed, 12 Aug 2026 18:19:00 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/842569-backend-developer/)**: Backend Developer | posted Wed, 12 Aug 2026 13:28:59 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/841410-senior-backend-engineer-node-js-ai-fluent-b2b/)**: Senior Backend Engineer — Node.js (AI-Fluent, B2B SaaS) | posted Wed, 05 Aug 2026 23:52:34 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/842569-backend-developer/)**: Backend Developer | posted Wed, 12 Aug 2026 13:28:59 +0300
+- [x] [skipped: no longer active] **[(see listing, company not named in feed)](https://djinni.co/jobs/841410-senior-backend-engineer-node-js-ai-fluent-b2b/)**: Senior Backend Engineer — Node.js (AI-Fluent, B2B SaaS) | posted Wed, 05 Aug 2026 23:52:34 +0300
 
 ## Skipped
 
