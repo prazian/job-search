@@ -7,8 +7,8 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 
 ## Matches
 
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/845503-python-developer-microservices/)**: Python Developer (microservices) | posted Fri, 04 Sep 2026 09:46:35 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846444-rpa-and-python-engineer-uipath/)**: RPA and Python Engineer (UiPath) | posted Thu, 03 Sep 2026 14:24:26 +0300
+- [x] [skipped: only Europe] **[(see listing, company not named in feed)](https://djinni.co/jobs/845503-python-developer-microservices/)**: Python Developer (microservices) | posted Fri, 04 Sep 2026 09:46:35 +0300
+- [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/846444-rpa-and-python-engineer-uipath/)**: RPA and Python Engineer (UiPath) | posted Thu, 03 Sep 2026 14:24:26 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846430-python-backend-developer/)**: Python Backend Developer | posted Thu, 03 Sep 2026 13:30:26 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846333-simulation-engineer-python/)**: Simulation Engineer (Python) | posted Wed, 02 Sep 2026 20:28:24 +0300
 - [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846252-senior-full-stack-developer/)**: Senior Full Stack Developer | posted Wed, 02 Sep 2026 15:54:24 +0300
