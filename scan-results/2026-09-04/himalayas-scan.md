@@ -7,9 +7,9 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 
 ## Matches
 
-- [ ] **[xneelo](https://himalayas.app/companies/xneelo-co/jobs/software-engineer)**: Software Engineer | no restriction stated | Full Time | posted 2026-09-05
-- [ ] **[saas.group](https://himalayas.app/companies/saas-group/jobs/staff-software-engineer)**: Staff Software Engineer | no restriction stated | Full Time | posted 2026-09-05
-- [ ] **[FINN](https://himalayas.app/companies/finn-app/jobs/senior-backend-engineer)**: Senior Backend Engineer | no restriction stated | Full Time | posted 2026-09-05
+- [x] **[xneelo](https://himalayas.app/companies/xneelo-co/jobs/software-engineer)**: Software Engineer | no restriction stated | Full Time | posted 2026-09-05
+- [x] **[saas.group](https://himalayas.app/companies/saas-group/jobs/staff-software-engineer)**: Staff Software Engineer | no restriction stated | Full Time | posted 2026-09-05
+- [x] **[FINN](https://himalayas.app/companies/finn-app/jobs/senior-backend-engineer)**: Senior Backend Engineer | no restriction stated | Full Time | posted 2026-09-05
 - [x] [skipped: location not eligible] **[Huzzle](https://himalayas.app/companies/huzzle/jobs/sales-development-representative-it-infrastructure)**: Sales Development Representative - IT Infrastructure | South Africa | Contractor | posted 2026-09-04
 - [x] [skipped: location not eligible] **[FYUL](https://himalayas.app/companies/fyul/jobs/it-systems-automation-engineering-manager-remote-within-emea)**: IT Systems Automation Engineering Manager (remote within EMEA) | Estonia, Poland, Portugal, Romania, Spain | Full Time | posted 2026-09-04
 - [x] [skipped: location not eligible] **[Tailscale](https://himalayas.app/companies/tailscale/jobs/director-apac-go-to-market)**: Director, APAC Go-to-Market | Singapore | Full Time | posted 2026-09-04
@@ -161,7 +161,7 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] [skipped: location not eligible] **[Exadel](https://himalayas.app/companies/exadel/jobs/lead-data-engineer)**: Lead Data Engineer | Bulgaria, Georgia, Poland, Romania | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Affirm](https://himalayas.app/companies/affirm/jobs/senior-software-engineer-backend-test-enablers)**: Senior Software Engineer, Backend (Test Enablers) | Poland | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Software Mind](https://himalayas.app/companies/software-mind/jobs/mnd-senior-python-developer-api)**: [MND] Senior Python Developer (API) | Poland | Full Time | posted 2026-09-03
-- [ ] **[Alpaca](https://himalayas.app/companies/alpaca/jobs/senior-software-engineer-platform)**: Senior Software Engineer - Platform | Albania, Armenia, Austria, Azerbaijan, and 43 more countries | Full Time | posted 2026-09-03
+- [x] **[Alpaca](https://himalayas.app/companies/alpaca/jobs/senior-software-engineer-platform)**: Senior Software Engineer - Platform | Albania, Armenia, Austria, Azerbaijan, and 43 more countries | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[AND Digital](https://himalayas.app/companies/and-digital/jobs/contract-lead-azure-platform-engineer)**: Contract Lead Azure Platform Engineer | United Kingdom | Contractor | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Intetics](https://himalayas.app/companies/intetics/jobs/senior-devops-1-5-month-project)**: Senior DevOps (1.5 month project) | Morocco | Contractor | posted 2026-09-03
 - [x] [skipped: location not eligible] **[3Pillar Global](https://himalayas.app/companies/3pillar-global/jobs/java-technical-lead)**: Java Technical Lead | India | Full Time | posted 2026-09-03
@@ -169,7 +169,7 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] [skipped: location not eligible] **[Inizio Partners Corp](https://himalayas.app/companies/inizio-partners-corp/jobs/senior-generative-ai-engineer)**: Senior Generative AI Engineer | Canada | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[GitLab](https://himalayas.app/companies/gitlab-com/jobs/senior-manager-product-management-agentic-software-delivery)**: Senior Manager, Product Management: Agentic Software Delivery | Canada, United States | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[GitLab](https://himalayas.app/companies/gitlab-com/jobs/principal-product-manager-engineering-intelligence-insights)**: Principal Product Manager, Engineering Intelligence & Insights | Canada, United States | Full Time | posted 2026-09-03
-- [ ] **[Teravision Technologies](https://himalayas.app/companies/teravision-technologies/jobs/lead-fullstack-developer)**: Lead Fullstack Developer | no restriction stated | Contractor | posted 2026-09-03
+- [x] **[Teravision Technologies](https://himalayas.app/companies/teravision-technologies/jobs/lead-fullstack-developer)**: Lead Fullstack Developer | no restriction stated | Contractor | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Portcast](https://himalayas.app/companies/portcast/jobs/backend-engineer-mid-level)**: Backend Engineer [Mid-Level] | Bosnia and Herzegovina, India, Indonesia, Malaysia, and 4 more countries | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Jumio](https://himalayas.app/companies/jumio/jobs/devops-engineer-iv-obs)**: DevOps Engineer IV (Obs) | India | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Samsara](https://himalayas.app/companies/samsara/jobs/senior-legal-analyst-litigation-project-manager)**: Senior Legal Analyst & Litigation Project Manager | Australia, Canada, United Kingdom, United States | Full Time | posted 2026-09-03
