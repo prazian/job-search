@@ -7,6 +7,7 @@ Two kinds of entries here: **reported directly** (you ran into it yourself, that
 | Company | Why | Source | First seen |
 |---|---|---|---|
 | Flywheel Motion | Frames real production work as a disposable "40 minute task" and asks candidates to complete it unpaid, a classic unpaid-labor extraction pattern dressed up as a skills test | Reported directly, 2026-08-19 | [HN, Who is hiring (August 2026)](https://news.ycombinator.com/item?id=49156702), posted by HN user norejisace |
+| COMMIT | Israeli company, skipped on Djinni after clicking through (not an Armenia-eligible engagement) | Reported directly, 2026-09-04 | Djinni, Senior DevOps Engineer listings |
 
 I searched for independent corroboration (Glassdoor, Reddit) before writing this and found none, not because the report looks weak, but because this looks like a very small/new operation with no public review footprint yet either way. So this entry rests entirely on what you ran into, treat it as solid (you're the one who dealt with them), just noting for the record that it isn't cross-checked against a second source the way the rest of this repo's data is.
 

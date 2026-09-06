@@ -21,9 +21,9 @@ Generated 2026-09-04 07:06 UTC. New file each day, edit freely, `--force` to res
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5692058)**: Golang Engineering Manager, Commercial Systems | Home based - EMEA | posted 2024-02-09
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4827747)**: Golang Software Engineer, Commercial Systems | Home based - EMEA | posted 2023-01-26
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4960407)**: Golang System Software Engineer - Containers / Virtualisation | Home Based - Americas; Home based - EMEA | posted 2023-03-29
-- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/8142329)**: Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu | Home based - Worldwide | posted 2026-08-24
+- [x] [skipped: too junior] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/8142329)**: Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu | Home based - Worldwide | posted 2026-08-24
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6426388)**: Juju Software Engineer (Go) | Home based - EMEA | posted 2024-11-22
-- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5370815)**: Junior Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-02-25
+- [x] [skipped: too junior] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5370815)**: Junior Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-02-25
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7334725)**: Kernel Build Automation Engineer - Ubuntu Linux | Home based - EMEA | posted 2025-10-16
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6010955)**: Lead Linux Kernel Engineer - Ubuntu | Home based - Worldwide | posted 2024-06-03
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/4717512)**: Linux Cryptography and Security Engineer | Home based - Worldwide | posted 2022-11-23
@@ -32,7 +32,7 @@ Generated 2026-09-04 07:06 UTC. New file each day, edit freely, `--force` to res
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5151903)**: Linux Kernel Engineer | Home based - Worldwide | posted 2023-10-18
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6062471)**: Linux Platform Integration - Ubuntu Systems Senior Engineer | Home based - Worldwide | posted 2024-06-23
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/7432750)**: Linux Software Engineer - Ubuntu for Next-Gen Silicon (multiple roles and seniority levels) | Home Based - Americas; Home Based - APAC; Home based - EMEA | posted 2025-11-28
-- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6643965)**: Product Manager - Cloud | Home based - EMEA | posted 2025-02-18
+- [x] [skipped: unrelated] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6643965)**: Product Manager - Cloud | Home based - EMEA | posted 2025-02-18
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5703396)**: Python and Kubernetes Software Engineer - Data, Workflows, AI/ML & Analytics | Home based - Worldwide | posted 2024-04-11
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5143074)**: Python Engineer | Home based - Worldwide | posted 2023-10-11
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/5692059)**: Python Engineering Manager, Commercial Systems | Home based - EMEA | posted 2024-02-09
@@ -57,41 +57,41 @@ Generated 2026-09-04 07:06 UTC. New file each day, edit freely, `--force` to res
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3880952)**: Staff Software Engineer for Identity Management (Go/Golang) | Home Based - Americas; Home based - EMEA | posted 2022-07-13
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/3748266)**: Telco Cloud Field Engineer | Home Based - Americas; Home based - EMEA | posted 2022-04-25
 - [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6076909)**: Ubuntu Linux Kernel Engineer - Silicon Enablement | Home based - Worldwide | posted 2024-06-27
-- [ ] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6072086)**: UX Designer - Infrastructure | Home based - EMEA | posted 2025-01-28
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8778279002)**: Intermediate Backend Engineer, EMEA | Remote, United Kingdom | posted 2026-09-02
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8775415002)**: Intermediate Backend Engineer, EMEA | Remote, Poland | posted 2026-09-02
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621733002)**: Senior Backend Engineer, AI Engineering: Chat    | Remote, Canada; Remote, United Kingdom | posted 2026-07-20
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8636713002)**: Senior Backend Engineer, Deployment Environments | Remote, Canada; Remote, United Kingdom | posted 2026-07-21
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749951002)**: Senior Backend Engineer (Go), Tenant Scale: Gitaly  | Remote, Poland | posted 2026-08-26
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8729451002)**: Senior Backend Engineer (Go), Tenant Scale: Gitaly  | Remote, Canada; Remote, United Kingdom | posted 2026-08-20
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749946002)**: Senior Backend Engineer, Poland | Remote, Poland | posted 2026-08-26
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8759577002)**: Senior Backend Engineer (Ruby), AI Catalog: External Agents | Remote, United Kingdom | posted 2026-08-31
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621620002)**: Senior Backend Engineer (Ruby), AI Engineering: AI Coding | Remote, United Kingdom | posted 2026-07-13
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8646595002)**: Senior Backend Engineer (Ruby), AI Engineering: DAP Repository Flows | Remote, United Kingdom | posted 2026-08-07
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8682860002)**: Senior Backend Engineer (Ruby), Plan: Spec-Driven Development | Remote, United Kingdom | posted 2026-08-12
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749950002)**: Senior Backend Engineer (Ruby), Plan: Spec-Driven Development | Remote, Poland | posted 2026-08-26
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8716138002)**: Senior Backend Engineer, UK | Remote, United Kingdom | posted 2026-08-14
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749952002)**: Senior Software Engineer (Typescript), AI Clients: Duo CLI | Remote, Poland | posted 2026-08-26
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8693103002)**: Senior Software Engineer (Typescript), AI Clients: Duo CLI | Remote, United Kingdom | posted 2026-08-12
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8775039002)**: Staff Backend Engineer, EMEA | Remote, United Kingdom | posted 2026-09-02
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8777342002)**: Staff Backend Engineer, EMEA | Remote, Poland | posted 2026-09-02
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8448283002)**: Staff Backend Engineer (Ruby on Rails/AI), Verify | Remote, United Kingdom | posted 2026-03-09
-- [ ] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8514960002)**: Staff Infrastructure Security Engineer (EMEA/APJ) | Remote, India; Remote, Israel; Remote, Poland; Remote, United Kingdom | posted 2026-04-27
-- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635595)**: Backend Engineer III  | Cardiff, London or Remote (UK) | posted 2025-02-17
-- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635837)**: Senior Backend Engineer | Cardiff, London or Remote (UK) | posted 2025-02-14
-- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6036797)**: Senior Staff Backend Engineer | Cardiff, London or Remote (UK) | posted 2024-06-12
-- [ ] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6636147)**: Staff Backend Engineer  | Cardiff, London or Remote (UK) | posted 2025-02-14
-- [ ] **[Twilio](https://job-boards.greenhouse.io/twilio/jobs/8108771)**: DevOps Engineer (Observability) | Remote - Ireland | posted 2026-08-05
-- [ ] **[PostHog](https://jobs.ashbyhq.com/posthog/3f190a45-7810-47f9-b77d-169b806ea266)**: Backend Engineer - Ingestion (Europe/UK timezone) | European Union, United Kingdom | posted 2026-08-17
-- [ ] **[ElevenLabs](https://jobs.ashbyhq.com/elevenlabs/9fbd9227-57e0-4221-9255-1a1d967be8ed)**: Research Engineer - Data Infrastructure | United Kingdom, United States, Poland, Bulgaria | posted 2026-08-28
-- [ ] **[Attio](https://jobs.ashbyhq.com/attio/433cfa12-a43d-435e-9f69-8fb8688d1b10)**: Senior Product Engineer [Backend]  | Poland, Portugal, Ireland, Germany | posted 2026-05-12
-- [ ] **[Attio](https://jobs.ashbyhq.com/attio/1e6c62e8-d50e-49ab-a7b2-4e54b2e7bcbb)**: Senior Product Engineer [Backend]  | United Kingdom | posted 2026-08-19
+- [x] [skipped: unrelated] **[Canonical](https://job-boards.greenhouse.io/canonical/jobs/6072086)**: UX Designer - Infrastructure | Home based - EMEA | posted 2025-01-28
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8778279002)**: Intermediate Backend Engineer, EMEA | Remote, United Kingdom | posted 2026-09-02
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8775415002)**: Intermediate Backend Engineer, EMEA | Remote, Poland | posted 2026-09-02
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621733002)**: Senior Backend Engineer, AI Engineering: Chat    | Remote, Canada; Remote, United Kingdom | posted 2026-07-20
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8636713002)**: Senior Backend Engineer, Deployment Environments | Remote, Canada; Remote, United Kingdom | posted 2026-07-21
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749951002)**: Senior Backend Engineer (Go), Tenant Scale: Gitaly  | Remote, Poland | posted 2026-08-26
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8729451002)**: Senior Backend Engineer (Go), Tenant Scale: Gitaly  | Remote, Canada; Remote, United Kingdom | posted 2026-08-20
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749946002)**: Senior Backend Engineer, Poland | Remote, Poland | posted 2026-08-26
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8759577002)**: Senior Backend Engineer (Ruby), AI Catalog: External Agents | Remote, United Kingdom | posted 2026-08-31
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8621620002)**: Senior Backend Engineer (Ruby), AI Engineering: AI Coding | Remote, United Kingdom | posted 2026-07-13
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8646595002)**: Senior Backend Engineer (Ruby), AI Engineering: DAP Repository Flows | Remote, United Kingdom | posted 2026-08-07
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8682860002)**: Senior Backend Engineer (Ruby), Plan: Spec-Driven Development | Remote, United Kingdom | posted 2026-08-12
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749950002)**: Senior Backend Engineer (Ruby), Plan: Spec-Driven Development | Remote, Poland | posted 2026-08-26
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8716138002)**: Senior Backend Engineer, UK | Remote, United Kingdom | posted 2026-08-14
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8749952002)**: Senior Software Engineer (Typescript), AI Clients: Duo CLI | Remote, Poland | posted 2026-08-26
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8693103002)**: Senior Software Engineer (Typescript), AI Clients: Duo CLI | Remote, United Kingdom | posted 2026-08-12
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8775039002)**: Staff Backend Engineer, EMEA | Remote, United Kingdom | posted 2026-09-02
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8777342002)**: Staff Backend Engineer, EMEA | Remote, Poland | posted 2026-09-02
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8448283002)**: Staff Backend Engineer (Ruby on Rails/AI), Verify | Remote, United Kingdom | posted 2026-03-09
+- [x] [skipped: location not eligible] **[GitLab](https://job-boards.greenhouse.io/gitlab/jobs/8514960002)**: Staff Infrastructure Security Engineer (EMEA/APJ) | Remote, India; Remote, Israel; Remote, Poland; Remote, United Kingdom | posted 2026-04-27
+- [x] [skipped: location not eligible] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635595)**: Backend Engineer III  | Cardiff, London or Remote (UK) | posted 2025-02-17
+- [x] [skipped: location not eligible] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6635837)**: Senior Backend Engineer | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [x] [skipped: location not eligible] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6036797)**: Senior Staff Backend Engineer | Cardiff, London or Remote (UK) | posted 2024-06-12
+- [x] [skipped: location not eligible] **[Monzo](https://job-boards.greenhouse.io/monzo/jobs/6636147)**: Staff Backend Engineer  | Cardiff, London or Remote (UK) | posted 2025-02-14
+- [x] [skipped: location not eligible] **[Twilio](https://job-boards.greenhouse.io/twilio/jobs/8108771)**: DevOps Engineer (Observability) | Remote - Ireland | posted 2026-08-05
+- [x] [skipped: only Europe] **[PostHog](https://jobs.ashbyhq.com/posthog/3f190a45-7810-47f9-b77d-169b806ea266)**: Backend Engineer - Ingestion (Europe/UK timezone) | European Union, United Kingdom | posted 2026-08-17
+- [x] [skipped: location not eligible] **[ElevenLabs](https://jobs.ashbyhq.com/elevenlabs/9fbd9227-57e0-4221-9255-1a1d967be8ed)**: Research Engineer - Data Infrastructure | United Kingdom, United States, Poland, Bulgaria | posted 2026-08-28
+- [x] [skipped: location not eligible] **[Attio](https://jobs.ashbyhq.com/attio/433cfa12-a43d-435e-9f69-8fb8688d1b10)**: Senior Product Engineer [Backend]  | Poland, Portugal, Ireland, Germany | posted 2026-05-12
+- [x] [skipped: location not eligible] **[Attio](https://jobs.ashbyhq.com/attio/1e6c62e8-d50e-49ab-a7b2-4e54b2e7bcbb)**: Senior Product Engineer [Backend]  | United Kingdom | posted 2026-08-19
 - [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-python-engineer/)**: Senior / Principal Python Engineer | Europe, Albania, Poland, Romania, Ukraine, Latin America, Argentina, Brazil, Colombia, Mexico
-- [ ] **[Sigma Software](https://career.sigma.software/vacancy/junior-devops-engineer-7/)**: Junior DevOps Engineer | Europe, Albania, Poland, Romania, Ukraine
-- [ ] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: Middle DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine
+- [x] [skipped: only Europe] **[Sigma Software](https://career.sigma.software/vacancy/junior-devops-engineer-7/)**: Junior DevOps Engineer | Europe, Albania, Poland, Romania, Ukraine
+- [x] [skipped: only Europe] **[Sigma Software](https://career.sigma.software/vacancy/devops-engineer-27/)**: Middle DevOps Engineer | Europe, Albania, Poland, Portugal, Romania, Spain, Ukraine
 - [x] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-golang-developer/)**: Senior/Principal Golang Developer | Europe, Albania, Poland, Romania, Ukraine, Latin America, Brazil, Mexico
 - [x] [same as before] **[Sigma Software](https://career.sigma.software/vacancy/senior-principal-go-developer/)**: Senior / Principal Go Developer | Europe, Albania, Poland, Romania, Ukraine
-- [ ] **[Sigma Software](https://career.sigma.software/vacancy/senior-devops-finops-engineer/)**: Senior DevOps/FinOps Engineer | Europe, Poland, Romania, Ukraine
+- [x] [skipped: only Europe] **[Sigma Software](https://career.sigma.software/vacancy/senior-devops-finops-engineer/)**: Senior DevOps/FinOps Engineer | Europe, Poland, Romania, Ukraine
 
 ## Skipped
 

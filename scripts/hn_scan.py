@@ -109,6 +109,9 @@ def detect_hard_skip(text: str) -> str | None:
     head = text[:200]
     if ONSITE_RE.search(head) and not REMOTE_RE.search(head):
         return "onsite/hybrid only, no remote option"
+    loc_skip = _common.location_text_allows_armenia(head)
+    if loc_skip and re.search(r"residents? only", head, re.I):
+        return loc_skip
     return None
 
 

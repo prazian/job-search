@@ -25,6 +25,14 @@ place (e.g. "Location: Ukraine", "office-based role", see
 _common.requires_specific_location). All three checks run against the full
 job description, not just the short excerpt.
 
+Country allowlists (Himalayas' locationRestrictions) are a hard filter,
+learned from reviewing the 2026-09-04 report: if the listing names
+countries and Armenia isn't one of them, it is skipped as location not
+eligible. Empty allowlist (worldwide) is fine. Generic "Software Engineer"
+titles that mention Python/Go/AWS in the description are included even
+when the title itself has no stack keyword, those used to fall through
+the firehose filter.
+
 Writes a dated, clickable markdown report to
 scan-results/YYYY-MM-DD/himalayas-scan.md, one folder per day. If today's file
 already exists, running this again does nothing to it, prints a note and
@@ -112,10 +120,10 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
             title = j.get("title", "")
             categories = " ".join(j.get("categories", []))
             excerpt_text = j.get("excerpt", "")
-            text = f"{title} {categories} {excerpt_text}"
-            if not stack_pattern.search(text):
-                continue
             full_desc = strip_html(j.get("description", "")) or excerpt_text
+            text = f"{title} {categories} {excerpt_text}"
+            if not stack_pattern.search(text) and not _common.engineering_title_with_stack(title, full_desc):
+                continue
             if not _common.is_english_text(f"{title} {full_desc}"):
                 continue
             other_lang = _common.requires_other_language(f"{title} {full_desc}")
@@ -136,13 +144,23 @@ def crawl(stack_pattern: re.Pattern, blocklist: list[str], max_pages: int) -> tu
             blocked = next((name for name in blocklist if name.lower() in company.lower()), None)
             pub = j.get("pubDate")
             posted = datetime.fromtimestamp(pub, tz=timezone.utc).strftime("%Y-%m-%d") if pub else "?"
+            us_only = (
+                "US-only, and you don't reside in the US"
+                if _common.is_us_only(region_text) and len(countries) <= 3
+                else None
+            )
             matches.append({
                 "id": guid,
-                "author": company,
                 "url": j.get("applicationLink") or guid,
+                "author": company,
                 "excerpt": f"{title} | {location_display} | {employment} | posted {posted}",
                 "location": location_display,
-                "hard_skip": "US-only, and you don't reside in the US" if _common.is_us_only(region_text) and len(countries) <= 3 else None,
+                "hard_skip": _common.first_skip(
+                    _common.countries_allow_armenia(countries),
+                    _common.role_skip(title),
+                    _common.us_company_skip(company),
+                    us_only,
+                ),
                 "preferred_region": _common.is_preferred_region(region_text),
                 "blocked": blocked,
             })
@@ -191,7 +209,10 @@ def write_markdown(matches: list[dict], path: str, stack_words: list[str], prior
         f"Generated {now}. Stack filter: {', '.join(display_stack)}. "
         f"Crawled {coverage} of the unfiltered firehose ({pages_done * 20} jobs sampled), no server-side filter exists.",
         "New file each day (`scan-results/YYYY-MM-DD/himalayas-scan.md`). Once this file exists, running the scan again today does nothing to it, edit freely.",
-        "Includes full-time roles, not just contract, employment type is shown per listing. EMEA/APAC/Worldwide-flagged listings sort first. US-only listings are auto-skipped, not eligible.",
+        "Includes full-time roles, not just contract, employment type is shown per listing. "
+        "EMEA/APAC/Worldwide-flagged listings sort first. Country allowlists that don't include "
+        "Armenia, unrelated titles (sales/Salesforce/Azure-only/junior), and known US companies "
+        "(Stripe, Doppel) are auto-skipped.",
         "Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `- [x] [skipped: not a fit] **[company]...`.",
         "",
         "## Matches",

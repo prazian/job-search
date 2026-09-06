@@ -105,17 +105,16 @@ def _as_list(value) -> list:
 
 
 def _is_broad_location(token: str) -> bool:
-    """"EU" is not "Europe": Armenia is geographically in Europe but not in
-    the European Union, confirmed by you directly on a real "EU" listing, so
-    the two need to be told apart rather than both waved through as "Europe"
-    the way _common.is_preferred_region would. Everything else broad enough
-    to include Armenia (Worldwide, or "Europe" spelled out in any phrasing
-    like "Countries of Europe") passes; "EU" specifically, or a single named
-    country that isn't Armenia, does not."""
+    """Worldwide/EMEA/Armenia are broad enough. "Europe" is not: the
+    2026-09-04 review tagged dozens of Djinni listings "only Europe" after
+    clicking through, companies that say Europe keep treating Armenia as
+    outside the region. "EU" was already a skip (Armenia isn't a member)."""
     t = token.strip().lower()
-    if t in ("eu", "european union", "eu only"):
+    if t in ("eu", "european union", "eu only", "europe", "only europe", "european"):
         return False
-    return bool(re.search(r"\b(worldwide|anywhere|global)\b", t)) or "europe" in t
+    if t == "armenia":
+        return True
+    return bool(re.search(r"\b(worldwide|anywhere|global|emea)\b", t))
 
 
 def required_languages(html: str) -> list[tuple[str, str]]:
@@ -147,9 +146,10 @@ def location_requirement(html: str) -> str | None:
     2. If it's genuinely remote, the sidebar's own "Countries where we
        consider candidates" line (see CANDIDATE_COUNTRIES_RE), the
        human-readable eligibility whitelist. Anything not broad enough to
-       include Armenia (a single country, or "EU" specifically, see
-       _is_broad_location) is a hard skip, exactly the Ukraine/EU-residency
-       pattern this was built to catch."""
+       include Armenia (a single country, "Europe" alone, or "EU"
+       specifically, see _is_broad_location) is a hard skip. "Europe" is
+       not enough: the 2026-09-04 review tagged those only-Europe after
+       clicking through."""
     m = LD_JSON_RE.search(html)
     if m:
         try:
@@ -172,6 +172,8 @@ def location_requirement(html: str) -> str | None:
         return None
     if any(t.lower() in ("eu", "european union", "eu only") for t in tokens):
         return "EU-only, and Armenia isn't in the EU (though it is in Europe)"
+    if all(re.search(r"\beurope\b", t, re.I) for t in tokens):
+        return "only Europe"
     return f"remote, but restricted to applicants based in {' or '.join(tokens)}"
 
 
@@ -250,6 +252,7 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
             fetch_errors += 1
             print(f"  couldn't check {item['link']}: {e} (kept, not dropped over a fetch hiccup)", file=sys.stderr)
             hard_skip = None
+        hard_skip = _common.first_skip(hard_skip, _common.role_skip(item["title"]))
         blocked = next((name for name in blocklist if name.lower() in item["title"].lower()), None)
         matches.append({
             "id": item["link"],

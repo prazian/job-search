@@ -108,19 +108,20 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
         if not stack_pattern.search(f"{title} {excerpt}"):
             continue
         geo = j.get("jobGeo", "")
-        if not location_region_ok(geo):
+        loc_skip = _common.location_text_allows_armenia(geo)
+        if loc_skip:
             continue
         full_desc = strip_html(j.get("jobDescription", "")) or excerpt
         full_text = f"{title} {full_desc}"
-        hard_skip = None
-        if not _common.is_english_text(full_text):
-            hard_skip = "not confidently English"
-        else:
-            hard_skip = _common.requires_other_language(full_text)
-            if not hard_skip:
-                loc_req = _common.requires_specific_location(full_text)
-                if loc_req and loc_req.lower() not in geo.lower():
-                    hard_skip = f"page text requires {loc_req}"
+        hard_skip = _common.first_skip(
+            None if _common.is_english_text(full_text) else "not confidently English",
+            _common.requires_other_language(full_text),
+            _common.role_skip(title),
+        )
+        if not hard_skip:
+            loc_req = _common.requires_specific_location(full_text)
+            if loc_req and loc_req.lower() not in geo.lower():
+                hard_skip = f"page text requires {loc_req}"
         company = j.get("companyName", "?")
         blocked = next((name for name in blocklist if name.lower() in company.lower()), None)
         pub = (j.get("pubDate") or "")[:10]

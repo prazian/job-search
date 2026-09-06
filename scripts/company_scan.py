@@ -236,12 +236,21 @@ def location_ok(location_text: str) -> bool:
     Exception: a bare "Yerevan, Armenia" (no "Remote" qualifier) still
     passes, confirmed real on PicsArt's board, an onsite office role there
     isn't a relocation problem the way an onsite Berlin/Barcelona role is,
-    it's where you already live."""
+    it's where you already live.
+
+    Country-locked remote (GitLab "Remote, United Kingdom", Monzo "Remote
+    (UK)") is not eligible from Armenia, confirmed by the 2026-09-04
+    Himalayas review tagging those the same way. Worldwide, EMEA, or
+    Armenia named outright still pass; Europe plus another continent
+    (Sigma's Europe + Latin America) is treated as a recruiting region,
+    not a residency allowlist."""
     if not location_text:
         return False
     if _ARMENIA_RE.search(location_text):
         return True
-    return location_region_ok(location_text) and bool(REMOTE_SCOPE_RE.search(location_text))
+    if not REMOTE_SCOPE_RE.search(location_text):
+        return False
+    return _common.location_text_allows_armenia(location_text) is None
 
 
 def strip_html(t: str) -> str:
@@ -283,6 +292,7 @@ def scan_greenhouse(company: str, slug: str, stack_pattern: re.Pattern) -> list[
                 loc_req = _common.requires_specific_location(full_text)
                 if loc_req and loc_req.lower() not in location.lower():
                     hard_skip = f"page text requires {loc_req}"
+        hard_skip = _common.first_skip(hard_skip, _common.role_skip(j["title"]))
         posted = (j.get("first_published") or "")[:10]
         matches.append({
             "id": j["absolute_url"],
@@ -321,7 +331,12 @@ def scan_ashby(company: str, slug: str, stack_pattern: re.Pattern) -> list[dict]
         if j.get("workplaceType") != "Remote" and not any(_ARMENIA_RE.search(c) for c in countries):
             continue
         location = ", ".join(dict.fromkeys(countries)) or j.get("location", "")
-        if not location_region_ok(location):
+        loc_skip = (
+            _common.countries_allow_armenia(countries)
+            if countries
+            else _common.location_text_allows_armenia(location)
+        )
+        if loc_skip:
             continue
         full_text = f"{title} {j.get('descriptionPlain', '')}"
         hard_skip = None
@@ -335,6 +350,7 @@ def scan_ashby(company: str, slug: str, stack_pattern: re.Pattern) -> list[dict]
                 loc_req = _common.requires_specific_location(full_text)
                 if loc_req and loc_req.lower() not in location.lower():
                     hard_skip = f"page text requires {loc_req}"
+        hard_skip = _common.first_skip(hard_skip, _common.role_skip(title))
         posted = (j.get("publishedAt") or "")[:10]
         matches.append({
             "id": j["jobUrl"],
@@ -369,7 +385,7 @@ def scan_sigma(stack_pattern: re.Pattern) -> list[dict]:
             r'class="vacancy-card-new__locations">.*?<span>([^<]*)</span>', html_text, re.S
         )
         location = loc_m.group(1).strip() if loc_m else ""
-        if not location_region_ok(location):
+        if _common.location_text_allows_armenia(location):
             continue
         desc_m = re.search(r'id="tabContent_A".*?</ul>', html_text, re.S)
         full_text = f"{r['title']} {strip_html(desc_m.group(0)) if desc_m else ''}"
@@ -380,6 +396,7 @@ def scan_sigma(stack_pattern: re.Pattern) -> list[dict]:
             hard_skip = "requires Java/Kotlin/Spring Boot (JVM), not your stack"
         else:
             hard_skip = _common.requires_other_language(full_text)
+        hard_skip = _common.first_skip(hard_skip, _common.role_skip(r.get("title", "")))
         matches.append({
             "id": r["url"],
             "author": "Sigma Software",

@@ -146,6 +146,131 @@ def is_preferred_region(location: str) -> bool:
     return bool(PREFERRED_REGION_RE.search(location or ""))
 
 
+# Armenia-eligibility, learned from the 2026-09-04 review: a listing that
+# names Poland, the UK, Singapore, South Africa, etc. is a residency
+# allowlist, not "EMEA so it's probably fine." Europe-only is also a skip
+# (Armenia is geographically Europe but companies that say "Europe" keep
+# rejecting it). Worldwide, EMEA (includes the Middle East), or Armenia
+# named outright are the real yes. Europe plus another continent (Sigma
+# Software's Europe + Latin America recruiting region) is broad enough too.
+_ARMENIA_RE = re.compile(r"\b(armenia|yerevan)\b", re.I)
+_WORLDWIDE_RE = re.compile(r"\b(worldwide|anywhere|global|distributed)\b", re.I)
+_EMEA_RE = re.compile(r"\bemea\b", re.I)
+_OTHER_CONTINENT_RE = re.compile(
+    r"\b(latam|latin america|americas|apac|asia.pacific|africa|oceania)\b", re.I
+)
+_EUROPE_ONLY_RE = re.compile(r"\b(europe|european union|\beu\b)\b", re.I)
+_UNRESTRICTED_LOCATION = {
+    "",
+    "no restriction stated",
+    "location not specified",
+    "not specified",
+}
+
+# US companies that still aren't a fit even with no country allowlist,
+# tagged directly on 2026-09-04 (Stripe "US fintech", Doppel "US company").
+US_COMPANY_SKIP = {"stripe", "doppel"}
+
+# Titles that survived the stack regex on a loose word ("cloud", "backend",
+# "infrastructure") but aren't the work. Confirmed against the 2026-09-04
+# Himalayas leftovers: sales/GTM, Salesforce/PHP/Java/.NET, Azure-only,
+# GCP-only, intern/junior.
+_UNRELATED_ROLE_RE = re.compile(
+    r"\b("
+    r"sales development|\bsdr\b|account executive|account development|"
+    r"business development|product marketing|marketing manager|"
+    r"marketing specialist|marketing lead|marketing associate|gtm analyst|gtm strategy|"
+    r"bookkeep\w*|recruiter|scrum master|product owner|commercial director|"
+    r"sales manager|sales engineer|partnership sales|channel partner|"
+    r"product manager|product management|product mgr|"
+    r"accounts receivable|hr generalist|ux designer|"
+    r"salesforce|magento|laravel|\.net\b|php developer|java developer|"
+    r"oracle (cloud|fusion)|servicenow|aem developer|jd edwards|\brpg\b|as/?400"
+    r")\b",
+    re.I,
+)
+_AZURE_ONLY_RE = re.compile(r"\bazure\b", re.I)
+_GCP_ONLY_RE = re.compile(r"\b(gcp|google cloud)\b", re.I)
+_AWS_RE = re.compile(r"\baws\b", re.I)
+_JUNIOR_RE = re.compile(r"\b(intern|internship|junior|trainee|graduate|entry[- ]level)\b", re.I)
+ENGINEERING_TITLE_RE = re.compile(
+    r"\b(software engineer|staff engineer|principal engineer|backend engineer|"
+    r"platform engineer|devops|site reliability|\bsre\b|infrastructure engineer|"
+    r"full.?stack engineer|systems engineer)\b",
+    re.I,
+)
+ACTUAL_STACK_RE = re.compile(
+    r"\b(python|typescript|golang|aws|kubernetes|terraform)\b|\bgo\b", re.I
+)
+
+
+def first_skip(*reasons: str | None) -> str | None:
+    for reason in reasons:
+        if reason:
+            return reason
+    return None
+
+
+def countries_allow_armenia(countries: list[str] | None) -> str | None:
+    """Structured country allowlist (Himalayas locationRestrictions). Empty
+    means unrestricted. Armenia must be named; Georgia/Cyprus/EU countries
+    are not a substitute, you have to live there."""
+    if not countries:
+        return None
+    if any((c or "").strip().lower() == "armenia" for c in countries):
+        return None
+    return "location not eligible"
+
+
+def location_text_allows_armenia(text: str | None) -> str | None:
+    """Free-text location field (Greenhouse, Jobicy, Remotive, Djinni
+    tokens). None if Armenia-eligible, else a skip reason."""
+    if text is None or text.strip().lower() in _UNRESTRICTED_LOCATION:
+        return None
+    if _ARMENIA_RE.search(text):
+        return None
+    if _WORLDWIDE_RE.search(text):
+        return None
+    if _EMEA_RE.search(text):
+        return None
+    if _EUROPE_ONLY_RE.search(text) and _OTHER_CONTINENT_RE.search(text):
+        return None
+    if _EUROPE_ONLY_RE.search(text):
+        return "only Europe"
+    return "location not eligible"
+
+
+def role_skip(title: str | None) -> str | None:
+    """Title-level skips from the 2026-09-04 review. Returns a reason or None."""
+    if not title:
+        return None
+    if _JUNIOR_RE.search(title):
+        return "too junior"
+    if _AZURE_ONLY_RE.search(title) and not _AWS_RE.search(title):
+        return "Azure, not AWS"
+    if _GCP_ONLY_RE.search(title) and not _AWS_RE.search(title):
+        return "GCP, not AWS"
+    if _UNRELATED_ROLE_RE.search(title):
+        return "unrelated"
+    return None
+
+
+def us_company_skip(company: str | None) -> str | None:
+    if not company:
+        return None
+    if company.strip().lower() in US_COMPANY_SKIP:
+        return "US company"
+    return None
+
+
+def engineering_title_with_stack(title: str, description: str) -> bool:
+    """Generic SWE titles ('Software Engineer', 'Staff Software Engineer')
+    don't contain stack keywords, so the firehose filter used to drop them
+    even when the JD required Python/Go/AWS. Second chance: engineering
+    title plus actual stack in the description."""
+    return bool(ENGINEERING_TITLE_RE.search(title or "") and ACTUAL_STACK_RE.search(description or ""))
+
+
 # English-language detection, no external library, two checks: script and
 # common-word density. Script alone catches Cyrillic (Russian) and Armenian
 # script outright, since those are entirely different Unicode blocks from

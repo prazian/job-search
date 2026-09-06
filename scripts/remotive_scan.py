@@ -86,7 +86,12 @@ def scan_jobs(stack_pattern: re.Pattern, blocklist: list[str]) -> list[dict]:
             "excerpt": f"{j.get('title', '')} | {location or 'location not specified'} | "
                        f"{j.get('job_type')} | {j.get('salary') or 'salary not listed'}",
             "location": location,
-            "hard_skip": "US-only, and you don't reside in the US" if _common.is_us_only(location) else None,
+            "hard_skip": _common.first_skip(
+                "US-only, and you don't reside in the US" if _common.is_us_only(location) else None,
+                _common.location_text_allows_armenia(location) if location and not _common.is_us_only(location) else None,
+                _common.role_skip(j.get("title", "")),
+                _common.us_company_skip(j.get("company_name", "")),
+            ),
             "preferred_region": _common.is_preferred_region(location),
             "blocked": blocked,
         })
