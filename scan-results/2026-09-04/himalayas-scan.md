@@ -144,7 +144,7 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] [skipped: location not eligible] **[SONIC Drive-In](https://himalayas.app/companies/sonicdrivein/jobs/manager-international-omni-channel)**: Manager, International Omni-Channel | United Kingdom | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Creative Chaos](https://himalayas.app/companies/creative-chaos/jobs/principal-software-engineer-c)**: Principal Software Engineer - C++ | Pakistan | Full Time | posted 2026-09-03
 - [x] [skipped: location not eligible] **[Nebius](https://himalayas.app/companies/nebius/jobs/technical-product-manager-cluster-experience)**: Technical Product Manager (Cluster Experience) | Czechia, France, Germany, Netherlands | Full Time | posted 2026-09-03
-- [ ] **[Triptease](https://himalayas.app/companies/triptease/jobs/senior-software-engineer)**: Senior Software Engineer | Spain | Full Time | posted 2026-09-03
+- [x] [skipped: location not eligible] **[Triptease](https://himalayas.app/companies/triptease/jobs/senior-software-engineer)**: Senior Software Engineer | Spain | Full Time | posted 2026-09-03
 - [ ] **[HR Connect Ltd](https://himalayas.app/companies/hr-connect-ltd/jobs/product-analyst-finance)**: Product Analyst - Finance | Australia | Full Time | posted 2026-09-03
 - [ ] **[Channel Factory](https://himalayas.app/companies/channel-factory/jobs/sr-software-engineer-media-buying-team)**: Sr Software Engineer - Media Buying Team | Sweden | Full Time | posted 2026-09-03
 - [ ] **[Quest Global Technologies](https://himalayas.app/companies/quest-global-technologies/jobs/java-developer)**: Java Developer | India | Full Time | posted 2026-09-03
