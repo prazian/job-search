@@ -10,13 +10,13 @@ Applied? Tick its box, `- [ ]` to `- [x]`. Skipping one? Same, plus a reason: `-
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/827023-senior-python-developer/)**: Senior Python Developer | posted Mon, 07 Sep 2026 10:11:24 +0300
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/790956-senior-django-developer/)**: Senior Django Developer | posted Wed, 02 Sep 2026 15:40:05 +0300
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844160-backend-python-developer/)**: Backend Python Developer | posted Thu, 20 Aug 2026 19:16:20 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/799548-senior-devops/)**: Senior DevOps | posted Mon, 07 Sep 2026 16:52:34 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/838846-senior-devops-engineer-contractor/)**: Senior DevOps Engineer — Contractor | posted Mon, 07 Sep 2026 13:26:08 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/847066-senior-data-architect-aws-azure/)**: Senior Data Architect(AWS+Azure) | posted Mon, 07 Sep 2026 17:32:46 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846954-senior-data-engineer-aws-or-azure/)**: Senior Data Engineer (AWS or Azure) | posted Mon, 07 Sep 2026 13:18:33 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846950-data-engineering-lead-aws-and-azure/)**: Data Engineering Lead  (AWS and Azure) | posted Mon, 07 Sep 2026 13:10:33 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846903-senior-data-architect-aws-and-azure/)**: Senior Data Architect  (AWS and Azure) | posted Mon, 07 Sep 2026 11:50:33 +0300
-- [ ] **[(see listing, company not named in feed)](https://djinni.co/jobs/846837-senior-data-engineer-data-platform-and-orches/)**: Senior Data Engineer - Data Platform and Orchestration | posted Mon, 07 Sep 2026 09:48:33 +0300
+- [x] [skipped: unrelated Azure focused] **[(see listing, company not named in feed)](https://djinni.co/jobs/799548-senior-devops/)**: Senior DevOps | posted Mon, 07 Sep 2026 16:52:34 +0300
+- [x] [skipped: needs Ukrainian C1] **[(see listing, company not named in feed)](https://djinni.co/jobs/838846-senior-devops-engineer-contractor/)**: Senior DevOps Engineer — Contractor | posted Mon, 07 Sep 2026 13:26:08 +0300
+- [x] [skipped: too much data engineering] **[(see listing, company not named in feed)](https://djinni.co/jobs/847066-senior-data-architect-aws-azure/)**: Senior Data Architect(AWS+Azure) | posted Mon, 07 Sep 2026 17:32:46 +0300
+- [x] [skipped: Ukrainian Native] **[(see listing, company not named in feed)](https://djinni.co/jobs/846954-senior-data-engineer-aws-or-azure/)**: Senior Data Engineer (AWS or Azure) | posted Mon, 07 Sep 2026 13:18:33 +0300
+- [x] [skipped: Ukrainian Native] **[(see listing, company not named in feed)](https://djinni.co/jobs/846950-data-engineering-lead-aws-and-azure/)**: Data Engineering Lead  (AWS and Azure) | posted Mon, 07 Sep 2026 13:10:33 +0300
+- [x] [skipped: Ukrainian Native] **[(see listing, company not named in feed)](https://djinni.co/jobs/846903-senior-data-architect-aws-and-azure/)**: Senior Data Architect  (AWS and Azure) | posted Mon, 07 Sep 2026 11:50:33 +0300
+- [x] [skipped: needs Russian] **[(see listing, company not named in feed)](https://djinni.co/jobs/846837-senior-data-engineer-data-platform-and-orches/)**: Senior Data Engineer - Data Platform and Orchestration | posted Mon, 07 Sep 2026 09:48:33 +0300
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/829201-platform-engineer/)**: Platform Engineer | posted Thu, 03 Sep 2026 10:06:35 +0300
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/844943-senior-data-engineer-interexy/)**: Senior Data Engineer  Interexy | posted Wed, 26 Aug 2026 12:46:37 +0300
 - [x] **[(see listing, company not named in feed)](https://djinni.co/jobs/845074-it-support-specialist/)**: IT Support Specialist | posted Wed, 26 Aug 2026 18:36:17 +0300
